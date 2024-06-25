@@ -36,7 +36,7 @@ const InfoCard = ({
                         </h3>
                     </div>
                 </div>
-                <p className="text-slate-700">
+                <p className="text-slate-700 text-sm">
                     {description}
                 </p>
             </div>
