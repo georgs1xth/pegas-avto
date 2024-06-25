@@ -19,10 +19,10 @@ const InfoCard = ({
 }: infoCardProps) => {
 
     return (
-        <div className={cn("border rounded-lg flex flex-row p-6 gap-2 shadow-md",
-                        wideness == "two" ? "col-span-2" :
-                        wideness == "three" ? "col-span-3" :
-                        "col-span-1"
+        <div className={cn("border rounded-lg flex flex-row p-6 gap-2 shadow-md col-span-1 xs:col-span-2",
+                        wideness == "two" ? "sm:col-span-2" :
+                        wideness == "three" ? "sm:col-span-3" :
+                        "sm:col-span-1"
         )}>
             <div className="flex flex-col gap-2">
                 <div className="flex items-start md:items-center gap-x-2 flex-col md:flex-row">
