@@ -41,7 +41,7 @@ const CarouselItems = ({
                 </div>
             </a>
             <div className="flex flex-col justify-between md:min-h-[125px] max-h-max">
-                <div className="flex flex-col justify-center items-center text-center">
+                <div className="flex flex-col justify-center items-center text-center mt-2">
                     <h3 className="lg:text-xl md:text-lg text-lg font-normal text-slate-700">
                         {itemTitle}
                     </h3>
