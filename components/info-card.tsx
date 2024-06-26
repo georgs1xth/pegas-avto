@@ -26,7 +26,7 @@ const InfoCard = ({
 }: infoCardProps) => {
 
     return (
-        <div className={cn("border rounded-lg p-6 col-span-1 xs:col-span-2 shadow-md flex",
+        <div className={cn("border rounded-lg p-6 col-span-1 xs:col-span-2 shadow-md flex hover:scale-y-103 hover:scale-x-103 hover:shadow-lg hover:z-50 transition",
                         wideness == "two" ? "sm:col-span-2" :
                         wideness == "three" ? "sm:col-span-3" :
                         "sm:col-span-1"

@@ -6,11 +6,12 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface CarouselItemsProps {
     imageSrc: string;
     imageAlt: string;
-    classes?: any;
+    classes?: string;
     btnHref: string;
     itemTitle: string;
     itemDescription?: string;
@@ -33,13 +34,13 @@ const CarouselItems = ({
 
     return ( 
         <CarouselItem className={cn("md:grid md:basis-1/2 xl:basis-1/3 h-full", classes)}>
-            <a onClick={onClick} className="cursor-pointer h-2/4">
+            <Link href={btnHref} className="cursor-pointer h-2/4">
                 <div>
                     <AspectRatio ratio={15 / 9} className="rounded-xl shadow-md">
                         <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt}/>
                     </AspectRatio>
                 </div>
-            </a>
+            </Link>
             <div className="flex flex-col justify-between md:min-h-[135px] max-h-max">
                 <div className="flex flex-col justify-center items-center text-center mt-2">
                     <h3 className="lg:text-xl md:text-lg text-lg font-normal text-slate-700">
