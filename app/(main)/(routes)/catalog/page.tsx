@@ -12,8 +12,8 @@ const CatalogPage = ({
     searchParams
 }: CatalogPageProps) => {
     return ( 
-        <div className="p-2 py-4 md:p-4 xl:p-6 flex flex-col gap-y-4">
-            <div className="px-2 md:hidden">
+        <div className="p-4 py-4 md:p-4 xl:p-6 flex flex-col gap-y-4">
+            <div className="flex justify-center align-center md:hidden">
                 <Suspense>
                     <SearchCatalog/>
                 </Suspense>
