@@ -5,6 +5,7 @@ import { Logo } from "./logo";
 import MobileSidebar from "./mobile-sidebar";
 import { SearchCatalog } from "@/components/search-input";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
 
 const Navbar = () => {
 
@@ -19,9 +20,11 @@ const Navbar = () => {
                 <Logo />
             </div>
             {isCatalogPage && (
-                <div className="ml-10 hidden md:block">
-                    <SearchCatalog/>
-                </div>
+                <Suspense>
+                    <div className="ml-10 hidden md:block">
+                        <SearchCatalog/>
+                    </div>
+                </Suspense>
             )}
             <MobileSidebar/>
             
