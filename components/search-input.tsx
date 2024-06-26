@@ -3,7 +3,7 @@
 import qs from "query-string";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useDebounce } from "@/hooks/use-debounce";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
@@ -31,6 +31,7 @@ export const SearchCatalog = () => {
     }, [debouncedValue, currentCategoryId, router, pathname])
 
     return (
+        <Suspense>
         <div className="relative">
             <Search
                 className="h-4 w-4 absolute top-3 left-3 text-slate-600"
@@ -42,5 +43,6 @@ export const SearchCatalog = () => {
                 placeholder="Поиск товаров"
             />
         </div>
+        </Suspense>
     )
 }
