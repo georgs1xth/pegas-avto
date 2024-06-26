@@ -18,7 +18,7 @@ const InfoCardBtn = ({
     }
 
     return ( 
-        <Button variant="secondary" onClick={onClick} className="h-full ml-2">
+        <Button variant="secondary" onClick={onClick} className="h-full ml-3">
             <ArrowUpRight/>
         </Button>
      );
