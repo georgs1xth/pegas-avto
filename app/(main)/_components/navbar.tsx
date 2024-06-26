@@ -3,7 +3,7 @@
 import NavbarRoutes from "@/components/navbar-routes";
 import { Logo } from "./logo";
 import MobileSidebar from "./mobile-sidebar";
-import { SearchInput } from "@/components/search-input";
+import { SearchCatalog } from "@/components/search-input";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
             </div>
             {isCatalogPage && (
                 <div className="ml-10 hidden md:block">
-                    <SearchInput/>
+                    <SearchCatalog/>
                 </div>
             )}
             <MobileSidebar/>
