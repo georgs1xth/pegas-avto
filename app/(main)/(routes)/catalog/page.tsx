@@ -17,8 +17,9 @@ const CatalogPage = ({
                 <Suspense>
                     <SearchCatalog/>
                 </Suspense>
-                {searchParams.title}
             </div>
+            {searchParams.title}
+            {searchParams.categoryId}
         </div>
      );
 }
