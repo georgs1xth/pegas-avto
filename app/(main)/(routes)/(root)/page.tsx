@@ -1,14 +1,11 @@
 import { Clock, Handshake, Smile } from "lucide-react";
 import MainCarousel from "./_components/main-carousel";
 import InfoCard from "@/components/info-card";
-import { auth } from "@clerk/nextjs/server";
-const Home = async () => {
 
-    const userId = auth()
+const Home = () => {
 
     return (
-        <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4">
-            {userId.userId} 
+        <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4"> 
             <MainCarousel/>
             <div className="grid gap-3 md:gap-4 grid-cols-2 lg:grid-cols-4 p-2">
                 <InfoCard

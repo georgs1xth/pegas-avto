@@ -4,3 +4,12 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+import { Roles } from "@/app/types/globals"
+import { auth } from "@clerk/nextjs/server"
+
+export const checkRole = (role:Roles) => {
+  const { sessionClaims } = auth()
+
+  return sessionClaims?.metadata.role === role;
+}

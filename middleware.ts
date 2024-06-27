@@ -15,7 +15,8 @@ export default clerkMiddleware((auth, req) => {
     }
 
     // Check if the user is an admin
-    if (sessionClaims?.role !== 'admin') {
+    
+    if (sessionClaims?.metadata.role !== 'admin') {
       // Redirect non-admin users to the home page
       return NextResponse.redirect(new URL('/', req.url));
     }
@@ -31,3 +32,4 @@ export default clerkMiddleware((auth, req) => {
 export const config = {
   matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
 };
+
