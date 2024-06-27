@@ -30,10 +30,32 @@ model CatalogItem {
   title String
   description String?
   Price Float?
+  
   categoryId String?
+  category Category? @relation(fields: [categoryId], references: [id])
+
+  brandId String?
+  brand Brand? @relation(fields: [brandId], references: [id])
+
   isAvailable Boolean @default(false)
+  isPublished Boolean @default(false)
   // imageSrc ImageSrc[]
   imageSrc String?
+  
+  @@index([categoryId])
+  @@index([brandId])
+}
+
+model Brand {
+  id String @id @default(uuid())
+  name String @unique
+  items CatalogItem[]
+}
+
+model Category {
+  id String @id @default(uuid())
+  name String @unique
+  items CatalogItem[]
 }
 
 // model ImageSrc {

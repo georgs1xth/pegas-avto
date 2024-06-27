@@ -21,6 +21,7 @@ const config = {
       ...defaultTheme.screens,
       "xs": "200px",
       "sm": "350px",
+      "normal": "450px",
     },
     extend: {
       colors: {
