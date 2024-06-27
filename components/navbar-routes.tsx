@@ -18,9 +18,6 @@ const NavbarRoutes = () => {
   return (
     <div className="flex gap-2">
       <div>
-        {/* TO DO: SEARCH */}
-      </div>
-      <div>
         <Popover>
             <PopoverTrigger>
                 <Button variant="ghost" >

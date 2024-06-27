@@ -7,6 +7,7 @@ import { SearchCatalog } from "@/components/search-input";
 import { usePathname } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
 
@@ -36,7 +37,13 @@ const Navbar = () => {
                 </div>
             </Link>
 
-            <div className="ml-auto">
+            <div className="flex ml-auto gap-3">
+                <SignedOut>
+                    <SignInButton />
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
                 <NavbarRoutes/>
             </div>
             

@@ -17,15 +17,6 @@ const CatalogPage = async ({
     searchParams
 }: CatalogPageProps) => {
 
-    // const catalogItems = await db.catalogItem.findMany({
-    //     where: {
-    //         title: {
-    //             contains: searchParams.title
-    //         },
-    //         categoryId: searchParams.categoryId
-    //     }
-    // })
-
     const catalogItems = await getCatalogItems({
         ...searchParams
     })

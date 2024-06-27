@@ -1,10 +1,8 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
-
 const isAdminRoute = createRouteMatcher(['/admin(.*)']);
 
-export default clerkMiddleware((auth, req: NextRequest) => {
+export default clerkMiddleware((auth, req) => {
   if (isAdminRoute(req)) {
     // Protect admin routes
     const { userId, sessionClaims } = auth();
