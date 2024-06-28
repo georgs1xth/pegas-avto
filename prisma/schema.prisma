@@ -28,11 +28,11 @@ datasource db {
 model MainCarouselItem {
   id String @id @default(uuid())
   title String
-  description String
+  description String?
   isPublished Boolean @default(false)
-  imageUrl String
-  btnHref String
-  position Int
+  imageUrl String?
+  btnHref String?
+  position Int @default(10) 
 }
 
 model CatalogItem {

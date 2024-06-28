@@ -13,6 +13,7 @@ import {
   SignUpButton,
 } from '@clerk/nextjs'
 import { OurFileRouter } from "./api/uploadthing/core";
+import { ToastProvider } from "@/components/providers/toaster-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
     <ClerkProvider localization={localization}>
       <html lang="en">
         <body className="{inter.className} h-screen">
+          <ToastProvider />
           <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs
