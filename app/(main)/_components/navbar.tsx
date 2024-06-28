@@ -38,12 +38,14 @@ const Navbar = () => {
             </Link>
 
             <div className="flex ml-auto gap-3">
-                <SignedOut>
-                    <SignInButton />
-                </SignedOut>
-                <SignedIn>
-                    <UserButton />
-                </SignedIn>
+                <div className="flex justify-center items-center px-2 py-2 border rounded-md shadow-sm hover:bg-slate-200 transition">
+                    <SignedOut>
+                        <SignInButton/>
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
+                </div>
                 <NavbarRoutes/>
             </div>
             
