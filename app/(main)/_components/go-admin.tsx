@@ -8,7 +8,7 @@ const GoAdmin = () => {
         {checkRole("admin") ? 
                 <div className="flex items-center gap-4 p-5">
                     <h1 className="">
-                        You're an admin. Do you want to enter Admin Dashboard?
+                        You are an admin. Do you want to enter Admin Dashboard?
                     </h1>
                     <Link href="/admin/dashboard" className="bg-slate-900 text-white py-2 px-4 rounded-md">
                         Yes
