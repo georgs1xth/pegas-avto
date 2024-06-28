@@ -9,10 +9,10 @@ import CarouselItems from "@/app/(main)/(routes)/(root)/_components/CarouselItem
 
 import Autoplay from "embla-carousel-autoplay";
 import CarouselItemsList from "./CarouselItemsList";
-import { CarouselItem } from "@prisma/client";
+import { MainCarouselItem } from "@prisma/client";
 
 interface mainCarouselProps {
-    carouselItems: CarouselItem[]
+    carouselItems: MainCarouselItem[]
 }
 
 const MainCarousel = ({

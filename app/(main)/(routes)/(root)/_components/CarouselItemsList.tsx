@@ -1,9 +1,9 @@
-import { CarouselItem } from "@prisma/client"
+import { MainCarouselItem} from "@prisma/client"
 import CarouselItems from "./CarouselItems"
 
 
 interface CarouselItemsListProps {
-    items: CarouselItem[]
+    items: MainCarouselItem[]
 }
 
 const CarouselItemsList = ({

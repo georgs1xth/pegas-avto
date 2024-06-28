@@ -5,7 +5,10 @@ import db from "@/lib/db";
 
 const AdminHome = async () => {
     
-    const carouselItems = await db.carouselItem.findMany({
+    const carouselItems = await db.mainCarouselItem.findMany({
+        where: {
+            isPublished: true
+        },
         orderBy: {
             position: "asc"
         }
@@ -16,7 +19,8 @@ const AdminHome = async () => {
                             description: "Описание слайда",
                             imageUrl: "/slider-images/ac-automobile.jpg",
                             btnHref: "/admin/main/create",
-                            position: 1
+                            position: 1,
+                            isPublished: true
     })
 
     return (
