@@ -58,6 +58,27 @@ model Category {
   items CatalogItem[]
 }
 
+model CarouselItem {
+  id String @id @default(uuid())
+  title String
+  description String
+  imageUrl String
+  btnHref String
+  position Int
+}
+
+// model InfoCard {
+//   id String @id @default(uuid())
+//   icon String @default("Clock")
+//   label String
+//   description String?
+//   wideness String?
+//   position Int
+//   addButton Boolean @default(false)
+//   btnHref String?
+// }
+
+
 // model ImageSrc {
 //   id String @id @default(uuid())
 //   imageSrc String

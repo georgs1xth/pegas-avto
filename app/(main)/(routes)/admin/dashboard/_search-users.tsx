@@ -19,7 +19,7 @@ export const SearchUsers = () => {
         className="flex justify-between"
       >
         <label htmlFor="search">Search for Users</label>
-        <input id="search" name="search" type="text" className="rounded-md text-accent-foreground "/>
+        <input id="search" name="search" type="text" className="rounded-md text-accent-foreground mx-2"/>
         <button type="submit">Submit</button>
       </form>
     </div>
