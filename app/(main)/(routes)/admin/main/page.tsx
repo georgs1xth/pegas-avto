@@ -11,6 +11,14 @@ const AdminHome = async () => {
         }
     })
 
+    carouselItems.unshift({ id: "addCarouselItem",
+                            title: "Название слайда",
+                            description: "Описание слайда",
+                            imageUrl: "/slider-images/ac-automobile.jpg",
+                            btnHref: "/admin/main/create",
+                            position: 1
+    })
+
     return (
         <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4"> 
             <MainCarousel

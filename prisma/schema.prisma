@@ -15,14 +15,24 @@ datasource db {
   relationMode = "prisma"
 }
 
-model MainSliderItem {
-  id          String   @id @default(uuid())
-  title       String
+// model MainSliderItem {
+//   id          String   @id @default(uuid())
+//   title       String
+//   description String
+//   isPublished Boolean  @default(false)
+//   imageSrc    String
+//   updatedAt   DateTime @updatedAt
+//   createdAt   DateTime @default(now())
+// }
+
+model MainCarouselItem {
+  id String @id @default(uuid())
+  title String
   description String
-  isPublished Boolean  @default(false)
-  imageSrc    String
-  updatedAt   DateTime @updatedAt
-  createdAt   DateTime @default(now())
+  isPublished Boolean @default(false)
+  imageUrl String
+  btnHref String
+  position Int
 }
 
 model CatalogItem {
@@ -56,15 +66,6 @@ model Category {
   id String @id @default(uuid())
   name String @unique
   items CatalogItem[]
-}
-
-model CarouselItem {
-  id String @id @default(uuid())
-  title String
-  description String
-  imageUrl String
-  btnHref String
-  position Int
 }
 
 // model InfoCard {

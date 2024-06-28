@@ -33,7 +33,7 @@ const CarouselItems = ({
     }
 
     return ( 
-        <CarouselItem className={cn("md:grid md:basis-1/2 xl:basis-1/3 h-full", classes)}>
+        <CarouselItem className={cn("basis-1 md:grid md:basis-1/2 xl:basis-1/3 h-full", classes)}>
             <Link href={btnHref} className="cursor-pointer h-2/4">
                 <div>
                     <AspectRatio ratio={15 / 9} className="rounded-xl shadow-md">
