@@ -12,6 +12,9 @@ const AdminHome = async () => {
     }
 
     const carouselItems = await db.mainCarouselItem.findMany({
+        where: {
+            isPublished: true
+        },
         orderBy: {
             position: "asc"
         },
