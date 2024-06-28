@@ -1,12 +1,21 @@
 import { Clock, Handshake, Smile } from "lucide-react";
 import MainCarousel from "./_components/main-carousel";
 import InfoCard from "@/components/info-card";
+import db from "@/lib/db";
 
-const Home = () => {
+const Home = async () => {
+
+    const carouselItems = await db.carouselItem.findMany({
+        orderBy: {
+            position: "asc"
+        }
+    })
 
     return (
         <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4"> 
-            <MainCarousel/>
+            <MainCarousel
+                carouselItems={carouselItems}
+            />
             <div className="grid gap-3 md:gap-4 grid-cols-2 lg:grid-cols-4 p-2">
                 <InfoCard
                 icon={Clock}
