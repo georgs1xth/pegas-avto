@@ -4,17 +4,17 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { PlusCircle } from "lucide-react";
+import { Ban, PlusCircle } from "lucide-react";
 
 interface CarouselItemsProps {
     id: string,
-    imageSrc: string;
+    imageSrc?: string;
     imageAlt: string;
     classes?: string;
-    btnHref: string;
+    btnHref?: string;
     itemTitle: string;
     itemDescription?: string;
 }
@@ -29,6 +29,10 @@ const CarouselItems = ({
     itemDescription,
 
 }: CarouselItemsProps) => {
+
+    const pathname = usePathname()
+
+    !!btnHref ? btnHref = btnHref : btnHref = pathname
 
     const router = useRouter();
     const onClick = () => {
@@ -45,7 +49,11 @@ const CarouselItems = ({
                         <div className="flex justify-center items-center w-full h-full bg-slate-200/50">
                             <PlusCircle className="w-14 h-14 text-slate-600"/>
                         </div> :
-                        <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt}/>
+                        !!imageSrc ?
+                        <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt}/> :
+                        <div className="flex justify-center items-center w-full h-full">
+                            <Ban/>
+                        </div>
                         }
                     </AspectRatio>
                 </div>

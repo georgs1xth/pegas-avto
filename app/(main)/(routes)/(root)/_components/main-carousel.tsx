@@ -34,11 +34,11 @@ const MainCarousel = ({
                         <CarouselItems 
                             key={item.id}
                             id={item.id}
-                            imageSrc={item.imageUrl} 
+                            imageSrc={item.imageUrl!} 
                             imageAlt={item.title}
-                            btnHref={item.btnHref} 
+                            btnHref={item.btnHref!} 
                             itemTitle={item.title} 
-                            itemDescription={item.description}
+                            itemDescription={item.description!}
                     />
                     )) :
                     <CarouselItems 
