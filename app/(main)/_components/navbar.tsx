@@ -38,7 +38,7 @@ const Navbar = () => {
             </Link>
 
             <div className="flex ml-auto gap-3">
-                <div className="flex justify-center items-center px-2 py-2 border rounded-md shadow-sm hover:bg-slate-200 transition">
+                <div className="flex justify-center items-center px-4 py-2 border rounded-md shadow-sm hover:bg-slate-200 transition text-slate-700">
                     <SignedOut>
                         <SignInButton/>
                     </SignedOut>
