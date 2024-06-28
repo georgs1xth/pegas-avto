@@ -1,5 +1,6 @@
-import { Handshake, Info, Layout, ShoppingBag, Wrench } from "lucide-react";
+import { Handshake, Info, Layout, LogOut, ShoppingBag, Wrench } from "lucide-react";
 import SidebarItem from "./sidebar-item";
+import { usePathname } from "next/navigation";
 
 const mainPageRoutes = [
     {
@@ -29,9 +30,43 @@ const mainPageRoutes = [
     }
 ]
 
-const SidebarRoutes = () => {
+const adminPageRoutes = [
+    {
+        icon: LogOut,
+        label: "Выйти",
+        href: "/"
+    },
+    {
+        icon: ShoppingBag,
+        label: "Товары",
+        href: "/catalog"
+    },
+    {
+        icon: Wrench,
+        label: "Услуги",
+        href: "/services"
+    },
+    {
+        icon: Info,
+        label: "О нас",
+        href: "/about"
+    },
+    {
+        icon: Handshake,
+        label: "Сотрудничество",
+        href: "/partnership"
+    }
+]
 
-    const routes = mainPageRoutes;
+const SidebarRoutes = () => {
+    
+    const pathname = usePathname();
+
+    const isAdminPage = pathname?.includes("/admin");
+
+    const routes = isAdminPage ? adminPageRoutes : mainPageRoutes;
+
+
 
     return (         
         <div className="flex flex-col w-full gap-y-1.5">

@@ -1,6 +1,6 @@
 
 import { redirect } from "next/navigation";
-import { checkRole } from "@/lib/utils";
+import { checkRole } from "@/app/utils/check-role"; 
 import { SearchUsers } from "./_search-users";
 import { clerkClient } from "@clerk/nextjs/server";
 import { setRole } from "./_actions";
