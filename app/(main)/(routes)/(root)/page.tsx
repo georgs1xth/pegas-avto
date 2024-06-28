@@ -6,6 +6,9 @@ import db from "@/lib/db";
 const Home = async () => {
 
     const carouselItems = await db.mainCarouselItem.findMany({
+        where: {
+            isPublished: true
+        },
         orderBy: {
             position: "asc"
         }

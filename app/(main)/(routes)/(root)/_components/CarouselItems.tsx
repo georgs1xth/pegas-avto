@@ -7,8 +7,10 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { PlusCircle } from "lucide-react";
 
 interface CarouselItemsProps {
+    id: string,
     imageSrc: string;
     imageAlt: string;
     classes?: string;
@@ -18,6 +20,7 @@ interface CarouselItemsProps {
 }
 
 const CarouselItems = ({
+    id,
     imageSrc,
     imageAlt,
     classes,
@@ -32,12 +35,18 @@ const CarouselItems = ({
         router.push(`${btnHref}`)
     }
 
-    return ( 
-        <CarouselItem className={cn("basis-1 md:grid md:basis-1/2 xl:basis-1/3 h-full", classes)}>
-            <Link href={btnHref} className="cursor-pointer h-2/4">
-                <div>
-                    <AspectRatio ratio={15 / 9} className="rounded-xl shadow-md">
+    return (
+
+        <CarouselItem className="md:grid md:basis-1/2 xl:basis-1/3 h-full">
+            <Link href={btnHref} className="cursor-pointer">
+                <div className="h-full">
+                    <AspectRatio ratio={15 / 9} className="rounded-xl shadow-md h-full w-full overflow-hidden">
+                        {id === "addCarouselItem" ?
+                        <div className="flex justify-center items-center w-full h-full bg-slate-200/50">
+                            <PlusCircle className="w-14 h-14 text-slate-600"/>
+                        </div> :
                         <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt}/>
+                        }
                     </AspectRatio>
                 </div>
             </Link>

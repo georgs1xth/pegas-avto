@@ -8,7 +8,6 @@ import {
 import CarouselItems from "@/app/(main)/(routes)/(root)/_components/CarouselItems";
 
 import Autoplay from "embla-carousel-autoplay";
-import CarouselItemsList from "./CarouselItemsList";
 import { MainCarouselItem } from "@prisma/client";
 
 interface mainCarouselProps {
@@ -31,16 +30,26 @@ const MainCarousel = ({
                 <CarouselContent className="">
 
                     { !!carouselItems && carouselItems.length > 0 ?
-                    <CarouselItemsList
-                        items={carouselItems}
-                    /> :
+                    carouselItems.map((item) => (
+                        <CarouselItems 
+                            key={item.id}
+                            id={item.id}
+                            imageSrc={item.imageUrl} 
+                            imageAlt={item.title}
+                            btnHref={item.btnHref} 
+                            itemTitle={item.title} 
+                            itemDescription={item.description}
+                    />
+                    )) :
                     <CarouselItems 
+                        id="1"
                         imageSrc="/slider-images/Starline.jpeg" 
                         imageAlt="установка starline" 
                         btnHref="/catalog/signalisations/starline" 
                         itemTitle="StarLine — надежная защита вашего автомобиля." itemDescription="Установка Автосигнализаций."
                     />
                     }
+                    
                     {/* <CarouselItems 
                         imageSrc="/slider-images/Starline.jpeg" 
                         imageAlt="установка starline" 
