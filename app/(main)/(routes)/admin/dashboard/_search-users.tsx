@@ -16,9 +16,10 @@ export const SearchUsers = () => {
           const queryTerm = formData.get("search") as string;
           router.push(pathname + "?search=" + queryTerm);
         }}
+        className="flex justify-between"
       >
         <label htmlFor="search">Search for Users</label>
-        <input id="search" name="search" type="text" />
+        <input id="search" name="search" type="text" className="rounded-md text-accent-foreground "/>
         <button type="submit">Submit</button>
       </form>
     </div>

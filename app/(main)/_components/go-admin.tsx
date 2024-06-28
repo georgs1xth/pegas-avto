@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const GoAdmin = () => {
   return (
-    <div>
+    <>
         {checkRole("admin") ? 
                 <div className="flex items-center gap-4 p-5">
                     <h1 className="">
@@ -13,8 +13,8 @@ const GoAdmin = () => {
                     <Link href="/admin/dashboard" className="bg-slate-900 text-white py-2 px-4 rounded-md">
                         Yes
                     </Link>
-                </div> : <div></div>}
-    </div>
+                </div> : <div className="hidden"></div>}
+    </>
   )
 }
 

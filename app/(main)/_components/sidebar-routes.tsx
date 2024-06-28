@@ -37,24 +37,19 @@ const adminPageRoutes = [
         href: "/"
     },
     {
+        icon: Layout,
+        label: "Главная",
+        href: "/admin/main"
+    },
+    {
         icon: ShoppingBag,
         label: "Товары",
-        href: "/catalog"
+        href: "/admin/catalog"
     },
     {
         icon: Wrench,
         label: "Услуги",
-        href: "/services"
-    },
-    {
-        icon: Info,
-        label: "О нас",
-        href: "/about"
-    },
-    {
-        icon: Handshake,
-        label: "Сотрудничество",
-        href: "/partnership"
+        href: "/admin/services"
     }
 ]
 
