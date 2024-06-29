@@ -13,6 +13,16 @@ import CarouselItems from "@/app/(main)/(routes)/(root)/_components/CarouselItem
 import { BtnHrefForm } from "./_components/btn-href-form"
 import { PositionForm } from "./_components/position-form"
 
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+  } from "@/components/ui/breadcrumb"
+  
+
 const SlideIdPage = async ({
     params
 }: {
@@ -55,6 +65,30 @@ const SlideIdPage = async ({
                 label="Этот слайд не опубликован. Он не будет виден посетителям."
             />
         )}
+            <div className="p-4">
+                <Breadcrumb>
+                    <BreadcrumbList>
+                        
+                            <BreadcrumbItem>
+                                <BreadcrumbLink href="/admin/main">Главная администратора</BreadcrumbLink>
+                            </BreadcrumbItem>
+                        
+                        <BreadcrumbSeparator />
+                        
+                            <BreadcrumbItem>
+                                <BreadcrumbLink href="/admin/main/slider-items">Все слайды</BreadcrumbLink>
+                            
+                            </BreadcrumbItem>
+                        
+                        <BreadcrumbSeparator />
+                            
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>Этот слайд</BreadcrumbPage>
+                            </BreadcrumbItem>
+
+                    </BreadcrumbList>
+                </Breadcrumb>
+            </div>
             <div className="p-2">
                 <Carousel>
                     <CarouselContent>
@@ -65,8 +99,6 @@ const SlideIdPage = async ({
                             itemDescription={slide.description!}
                             imageAlt={slide.id}
                             imageSrc={slide.imageUrl!}
-                            // btnHref={slide.btnHref!}
-                            // btnHref={slide.btnHref!}
                         />
                     </CarouselContent>
                 </Carousel>

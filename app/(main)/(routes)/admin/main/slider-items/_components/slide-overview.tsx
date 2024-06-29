@@ -49,6 +49,8 @@ const SlideOverview = ({
             <Link href={btnHref} className="cursor-pointer">
                 <div className="h-full">
                     <AspectRatio ratio={15 / 9} className="rounded-xl shadow-md h-full w-full overflow-hidden">
+                        <div className="w-full h-full">
+
                         {id === "addCarouselItem" ?
                         <div className="flex justify-center items-center w-full h-full bg-slate-200/50">
                             <PlusCircle className="w-14 h-14 text-slate-600"/>
@@ -60,10 +62,11 @@ const SlideOverview = ({
                         </div>
                         }
                         {id === "addCarouselItem" ? null :
-                            <div className="relative top-5 left-5 z-[10] w-full">
-                                    {isPublished ? <Badge variant="destructive">В архиве</Badge> : <Badge variant="secondary">Опубликован</Badge>}
+                            <div className="absolute bottom-5 left-5 z-[10] w-full">
+                                    {!isPublished ? <Badge variant="destructive" className="bg-red-500/50 hover:bg-red-500">В архиве</Badge> : <Badge variant="secondary">Опубликован</Badge>}
                             </div>
                         }
+                        </div>
                     </AspectRatio>
                 </div>
             </Link>
