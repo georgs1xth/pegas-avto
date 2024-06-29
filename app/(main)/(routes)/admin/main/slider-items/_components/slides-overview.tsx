@@ -20,6 +20,7 @@ const SlidesOverview = ({
                 btnHref={item.btnHref!}
                 itemTitle={item.title}
                 itemDescription={item.description!}
+                isPublished={item.isPublished}
             />           
         ))}
     </div>

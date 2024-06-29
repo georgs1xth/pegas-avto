@@ -8,9 +8,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Ban, PlusCircle } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 interface SlideOverviewProps {
     id: string,
+    isPublished: boolean,
     imageSrc?: string;
     imageAlt: string;
     classes?: string;
@@ -21,19 +23,21 @@ interface SlideOverviewProps {
 
 const SlideOverview = ({
     id,
+    isPublished,
     imageSrc,
     imageAlt,
-    classes,
     btnHref,
+    classes,
     itemTitle,
     itemDescription,
 
 }: SlideOverviewProps) => {
 
-    const pathname = usePathname()
-
-    !!btnHref ? btnHref = btnHref : btnHref = pathname
-
+    if(id !== "addCarouselItem"){
+        btnHref = `/admin/main/slider-items/${id}`
+    }else{
+    btnHref = `${btnHref}`
+    }
     const router = useRouter();
     const onClick = () => {
         router.push(`${btnHref}`)
@@ -41,7 +45,7 @@ const SlideOverview = ({
 
     return (
 
-        <div className="w-full h-full">
+        <div className="flex flex-col">
             <Link href={btnHref} className="cursor-pointer">
                 <div className="h-full">
                     <AspectRatio ratio={15 / 9} className="rounded-xl shadow-md h-full w-full overflow-hidden">
@@ -54,6 +58,11 @@ const SlideOverview = ({
                         <div className="flex justify-center items-center w-full h-full">
                             <Ban className="w-14 h-14 text-red-500"/>
                         </div>
+                        }
+                        {id === "addCarouselItem" ? null :
+                            <div className="relative top-5 left-5 z-[10] w-full">
+                                    {isPublished ? <Badge variant="destructive">В архиве</Badge> : <Badge variant="secondary">Опубликован</Badge>}
+                            </div>
                         }
                     </AspectRatio>
                 </div>
@@ -69,7 +78,7 @@ const SlideOverview = ({
                 </div>
                 <div className="justify-center mt-2 hidden md:flex ">
                     <Button variant="outline" onClick={onClick} className="rounded-2xl" size="inline">
-                        Подробнее
+                        {id === "addCarouselItem" ? <>Добавить слайд</> : <>Подробнее</>}
                     </Button>
                 </div>
             </div>
