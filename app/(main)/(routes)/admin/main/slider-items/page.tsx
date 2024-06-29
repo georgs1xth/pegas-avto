@@ -2,6 +2,7 @@ import MainCarousel from "../../../(root)/_components/main-carousel";
 import db from "@/lib/db";
 import { checkRole } from "@/app/utils/check-role";
 import { redirect } from "next/navigation";
+import SlidesOverview from "./_components/slides-overview";
 
 const SlideListPage = async () => {
     
@@ -25,10 +26,10 @@ const SlideListPage = async () => {
     })
 
     return (
-        <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4"> 
-            <MainCarousel
-                carouselItems={carouselItems}
-            />
+        <div className="p-2 md:p-4 xl:p-6">
+          <SlidesOverview
+            carouselItems={carouselItems}
+          />
         </div>
      );
 }
