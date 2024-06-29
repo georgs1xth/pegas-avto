@@ -5,6 +5,13 @@ import db from "@/lib/db"
 import { LayoutDashboard } from "lucide-react"
 import { redirect } from "next/navigation"
 import { Actions } from "./_components/actions"
+import { TitleForm } from "./_components/title-form"
+import { DescriptionForm } from "./_components/description-form"
+import { ImageForm } from "./_components/image-form"
+import { Carousel, CarouselContent } from "@/components/ui/carousel"
+import CarouselItems from "@/app/(main)/(routes)/(root)/_components/CarouselItems"
+import { BtnHrefForm } from "./_components/btn-href-form"
+import { PositionForm } from "./_components/position-form"
 
 const SlideIdPage = async ({
     params
@@ -48,7 +55,22 @@ const SlideIdPage = async ({
                 label="Этот слайд не опубликован. Он не будет виден посетителям."
             />
         )}
-            <div className="p-6">
+            <div className="p-2">
+                <Carousel>
+                    <CarouselContent>
+                        <CarouselItems
+                            key={slide.id}
+                            id={slide.id}
+                            itemTitle={slide.title}
+                            itemDescription={slide.description!}
+                            imageAlt={slide.id}
+                            imageSrc={slide.imageUrl!}
+                            // btnHref={slide.btnHref!}
+                            // btnHref={slide.btnHref!}
+                        />
+                    </CarouselContent>
+                </Carousel>
+
             <div className="flex items-center justify-between">
                     <div className="flex flex-col gap-y-2">
                         <h1 className="text-2xl font-medium">
@@ -64,7 +86,7 @@ const SlideIdPage = async ({
                         isPublished={slide.isPublished}
                     />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+                <div className="grid grid-cols-1 gap-6 mt-16">
                     <div>
                         <div className="flex items-center gap-x-2">
                             <IconBadge icon={LayoutDashboard}/>
@@ -72,27 +94,26 @@ const SlideIdPage = async ({
                                 Редактирование слайда
                             </h2>
                         </div>
-                        {/* <TitleForm 
-                            initialData={course}
-                            courseId={course.id}
+                        <TitleForm 
+                            initialData={slide}
+                            slideId={slide.id}
                             />
                         <DescriptionForm
-                            initialData={course}
-                            courseId={course.id}
+                            initialData={slide}
+                            slideId={slide.id}
                             />
                         <ImageForm
-                            initialData={course}
-                            courseId={course.id}
+                            initialData={slide}
+                            slideId={slide.id}
+                            />
+                        <BtnHrefForm
+                            initialData={slide}
+                            slideId={slide.id}
                             />
                         <PositionForm
-                            initialData={course}
-                            courseId={course.id}
-                            options={categories.map((category) => ({
-                                label: category.name,
-                                value: category.id
-                            }))}
-                            /> */}
-                    
+                            initialData={slide}
+                            slideId={slide.id}
+                            />
                     </div>
                 </div>
             </div>

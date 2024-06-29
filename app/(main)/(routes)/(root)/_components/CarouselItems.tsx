@@ -52,7 +52,7 @@ const CarouselItems = ({
                         !!imageSrc ?
                         <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt}/> :
                         <div className="flex justify-center items-center w-full h-full">
-                            <Ban/>
+                            <Ban className="w-14 h-14 text-red-500"/>
                         </div>
                         }
                     </AspectRatio>

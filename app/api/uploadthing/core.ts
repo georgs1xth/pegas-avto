@@ -1,3 +1,4 @@
+import { checkRole } from "@/app/utils/check-role";
 import { auth } from "@clerk/nextjs/server";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 
@@ -5,13 +6,14 @@ const f = createUploadthing();
 
 const handleAuth = () => {
     
-    const { sessionClaims, userId } = auth()
-    
-    if(!userId) throw new Error("Unautrhorized");
+    const { userId } = auth()
 
-    if(sessionClaims?.metadata.role !== "admin" || "moderator"){
-        throw new Error("Not enough rights")
-    }
+    if (!checkRole("admin"))throw new Error("Unautrhorized")
+    // if(!userId) throw new Error("Unautrhorized");
+
+    // if(sessionClaims?.metadata.role !== "admin" || "moderator"){
+    //     throw new Error("Not enough rights")
+    // }
 
     return { userId };
 }
