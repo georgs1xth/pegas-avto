@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { LogIn } from "lucide-react";
+import { LogIn, Skull, Zap } from "lucide-react";
 
 const Navbar = ({
     children
@@ -23,11 +23,24 @@ const Navbar = ({
     return ( 
         <div className="p-4 border-b h-full flex items-center bg-white shadow-sm w-full">
 
-            <Link href="/">
-                <div className="hidden justify-center w-100px md:scale-125 md:w-[180px] xl:scale-150 xl:w-[240px] md:flex">
-                    <Logo />
-                </div>
-            </Link>
+
+            
+                <Link href="/">
+                    <div className="hidden justify-center w-100px md:scale-125 md:w-[180px] xl:scale-150 xl:w-[240px] md:flex">
+                    {!!children ? 
+                        <h1 className="text-md font-medium flex gap-1 justify-center items-center">
+                            <Zap className="text-slate-800"/>
+                            <div className="flex flex-col gap-0">
+                                <span className="text-xs h-[10px] text-slate-700">made by </span>
+                                Georgiy
+                            </div>
+                        </h1>
+                        :            
+                        <Logo />
+                    }
+                    </div>
+                </Link>
+
             {isCatalogPage && (
                 <Suspense>
                     <div className="ml-10 hidden md:block">
@@ -39,7 +52,14 @@ const Navbar = ({
 
             <div className="justify-center md:hidden flex ml-4">
                 <Link href="/">
-                    <Logo />
+                    {!!children ? 
+                        <h1 className="text-md font-medium flex flex-col gap-0">
+                            <span className="text-xs h-[10px] text-slate-700">made by </span>
+                            Georgiy
+                        </h1>
+                        :            
+                        <Logo />
+                    }
                 </Link>
             </div>
 
