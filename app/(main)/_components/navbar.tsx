@@ -8,8 +8,13 @@ import { usePathname } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { LogIn } from "lucide-react";
 
-const Navbar = () => {
+const Navbar = ({
+    children
+}: {
+    children: React.ReactNode
+}) => {
 
     const pathname = usePathname();
 
@@ -31,22 +36,31 @@ const Navbar = () => {
                 </Suspense>
             )}
             <MobileSidebar/>
-            <Link href="/">
-                <div className="justify-center md:hidden flex ml-4">
-                    <Logo />
-                </div>
-            </Link>
 
-            <div className="flex ml-auto gap-3">
-                <div className="flex justify-center items-center px-4 py-2 border rounded-md shadow-sm hover:bg-slate-200 transition text-slate-700">
+            <div className="justify-center md:hidden flex ml-4">
+                <Link href="/">
+                    <Logo />
+                </Link>
+            </div>
+
+            <div className="flex ml-auto gap-3 justify-center items-center">
+                <div className="flex justify-center items-center border rounded-md shadow-sm hover:bg-slate-200 transition text-slate-700">
                     <SignedOut>
-                        <SignInButton/>
+                        <SignInButton>
+                            <div className="px-4 py-2 hover:cursor-pointer">
+                                <LogIn className=""/>
+                            </div>
+                        </SignInButton>
                     </SignedOut>
                     <SignedIn>
-                        <UserButton />
+                        <div className="px-4 py-2 flex justify-center items-center w-12 h-10">
+                            <UserButton />
+                        </div>
                     </SignedIn>
                 </div>
-                <NavbarRoutes/>
+                <NavbarRoutes>
+                    {children}
+                </NavbarRoutes>
             </div>
             
         </div>

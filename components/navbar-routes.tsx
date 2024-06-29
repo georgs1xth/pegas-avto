@@ -8,7 +8,11 @@ import { Popover,
  } from "@/components/ui/popover";
 import { useRouter } from "next/navigation";
 
-const NavbarRoutes = () => {
+const NavbarRoutes = ({
+    children
+}: { 
+children: React.ReactNode
+}) => {
   const router = useRouter();
 
   const onClick = () => {
@@ -17,7 +21,6 @@ const NavbarRoutes = () => {
 
   return (
     <div className="flex gap-2">
-      <div>
         <Popover>
             <PopoverTrigger>
                 <Button variant="ghost" >
@@ -51,6 +54,7 @@ const NavbarRoutes = () => {
                 </div>
             </PopoverContent>
         </Popover>
+        {children}
         <Popover>
             <PopoverTrigger>
                 <Button variant="ghost" >
@@ -107,7 +111,6 @@ const NavbarRoutes = () => {
                 </div>
             </PopoverContent>
         </Popover>
-      </div>
     </div>
   );
 };
