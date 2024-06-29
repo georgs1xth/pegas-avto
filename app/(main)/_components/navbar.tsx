@@ -54,7 +54,7 @@ const Navbar = ({
                 <Link href="/">
                     {!!children ? 
                         <h1 className="text-md font-medium flex flex-col gap-0">
-                            <span className="text-xs h-[10px] text-slate-700">made by </span>
+                            <span className="text-xs h-[8px] text-slate-700">made by </span>
                             Georgiy
                         </h1>
                         :            
