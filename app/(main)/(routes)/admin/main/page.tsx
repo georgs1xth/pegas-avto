@@ -4,6 +4,8 @@ import InfoCard from "@/components/info-card";
 import db from "@/lib/db";
 import { checkRole } from "@/app/utils/check-role";
 import { redirect } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const AdminHome = async () => {
     
@@ -30,7 +32,13 @@ const AdminHome = async () => {
     })
 
     return (
-        <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4"> 
+        <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4">
+            <Link href="/admin/main/slider-items">
+                <Button type="button">
+                    Все слайды
+                </Button>
+            </Link>
+            
             <MainCarousel
                 carouselItems={carouselItems}
             />

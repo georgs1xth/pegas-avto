@@ -28,7 +28,7 @@ interface PositionFormProps {
 };
 
 const formSchema = z.object({
-  position: z.number().int()
+  position: z.number().positive()
 });
 
 export const PositionForm = ({
@@ -44,7 +44,7 @@ export const PositionForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      position: initialData?.position || 10
+      position: initialData?.position || 1
     },
   });
 
@@ -81,7 +81,7 @@ export const PositionForm = ({
           "text-sm mt-2",
           !initialData.position && "text-slate-400 italic"
         )}>
-          {initialData.position || "Нет описания"}
+          {initialData.position || "Нет позиции"}
         </p>
       )}
       {isEditing && (
@@ -101,6 +101,10 @@ export const PositionForm = ({
                       disabled={isSubmitting}
                       placeholder="Например: Установка автосигнализаций"
                       {...field}
+                      onChange={ (e) => {
+                        const value = parseFloat(e.target.value);
+                        field.onChange(value);
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
