@@ -24,7 +24,7 @@ export async function PATCH(
             return new NextResponse("Not Found", { status: 404 })
         }
 
-        if (!slide.title || !slide.description || !slide.imageUrl || !slide.btnHref || !slide.position){
+        if (!slide.title || !slide.description || !slide.imageUrl || !slide.position){
             return new NextResponse("Missing required fields", { status: 401 })
         }
 

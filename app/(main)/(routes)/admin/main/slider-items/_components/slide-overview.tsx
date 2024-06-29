@@ -19,6 +19,7 @@ interface SlideOverviewProps {
     btnHref?: string;
     itemTitle: string;
     itemDescription?: string;
+    position: number;
 }
 
 const SlideOverview = ({
@@ -30,6 +31,7 @@ const SlideOverview = ({
     classes,
     itemTitle,
     itemDescription,
+    position
 
 }: SlideOverviewProps) => {
 
@@ -64,6 +66,11 @@ const SlideOverview = ({
                         {id === "addCarouselItem" ? null :
                             <div className="absolute bottom-5 left-5 z-[10] w-full">
                                     {!isPublished ? <Badge variant="destructive" className="bg-red-500/50 hover:bg-red-500">В архиве</Badge> : <Badge variant="secondary">Опубликован</Badge>}
+                            </div>
+                        }
+                        {id === "addCarouselItem" ? null :
+                            <div className="absolute bottom-5 -right-32 z-[10] w-full">
+                                    <Badge> Порядок: {position}</Badge>
                             </div>
                         }
                         </div>

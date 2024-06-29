@@ -47,8 +47,7 @@ const SlideIdPage = async ({
         slide.title,
         slide.description,
         slide.imageUrl,
-        slide.position,
-        slide.btnHref,
+        slide.position
     ]
 
     const totalFields = requiredFields.length;
@@ -106,10 +105,10 @@ const SlideIdPage = async ({
             <div className="flex items-center justify-between">
                     <div className="flex flex-col gap-y-2">
                         <h1 className="text-2xl font-medium">
-                            Course setup
+                            Настройки слайда
                         </h1>
                         <span className="text-sm text-slate-700">
-                            Complete all fields {completionText}
+                            Заполните все строки {completionText}
                         </span>
                     </div>
                     <Actions

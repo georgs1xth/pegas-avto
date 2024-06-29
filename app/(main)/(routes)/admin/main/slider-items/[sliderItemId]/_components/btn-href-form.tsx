@@ -27,9 +27,7 @@ interface BtnHrefFormProps {
 };
 
 const formSchema = z.object({
-  btnHref: z.string().min(1, {
-    message: "Ссылка слайда необходима",
-  }),
+  btnHref: z.string()
 });
 
 export const BtnHrefForm = ({

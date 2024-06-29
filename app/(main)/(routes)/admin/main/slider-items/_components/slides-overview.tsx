@@ -21,6 +21,7 @@ const SlidesOverview = ({
                 itemTitle={item.title}
                 itemDescription={item.description!}
                 isPublished={item.isPublished}
+                position={item.position}
             />           
         ))}
     </div>

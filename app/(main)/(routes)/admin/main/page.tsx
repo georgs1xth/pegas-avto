@@ -35,7 +35,7 @@ const AdminHome = async () => {
         <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4">
             <Link href="/admin/main/slider-items" >
                 <Button type="button" size="inline" className="text-lg font-normal">
-                    Все слайды
+                    Настройки слайдов
                 </Button>
             </Link>
             
