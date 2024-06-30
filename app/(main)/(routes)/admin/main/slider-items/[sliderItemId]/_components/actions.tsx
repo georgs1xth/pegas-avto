@@ -30,16 +30,16 @@ export const Actions = ({
 
             if (isPublished) {
                 await axios.patch(`/api/main/slider-items/${slideId}/unpublish`);
-                toast.success("Course Unpublished");
+                toast.success("Слайд архивирован");
             } else {
                 await axios.patch(`/api/main/slider-items/${slideId}/publish`);
-                toast.success("Course published");
+                toast.success("Слайд опубликован");
                 confetti.onOpen();
             }
 
             router.refresh();
         } catch {
-            toast.error("Something went wrong")
+            toast.error("Что-то пошло не так")
         } finally {
             setIsLoading(false);
         }
@@ -51,11 +51,11 @@ export const Actions = ({
 
             await axios.delete(`/api/main/slider-items/${slideId}`)
 
-            toast.success("Slide deleted");
+            toast.success("Слайд удалён");
             router.refresh()
             router.push(`/admin/main/slider-items`)
         } catch {
-            toast.error("Something went wrong")
+            toast.error("Слайд удалён")
         } finally {
             setIsLoading(false);
         }
