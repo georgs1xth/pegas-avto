@@ -19,7 +19,7 @@ children : React.ReactNode
                 <Navbar>
                     {checkRole("admin") ?
                     <Link href="/admin/main" className="flex justify-center items-center">
-                        <Button variant="ghost" className="p-3">
+                        <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
                             <LucideShieldAlert className="h-5 w-5"/>
                         </Button>
                     </Link> 

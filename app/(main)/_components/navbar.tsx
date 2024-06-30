@@ -21,7 +21,7 @@ const Navbar = ({
     const isCatalogPage = pathname.includes("/catalog");
 
     return ( 
-        <div className="p-4 border-b h-full flex items-center bg-white shadow-sm w-full">
+        <div className="p-4 border-b h-full flex items-center bg-background/60 backdrop-blur-md shadow-sm w-full">
 
 
             
@@ -64,16 +64,16 @@ const Navbar = ({
             </div>
 
             <div className="flex ml-auto gap-3 justify-center items-center">
-                <div className="flex justify-center items-center border rounded-md shadow-sm hover:bg-slate-200 transition text-slate-700">
+                <div className="flex justify-center items-center border rounded-md shadow-sm overflow-hidden hover:bg-slate-200 transition text-slate-700">
                     <SignedOut>
                         <SignInButton>
-                            <div className="px-4 py-2 hover:cursor-pointer">
+                            <div className="px-4 py-2 hover:cursor-pointer bg-background/40">
                                 <LogIn className=""/>
                             </div>
                         </SignInButton>
                     </SignedOut>
                     <SignedIn>
-                        <div className="px-4 py-2 flex justify-center items-center w-12 h-10">
+                        <div className="px-4 py-2 flex justify-center items-center w-12 h-10 bg-background/40">
                             <UserButton />
                         </div>
                     </SignedIn>
