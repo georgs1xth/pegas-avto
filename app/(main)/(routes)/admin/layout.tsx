@@ -1,3 +1,7 @@
+export const metadata = {
+    title: "Administrating"    
+}
+
 const AdminLayout = ({
     children
 }: {
@@ -5,7 +9,7 @@ children : React.ReactNode
 }) => {
 
     return (
-        <div className="p-2 md:p-4 lg:p-6">
+        <div className="">
             {children}
         </div>
       );
