@@ -22,7 +22,11 @@ const localization = {
 }
 
 export const metadata: Metadata = {
-  title: "Пегас avto A",
+  title: {
+    default: "",
+    template: "%s | Pegas Avto A",
+  },
+ 
   description: "Официальный сайт CTO Пегас Avto A",
 };
 

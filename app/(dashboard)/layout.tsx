@@ -5,6 +5,9 @@ import Navbar from "./_components/navbar";
 import Sidebar from "./_components/sidebar";
 import { LucideShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
+
+
 
 const MainLayout = ({
     children
