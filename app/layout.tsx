@@ -23,7 +23,7 @@ const localization = {
 
 export const metadata: Metadata = {
   title: {
-    default: "",
+    default: "Pegas Avto A",
     template: "%s | Pegas Avto A",
   },
  
