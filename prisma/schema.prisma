@@ -38,7 +38,7 @@ model MainCarouselItem {
 model CatalogItem {
   id String @id @default(uuid())
   title String
-  description String?
+  description String? @db.Text
   Price Float?
   
   categoryId String?
@@ -49,11 +49,22 @@ model CatalogItem {
 
   isAvailable Boolean @default(false)
   isPublished Boolean @default(false)
-  // imageSrc ImageSrc[]
-  imageSrc String?
-  
+
+  imageSrcs ImageSrcMultiple[]
+  // imageSrc String?
   @@index([categoryId])
   @@index([brandId])
+}
+
+model ImageSrcMultiple {
+  id String @id @default(uuid())
+  name String
+  imageSrc String
+
+  itemId String
+  item CatalogItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@index([itemId])
 }
 
 model Brand {

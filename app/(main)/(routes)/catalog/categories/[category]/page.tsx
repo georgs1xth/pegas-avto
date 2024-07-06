@@ -18,11 +18,20 @@ const CategoryPage = async ({
         where: {
             categoryId: category?.id
         },
+        include: {
+            imageSrcs: {
+                select: {
+                    id: true
+                }
+            }
+        },
         orderBy: {
             isAvailable: "desc",
         }
     })
     
+    
+
     items.push({id: "1",
                 title: "Title",
                 description: "Description",
@@ -31,7 +40,7 @@ const CategoryPage = async ({
                 brandId: "1",
                 isAvailable: true,
                 isPublished: false,
-                imageSrc: ""
+                imageSrcs: [{id: ""}]
     })
     
     items.push({id: "1",
@@ -42,7 +51,7 @@ const CategoryPage = async ({
                 brandId: "1",
                 isAvailable: true,
                 isPublished: false,
-                imageSrc: ""
+                imageSrcs: [{id: ""}]
     })
 
     items.push({id: "1",
@@ -53,7 +62,7 @@ const CategoryPage = async ({
                 brandId: "1",
                 isAvailable: true,
                 isPublished: false,
-                imageSrc: ""
+                imageSrcs: [{id: ""}]
     })
 
     items.push({id: "1",
@@ -64,18 +73,63 @@ const CategoryPage = async ({
                 brandId: "1",
                 isAvailable: true,
                 isPublished: false,
-                imageSrc: ""
+                imageSrcs: [{id: ""}]
+    })
+
+    items.push({id: "1",
+                title: "Title",
+                description: "Description",
+                Price: 1,
+                categoryId: "1",
+                brandId: "1",
+                isAvailable: true,
+                isPublished: false,
+                imageSrcs: [{id: ""}]
+    })
+    
+    items.push({id: "1",
+                title: "Title",
+                description: "Description",
+                Price: 1,
+                categoryId: "1",
+                brandId: "1",
+                isAvailable: true,
+                isPublished: false,
+                imageSrcs: [{id: ""}]
+    })
+
+    items.push({id: "1",
+                title: "Title",
+                description: "Description",
+                Price: 1,
+                categoryId: "1",
+                brandId: "1",
+                isAvailable: true,
+                isPublished: false,
+                imageSrcs: [{id: ""}]
+    })
+
+    items.push({id: "1",
+                title: "Title",
+                description: "Description",
+                Price: 1,
+                categoryId: "1",
+                brandId: "1",
+                isAvailable: true,
+                isPublished: false,
+                imageSrcs: [{id: ""}]
     })
 
     return ( 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
             {items.map((item) => (
+
                 <CatalogItemCard
                     key={item.id}
                     id={item.id}
                     title={item.title}
                     price={item.Price!}
-                    imageSrc={item.imageSrc!}
+                    imageSrc={item.imageSrcs[0].id}
                     isAvailable={item.isAvailable}
                     brandId={item.brandId!}
                     category={item.categoryId!}

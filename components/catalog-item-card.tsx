@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import db from "@/lib/db";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import { CameraOff } from "lucide-react";
 import Image from "next/image";
@@ -14,7 +15,7 @@ interface CatalogItemCardProps {
     category: string;
 }
 
-export const CatalogItemCard = ({
+export const CatalogItemCard = async ({
     id,
     imageSrc,
     title,
@@ -22,8 +23,17 @@ export const CatalogItemCard = ({
     isAvailable,
     category
 }: CatalogItemCardProps) => {
+
+    const categoryItem = await db.category.findUnique({
+        where: {
+            id: category
+        }
+    })
+
+    // TO DO: PROTECT UNDEFINED CATEGORY => CREATE OTHER CATEGORY
+
   return (
-    <Link href={`/catalog/categories/${category}/${id}`}>
+    <Link href={`/catalog/categories/${categoryItem?.webRef}/${id}`}>
         <div className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition">
             <div>
                 <AspectRatio ratio={15 / 9} className="rounded-lg border flex justify-center items-center w-full">
