@@ -30,10 +30,12 @@ export const CatalogItemCard = async ({
         }
     })
 
+    const webReference = !!categoryItem?.webRef ? categoryItem.webRef : "Другое"
+
     // TO DO: PROTECT UNDEFINED CATEGORY => CREATE OTHER CATEGORY
 
   return (
-    <Link href={`/catalog/categories/${categoryItem?.webRef}/${id}`}>
+    <Link href={`/catalog/categories/${webReference}/${id}`}>
         <div className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition">
             <div>
                 <AspectRatio ratio={15 / 9} className="rounded-lg border flex justify-center items-center w-full">
