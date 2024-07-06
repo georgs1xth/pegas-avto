@@ -3,7 +3,7 @@ import db from "@/lib/db";
 import { Suspense } from "react";
 import { CatalogItemCard } from "../../../../components/catalog-item-card";
 import { getCatalogItems } from "@/actions/getCatalogItems";
-import { CatalogItemsList } from "@/components/catalog-items-list";
+// import { CatalogItemsList } from "@/components/catalog-items-list";
 import CatalogCategories from "./_components/catalog-categories";
 
 interface CatalogPageProps {
@@ -18,16 +18,16 @@ const CatalogPage = async ({
     searchParams
 }: CatalogPageProps) => {
 
-    const catalogItems = await getCatalogItems({
-        ...searchParams
-    })
+    // const catalogItems = await getCatalogItems({
+    //     ...searchParams
+    // })
 
     const categories = await db.category.findMany({
         orderBy: {
             name: "asc"
         }
     });
-    
+
 
     categories.push({id: "1", name: "Автосигнализации", webRef: "Автосигнализации", imageSrc: "/slider-images/Starline.jpeg"})
     categories.push({id: "2", name: "Парктроники", webRef: "Парктроники", imageSrc: "/slider-images/Starline.jpeg"})
@@ -44,9 +44,9 @@ const CatalogPage = async ({
             <CatalogCategories
                 items={categories}
             />
-            <CatalogItemsList
+            {/* <CatalogItemsList
                 items={catalogItems}
-            />
+            /> */}
         </div>
      );
 }
