@@ -28,7 +28,7 @@ export const CatalogItemCard = ({
             <div>
                 <AspectRatio ratio={15 / 9} className="rounded-lg border flex justify-center items-center w-full">
                     {!!imageSrc ? <Image src={imageSrc} alt={title}/> : <CameraOff/>}
-                </AspectRatio> 
+                </AspectRatio>
             </div>
             <div className="px-2 py-1 overflow-hidden">
                 {!!price && !!isAvailable ? <h2 className="text-lg font-semibold text-slate-900">{price.toString()} тг </h2> :
@@ -36,7 +36,7 @@ export const CatalogItemCard = ({
                 !!isAvailable ? <h2>Нет в наличии</h2> :
                 <h2 className="text-md text-slate-400">Нет в наличии</h2>}
                 <div className="flex flex-col gap-1 justify-between">
-                        <div className="text-sm line-clamp-2 h-10">{title}</div>
+                        <div className="text-sm line-clamp-2 max-h-max">{title}</div>
                     <div>
                         <p className="text-muted-foreground text-xs">{category}</p>            
                     </div>

@@ -65,6 +65,8 @@ model Brand {
 model Category {
   id String @id @default(uuid())
   name String @unique
+  imageSrc String?
+  webRef String?
   items CatalogItem[]
 }
 
