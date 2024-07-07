@@ -32,8 +32,6 @@ export const CatalogItemCard = async ({
 
     const webReference = !!categoryItem?.webRef ? categoryItem.webRef : "Другое"
 
-    // TO DO: PROTECT UNDEFINED CATEGORY => CREATE OTHER CATEGORY
-
   return (
     <Link href={`/catalog/categories/${webReference}/${id}`}>
         <div className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition">
@@ -44,8 +42,7 @@ export const CatalogItemCard = async ({
             </div>
             <div className="px-2 py-1 overflow-hidden">
                 {!!price && !!isAvailable ? <h2 className="text-lg font-semibold text-slate-900">{price.toString()} тг </h2> :
-                !!price ? <h2 className="text-base text-slate-400">цена уточняется</h2> :
-                !!isAvailable ? <h2>Нет в наличии</h2> :
+                !price && !!isAvailable ? <h2 className="text-base text-slate-400">цена уточняется</h2> :
                 <h2 className="text-md text-slate-400">Нет в наличии</h2>}
                 <div className="flex flex-col gap-1 justify-between">
                         <div className="text-sm line-clamp-2 max-h-max">{title}</div>

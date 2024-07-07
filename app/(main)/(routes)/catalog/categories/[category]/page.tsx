@@ -16,12 +16,13 @@ const CategoryPage = async ({
 
     const items = await db.catalogItem.findMany({
         where: {
-            categoryId: category?.id
+            categoryId: category?.id,
+            isPublished: true,
         },
         include: {
             imageSrcs: {
                 select: {
-                    id: true
+                    id: true,
                 }
             }
         },
@@ -46,11 +47,11 @@ const CategoryPage = async ({
     items.push({id: "1",
                 title: "Title",
                 description: "Description",
-                Price: 1,
+                Price: 123,
                 categoryId: "1",
                 brandId: "1",
-                isAvailable: true,
-                isPublished: false,
+                isAvailable: false,
+                isPublished: true,
                 imageSrcs: [{id: ""}]
     })
 
