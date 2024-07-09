@@ -1,6 +1,6 @@
 import { DataTable } from "./data-table"
 
-import { columns } from "./columns"
+import { Columns } from "./columns"
 import { Appointment } from "@prisma/client"
 import db from "@/lib/db"
 
@@ -19,7 +19,7 @@ const SchedulePage = async () => {
 
   return (
     <div className="p-4">
-        <DataTable columns={columns} data={data}/>
+        <DataTable columns={Columns} data={data}/>
     </div>
   )
 }

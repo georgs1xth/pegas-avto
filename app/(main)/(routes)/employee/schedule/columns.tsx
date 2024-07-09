@@ -19,7 +19,7 @@ import { useRouter } from "next/navigation"
 //   phone: string
 // }
 
-export const columns: ColumnDef<Appointment>[] = [
+export const Columns: ColumnDef<Appointment>[] = [
   {
     accessorKey: "date",
     header: "Время записи",
