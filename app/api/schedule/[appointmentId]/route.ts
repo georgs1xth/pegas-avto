@@ -38,3 +38,32 @@ export async function DELETE(
         return new NextResponse("Internal Error", { status: 500 })
     }
 }
+
+export async function PATCH(
+    req: Request,
+    { params }: { params: { appointmentId: string } },
+) {
+    try {
+        const { userId } = auth();
+        const { appointmentId } = params;
+        const values = await req.json();
+        
+        if ((!checkRole("admin") && !checkRole("moderator")) && userId || (!checkRole("admin") && !checkRole("moderator") && !userId)) {
+            return new NextResponse("Not enough rights", { status: 401 });
+        }
+    
+        const appointment = await db.appointment.update({
+            where: {
+                id: appointmentId
+            },
+            data: {
+                ...values,
+            }
+        })
+
+        return NextResponse.json(appointment)
+    } catch (error) {
+        console.log("[APPOINTMENT_ID_PATCH]", error);
+        return new NextResponse("Internal Error", { status: 500 })
+    }
+}

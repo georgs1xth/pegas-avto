@@ -2,16 +2,19 @@
 
 import { Button } from "@/components/ui/button";
 import axios from "axios";
+import { Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
 interface ActionsProps {
     appointmentId: string;
+    btnStyle: "icon" | "destructive"
 }
 
 export const DeleteAction = ({
-    appointmentId
+    appointmentId,
+    btnStyle
 }: ActionsProps) => {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +27,7 @@ export const DeleteAction = ({
 
             toast.success("Запись удалена");
             router.refresh()
-            router.push(`/admin/schedule/`)
+            router.push(`/employee/schedule/`)
         } catch {
             toast.error("Что-то пошло не так")
         } finally {
@@ -34,8 +37,8 @@ export const DeleteAction = ({
 
 
     return (
-            <Button size="inline" variant="destructive" disabled={isLoading} onClick={onDelete}>
-                Удалить запись
-            </Button>
+        <Button size="inline" variant={btnStyle === "destructive" ? "destructive" : "default"} disabled={isLoading} onClick={onDelete}>
+            {btnStyle === "destructive" ? "Удалить запись" : <Trash2/>}
+        </Button>
     )
 }
