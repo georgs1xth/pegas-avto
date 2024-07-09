@@ -81,6 +81,14 @@ model Category {
   items CatalogItem[]
 }
 
+model Appointment {
+  id String @id @default(uuid())
+  name String
+  phone String
+  amount Int @default(0)
+  status String @default("В ожидании")
+  date DateTime? @default(now())
+}
 // model InfoCard {
 //   id String @id @default(uuid())
 //   icon String @default("Clock")

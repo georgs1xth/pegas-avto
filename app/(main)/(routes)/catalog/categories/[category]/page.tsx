@@ -133,7 +133,7 @@ const CategoryPage = async ({
                     imageSrc={item.imageSrcs[0].id}
                     isAvailable={item.isAvailable}
                     brandId={item.brandId!}
-                    category={item.categoryId!}
+                    categoryId={item.categoryId!}
                     // description={item.description}
                 />
             ))}

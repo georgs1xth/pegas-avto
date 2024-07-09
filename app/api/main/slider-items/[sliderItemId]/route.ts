@@ -10,7 +10,7 @@ export async function DELETE(
     try {
         const { userId } = auth()
 
-        if (!checkRole("admin") && userId){
+        if (!checkRole("admin") && userId || !checkRole("admin") &&!userId){
             return new NextResponse("Not enough rights", { status: 401})
         }
 

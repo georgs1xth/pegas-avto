@@ -1,4 +1,4 @@
-import { Handshake, Info, Layout, LogOut, ShoppingBag, Wrench } from "lucide-react";
+import { Handshake, Info, Layout, LogOut, Pencil, ShoppingBag, Wrench } from "lucide-react";
 import SidebarItem from "./sidebar-item";
 import { usePathname } from "next/navigation";
 
@@ -50,6 +50,11 @@ const adminPageRoutes = [
         icon: Wrench,
         label: "Услуги",
         href: "/admin/services"
+    },
+    {
+        icon: Pencil,
+        label: "Запись",
+        href: "/admin/schedule"
     }
 ]
 

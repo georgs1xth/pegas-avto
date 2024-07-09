@@ -55,7 +55,7 @@ export const Actions = ({
             router.refresh()
             router.push(`/admin/main/slider-items`)
         } catch {
-            toast.error("Слайд удалён")
+            toast.error("Слайд не был удалён")
         } finally {
             setIsLoading(false);
         }

@@ -12,7 +12,7 @@ interface CatalogItemCardProps {
     price: number;
     isAvailable: boolean;
     brandId: string;
-    category: string;
+    categoryId: string;
 }
 
 export const CatalogItemCard = async ({
@@ -21,12 +21,12 @@ export const CatalogItemCard = async ({
     title,
     price,
     isAvailable,
-    category
+    categoryId
 }: CatalogItemCardProps) => {
 
     const categoryItem = await db.category.findUnique({
         where: {
-            id: category
+            id: categoryId
         }
     })
 
@@ -47,7 +47,7 @@ export const CatalogItemCard = async ({
                 <div className="flex flex-col gap-1 justify-between">
                         <div className="text-sm line-clamp-2 max-h-max">{title}</div>
                     <div>
-                        <p className="text-muted-foreground text-xs">{category}</p>            
+                        <p className="text-muted-foreground text-xs">{!!categoryItem?.name ? categoryItem.name : <>Другое</>}</p>            
                     </div>
                 </div>
             </div>
