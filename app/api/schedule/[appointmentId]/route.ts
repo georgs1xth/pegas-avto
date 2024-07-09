@@ -10,9 +10,10 @@ export async function DELETE(
     try {
         const { userId } = auth()
 
-        if (!checkRole("admin") && userId || !checkRole("admin") &&!userId){
-            return new NextResponse("Not enough rights", { status: 401})
+        if ((!checkRole("admin") && !checkRole("moderator")) && userId || (!checkRole("admin") && !checkRole("moderator") && !userId)) {
+            return new NextResponse("Not enough rights", { status: 401 });
         }
+          
 
         const appointment = await db.appointment.findUnique({
             where: {

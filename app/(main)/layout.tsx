@@ -3,7 +3,7 @@ import Link from "next/link";
 import { checkRole } from "../utils/check-role";
 import Navbar from "./_components/navbar";
 import Sidebar from "./_components/sidebar";
-import { LucideShieldAlert } from "lucide-react";
+import { LucideShieldAlert, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 
@@ -26,7 +26,12 @@ children : React.ReactNode
                             <LucideShieldAlert className="h-5 w-5"/>
                         </Button>
                     </Link> 
-                    : null
+                    : checkRole("moderator") ?
+                    <Link href="/employee/schedule" className="flex justify-center items-center">
+                        <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
+                            <Pencil className="h-5 w-5"/>
+                        </Button>
+                    </Link> : null
                     }                    
                 </Navbar>
             </div>

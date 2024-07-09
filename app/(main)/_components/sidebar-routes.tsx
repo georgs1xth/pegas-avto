@@ -54,7 +54,20 @@ const adminPageRoutes = [
     {
         icon: Pencil,
         label: "Запись",
-        href: "/admin/schedule"
+        href: "/employee/schedule"
+    }
+]
+
+const employeePageRoutes = [
+    {
+        icon: LogOut,
+        label: "Выйти",
+        href: "/"
+    },
+    {
+        icon: Pencil,
+        label: "Запись",
+        href: "/employee/schedule"
     }
 ]
 
@@ -64,9 +77,11 @@ const SidebarRoutes = () => {
 
     const isAdminPage = pathname?.includes("/admin");
 
-    const routes = isAdminPage ? adminPageRoutes : mainPageRoutes;
+    const isEmployeePage = pathname?.includes("/employee")
 
-
+    const routes =  isAdminPage ? adminPageRoutes : 
+                    isEmployeePage ? employeePageRoutes:
+                    mainPageRoutes;
 
     return (         
         <div className="flex flex-col w-full gap-y-1.5">
