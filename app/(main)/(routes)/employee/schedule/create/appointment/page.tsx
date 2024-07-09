@@ -32,7 +32,7 @@ const AppointmentCreatePage = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      phone: "",
+      phone: "+7",
     }
   });
 
