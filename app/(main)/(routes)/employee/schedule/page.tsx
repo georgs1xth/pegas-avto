@@ -1,10 +1,8 @@
 import { DataTable } from "./data-table"
 
 import { Columns } from "./columns"
-import { Appointment } from "@prisma/client"
 import db from "@/lib/db"
-import { Button } from "@/components/ui/button"
-import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 // export type Payment = {
 //     id: string
@@ -18,17 +16,12 @@ import { useRouter } from "next/navigation"
 const SchedulePage = async () => {
 
   const data = await db.appointment.findMany()
-  const router = useRouter();
-
-  const onClick = () => {
-    router.push('/employee/schedule/create/appointment')
-  }
 
   return (
     <div className="p-4">
-        <Button onClick={onClick}>
+        <Link href="/employee/schedule/create/appointment">
           Добавить запись
-        </Button>
+        </Link>
         <DataTable columns={Columns} data={data}/>
     </div>
   )
