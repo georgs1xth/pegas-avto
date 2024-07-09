@@ -6,7 +6,7 @@ import { ColumnDef } from "@tanstack/react-table"
 import { MoreHorizontal, Pencil, Trash } from "lucide-react"
 import { DeleteAction } from "./[appointmentId]/_components/delete-action"
 import { Appointment } from "@prisma/client"
-import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -52,7 +52,6 @@ export const Columns: ColumnDef<Appointment>[] = [
   {
     id: "actions",
     cell: ({ row }) => {
-      const router = useRouter()
       const appointment = row.original
       return (
         <DropdownMenu>
@@ -70,12 +69,12 @@ export const Columns: ColumnDef<Appointment>[] = [
               Скопировать номер телефона
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={()=> { 
-                                      router.push(`/employee/schedule/${appointment.id}`)
-                                    }}>
-              <div className="flex justify-center align-center w-full">
-                <Pencil/>
-              </div>
+            <DropdownMenuItem>
+              <Link href={`/employee/schedule/${appointment.id}`}>
+                <div className="flex justify-center align-center w-full cursor-pointer">
+                  <Pencil/>
+                </div>
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
               <div className="w-full">
