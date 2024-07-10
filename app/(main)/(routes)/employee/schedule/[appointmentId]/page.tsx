@@ -17,6 +17,7 @@ import { DeleteAction } from "./_components/delete-action"
 import { NameForm } from "./_components/name-form"
 import { PhoneForm } from "./_components/phone-form"
 import { CarForm } from "./_components/car-form"
+import { DateForm } from "./_components/date-form"
   
 
 const AppointmentIdPage = async ({
@@ -113,6 +114,10 @@ const AppointmentIdPage = async ({
                             initialData={appointment}
                             appointmentId={appointment.id}
                             />
+                        <DateForm
+                            initialData={appointment}
+                            appointmentId={appointment.id}
+                        />
                         {/* 
                         <DescriptionForm
                             initialData={slide}
