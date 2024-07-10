@@ -46,26 +46,26 @@ export const Columns: ColumnDef<Appointment>[] = [
     }
   },
   {
-    accessorKey: "car",
+    accessorKey: "авто",
     header: "Авто",
   },
   {
-    accessorKey: "status",
+    accessorKey: "статус",
     header: "Статус",
   },
   {
-    accessorKey: "name",
+    accessorKey: "имя",
     header: "Имя",
   },
   {
-    accessorKey: "phone",
+    accessorKey: "Номер телефона",
     header: "Номер телефона",
   },
   {
-    accessorKey: "amount",
+    accessorKey: "предоплачено",
     header: () => <div className="text-right">Предоплачено</div>,
     cell: ({ row }) => {
-        const amount = parseFloat(row.getValue("amount"))
+        const amount = parseFloat(row.getValue("предоплачено"))
         const formatted = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "KZT",
