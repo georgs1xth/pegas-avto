@@ -45,9 +45,9 @@ const AppointmentIdPage = async ({
         appointment.name,
         appointment.phone,
         appointment.date,
-        appointment.status,
         appointment.amount,
         appointment.car,
+        appointment.total,
     ]
 
     const totalFields = requiredFields.length;
@@ -123,23 +123,6 @@ const AppointmentIdPage = async ({
                             initialData={appointment}
                             appointmentId={appointment.id}
                         />
-                        {/* 
-                        <DescriptionForm
-                            initialData={slide}
-                            slideId={slide.id}
-                            />
-                        <ImageForm
-                            initialData={slide}
-                            slideId={slide.id}
-                            />
-                        <BtnHrefForm
-                            initialData={slide}
-                            slideId={slide.id}
-                            />
-                        <PositionForm
-                            initialData={slide}
-                            slideId={slide.id}
-                            /> */}
                     </div>
                 </div>
             </div>

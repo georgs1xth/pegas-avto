@@ -5,7 +5,7 @@ import { ru } from 'date-fns/locale';
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { ColumnDef } from "@tanstack/react-table"
-import { MoreHorizontal, Pencil, Trash } from "lucide-react"
+import { ArrowUpDown, MoreHorizontal, Pencil, Trash } from "lucide-react"
 import { DeleteAction } from "./[appointmentId]/_components/delete-action"
 import { Appointment } from "@prisma/client"
 import Link from "next/link"
@@ -24,7 +24,17 @@ import Link from "next/link"
 export const Columns: ColumnDef<Appointment>[] = [
   {
     accessorKey: "date",
-    header: () => <div className="text-left">Дата</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Дата
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
     cell: ({ row }) => {
         
         const date : Date = row.getValue("date")

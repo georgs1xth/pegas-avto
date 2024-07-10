@@ -20,11 +20,7 @@ const SchedulePage = async () => {
 
   return (
     <div className="p-4 flex flex-col gap-2 items-end">
-        <Link href="/employee/schedule/create/appointment">
-          <Button variant="default">
-            Добавить запись
-          </Button>
-        </Link>
+        
         <div className="w-full">
           <DataTable columns={Columns} data={data}/>
         </div>
