@@ -68,7 +68,43 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <div className="flex justify-between gap-4 py-4">
+      <div className="w-full flex flex-col gap-4 py-4">
+        <div className="w-full flex justify-between gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="w-full">
+                  Показать колонны
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {table
+                  .getAllColumns()
+                  .filter(
+                    (column) => column.getCanHide()
+                  )
+                  .map((column) => {
+                    return (
+                      <DropdownMenuCheckboxItem
+                        key={column.id}
+                        className="capitalize"
+                        checked={column.getIsVisible()}
+                        onCheckedChange={(value) => {
+                          column.toggleVisibility(!!value)
+                        }
+                        }
+                      >
+                        {column.id}
+                      </DropdownMenuCheckboxItem>
+                    )
+                  })}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Link href="/employee/schedule/create/appointment" className="">
+              <Button variant="default">
+                Добавить запись
+              </Button>
+            </Link>
+        </div>
         <Input
           placeholder="Поиск по телефону"
           value={(table.getColumn("phone")?.getFilterValue() as string) ?? ""}
@@ -77,40 +113,6 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-md"
         />
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Показать колонны
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter(
-                (column) => column.getCanHide()
-              )
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) => {
-                      column.toggleVisibility(!!value)
-                    }
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                )
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <Link href="/employee/schedule/create/appointment">
-          <Button variant="default">
-            Добавить запись
-          </Button>
-        </Link>
       </div>
       <div className="rounded-md border">
         <Table>
