@@ -2,7 +2,7 @@ import { checkRole } from "@/app/utils/check-role"
 import { Banner } from "@/components/banner"
 import { IconBadge } from "@/components/icon-badge"
 import db from "@/lib/db"
-import { LayoutDashboard } from "lucide-react"
+import { LayoutDashboard, User } from "lucide-react"
 import { redirect } from "next/navigation"
 
 import {
@@ -14,6 +14,8 @@ import {
     BreadcrumbSeparator,
   } from "@/components/ui/breadcrumb"
 import { DeleteAction } from "./_components/delete-action"
+import { NameForm } from "./_components/name-form"
+import { PhoneForm } from "./_components/phone-form"
   
 
 const AppointmentIdPage = async ({
@@ -42,6 +44,7 @@ const AppointmentIdPage = async ({
         appointment.date,
         appointment.status,
         appointment.amount,
+        appointment.car,
     ]
 
     const totalFields = requiredFields.length;
@@ -92,15 +95,20 @@ const AppointmentIdPage = async ({
                 <div className="grid grid-cols-1 gap-6 mt-16">
                     <div>
                         <div className="flex items-center gap-x-2">
-                            <IconBadge icon={LayoutDashboard}/>
+                            <IconBadge icon={User}/>
                             <h2 className="text-xl">
-                                Редактирование слайда
+                                Клиент
                             </h2>
                         </div>
-                        {/* <TitleForm 
-                            initialData={slide}
-                            slideId={slide.id}
+                        <NameForm 
+                            initialData={appointment}
+                            appointmentId={appointment.id}
                             />
+                        <PhoneForm 
+                            initialData={appointment}
+                            appointmentId={appointment.id}
+                            />
+                        {/* 
                         <DescriptionForm
                             initialData={slide}
                             slideId={slide.id}

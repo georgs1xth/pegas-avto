@@ -38,7 +38,7 @@ export const DeleteAction = ({
 
     return (
         <Button size="inline" variant={btnStyle === "destructive" ? "destructive" : "default"} disabled={isLoading} onClick={onDelete}>
-            {btnStyle === "destructive" ? "Удалить запись" : <Trash2/>}
+            {btnStyle === "destructive" ? <Trash2/> : <Trash2/>}
         </Button>
     )
 }

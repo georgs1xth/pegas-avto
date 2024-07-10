@@ -1,4 +1,6 @@
 "use client"
+import { format } from 'date-fns';
+import { ru } from 'date-fns/locale';
 
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -22,7 +24,20 @@ import Link from "next/link"
 export const Columns: ColumnDef<Appointment>[] = [
   {
     accessorKey: "date",
-    header: "Время записи",
+    header: () => <div className="text-left">Дата</div>,
+    cell: ({ row }) => {
+        
+        const date : Date = row.getValue("date")
+        const formatted = format(new Date(date), 'HH:mm d MMMM', {
+          locale: ru
+        })
+
+        return <div className="text-left">{formatted}</div>
+    }
+  },
+  {
+    accessorKey: "car",
+    header: "Авто",
   },
   {
     accessorKey: "status",
@@ -62,20 +77,11 @@ export const Columns: ColumnDef<Appointment>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Меню</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(appointment.phone)}
-            >
-              Скопировать номер телефона
+              <Link href={`/employee/schedule/${appointment.id}`} className="flex justify-center items-center hover:bg-slate-100 w-full rounded-md overflow-hidden cursor-pointer">
+            <DropdownMenuItem className="w-full hover:bg-slate-100">
+                  <Pencil className="w-full hover:bg-slate-100 cursor-pointer"/>
             </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <Link href={`/employee/schedule/${appointment.id}`}>
-                <div className="flex justify-center align-center w-full cursor-pointer">
-                  <Pencil/>
-                </div>
               </Link>
-            </DropdownMenuItem>
             <DropdownMenuItem>
               <div className="w-full">
                 <DeleteAction
