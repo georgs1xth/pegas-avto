@@ -18,6 +18,7 @@ import { NameForm } from "./_components/name-form"
 import { PhoneForm } from "./_components/phone-form"
 import { CarForm } from "./_components/car-form"
 import { DateForm } from "./_components/date-form"
+import { PaymentForm } from "./_components/payment-form"
   
 
 const AppointmentIdPage = async ({
@@ -115,6 +116,10 @@ const AppointmentIdPage = async ({
                             appointmentId={appointment.id}
                             />
                         <DateForm
+                            initialData={appointment}
+                            appointmentId={appointment.id}
+                        />
+                        <PaymentForm
                             initialData={appointment}
                             appointmentId={appointment.id}
                         />

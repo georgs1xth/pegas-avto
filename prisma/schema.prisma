@@ -86,8 +86,8 @@ model Appointment {
   name String?
   phone String
   car String?
-  amount Int? @default(0)
-  status String? @default("В ожидании")
+  amount Int @default(0)
+  status String @default("В ожидании")
   date DateTime @default(now())
 }
 
