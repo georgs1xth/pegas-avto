@@ -28,7 +28,7 @@ export const Columns: ColumnDef<Appointment>[] = [
       return (
         <Button
           variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
         >
           Дата
           <ArrowUpDown className="ml-2 h-4 w-4" />
