@@ -99,7 +99,6 @@ export const DateForm = ({
               name="date"
               render={({ field }) => (
             <FormItem>
-              <FormLabel className="pr-4">Date</FormLabel>
               <Popover
                 open={calendarOpen}
                 onOpenChange={(open) => setCalendarOpen(open)}
@@ -122,7 +121,7 @@ export const DateForm = ({
                           minute: '2-digit',
                         })}`
                       ) : (
-                        <span>Select Date</span>
+                        <span>Выбрать дату и время</span>
                       )}
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                     </Button>
@@ -161,7 +160,7 @@ export const DateForm = ({
               </Popover>
               <FormMessage />
               <FormDescription>
-                This is the date & time the assessment finished.
+                Выберите дату и время записи
               </FormDescription>
             </FormItem>
           )}
