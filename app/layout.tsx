@@ -5,7 +5,7 @@ import { ruRU } from "@clerk/localizations"
 
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin"
 import { extractRouterConfig } from "uploadthing/server";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import {
   ClerkProvider,
@@ -51,6 +51,7 @@ export default function RootLayout({
         />
 
           {children}
+          <SpeedInsights/>
         </body>
       </html>
     </ClerkProvider>
