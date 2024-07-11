@@ -88,9 +88,9 @@ export const Columns: ColumnDef<Appointment>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
               <Link href={`/employee/schedule/${appointment.id}`} className="flex justify-center items-center hover:bg-slate-100 w-full rounded-md overflow-hidden cursor-pointer">
-            <DropdownMenuItem className="w-full hover:bg-slate-100">
-                  <Pencil className="w-full hover:bg-slate-100 cursor-pointer"/>
-            </DropdownMenuItem>
+                <DropdownMenuItem className="w-full hover:bg-slate-100">
+                  <Pencil className="w-full h-16 rounded-md hover:bg-slate-200 py-4 cursor-pointer"/>
+                </DropdownMenuItem>
               </Link>
             <DropdownMenuItem>
               <div className="w-full">

@@ -23,7 +23,11 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 const formSchema = z.object({
-  phone: z.string().refine(validator.isMobilePhone)
+  phone: z.string().refine(validator.isMobilePhone),
+  amount: z.number({
+    required_error: "Необходима предоплата",
+    invalid_type_error: "Введите только цифры"
+  })
 })
 
 const AppointmentCreatePage = () => {
@@ -33,6 +37,7 @@ const AppointmentCreatePage = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       phone: "+7",
+      amount: 0,
     }
   });
 
@@ -49,13 +54,13 @@ const AppointmentCreatePage = () => {
   }
   
   return (
-    <div className="max-w-5xl mx-auto flex md:items-center justify-center sm:mt-[10%] h-full p-6">
+    <div className="max-w-5xl min-w-max mx-auto flex md:mt-[10%] justify-center sm:mt-[5%] h-full p-6">
       <div>
         <h1 className="text-2xl">Создание записи</h1>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 mt-8"
+            className="space-y-4 mt-8"
           >
             <FormField
               control={form.control}
@@ -69,10 +74,37 @@ const AppointmentCreatePage = () => {
                     <Input 
                     disabled={isSubmitting}
                     placeholder="Например: +7 707 705 0852"
-                    {...field}/>
+                    {...field}
+                    />
                 </FormControl>
                 <FormDescription>
                     Введите номер клиента
+                </FormDescription>
+                <FormMessage />
+              </FormItem>}
+            />
+            <FormField
+              control={form.control}
+              name="amount"
+              render={({ field }) => 
+              <FormItem>
+                <FormLabel>
+                    Предоплата
+                </FormLabel>
+                <FormControl>
+                    <Input 
+                      type="number"
+                      disabled={isSubmitting}
+                      placeholder="Например: 5000"
+                      {...field}
+                      onChange={ (e) => {
+                        const value = parseFloat(e.target.value);
+                        field.onChange(value);
+                      }}
+                    />
+                  </FormControl>
+                <FormDescription>
+                    Введите сумму предоплаты
                 </FormDescription>
                 <FormMessage />
               </FormItem>}

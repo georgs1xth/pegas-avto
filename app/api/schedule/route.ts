@@ -7,7 +7,7 @@ export async function POST(
 ) {
     try {
         const { userId } = auth();
-        const { phone } = await req.json();
+        const { phone, amount } = await req.json();
 
         if (!userId) {
             return new NextResponse("Unauthorized", { status: 401 });
@@ -15,7 +15,8 @@ export async function POST(
         
         const slide = await db.appointment.create({
             data: {
-                phone
+                phone,
+                amount
             }
         })
 
