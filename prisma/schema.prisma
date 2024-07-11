@@ -88,7 +88,6 @@ model Appointment {
   car String?
   amount Int @default(0)
   total Int @default(5000)
-  status String @default("В ожидании")
   date DateTime @default(now())
 }
 

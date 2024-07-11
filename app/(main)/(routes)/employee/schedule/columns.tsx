@@ -50,10 +50,6 @@ export const Columns: ColumnDef<Appointment>[] = [
     header: "Авто",
   },
   {
-    accessorKey: "status",
-    header: "Статус",
-  },
-  {
     accessorKey: "name",
     header: "Имя",
   },

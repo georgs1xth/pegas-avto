@@ -94,7 +94,8 @@ export const DateForm = ({
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-4 mt-4"
-          ><FormField
+          >
+            <FormField
               control={form.control}
               name="date"
               render={({ field }) => (
