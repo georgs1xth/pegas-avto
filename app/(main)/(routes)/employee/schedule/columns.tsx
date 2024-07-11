@@ -56,6 +56,21 @@ export const Columns: ColumnDef<Appointment>[] = [
   {
     accessorKey: "phone",
     header: "Номер телефона",
+    cell: ({row}) => {
+      return(
+        <>
+          <a href={`tel:${row.getValue("phone")}`} className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md md:hidden">
+            <p>
+              {row.getValue("phone")}
+            </p>
+          </a>
+          <p className='hidden md:block'>
+            {row.getValue("phone")}
+          </p>
+        </>
+
+      )
+    }
   },
   {
     accessorKey: "amount",
