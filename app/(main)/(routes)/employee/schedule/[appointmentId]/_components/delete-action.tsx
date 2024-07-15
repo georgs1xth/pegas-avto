@@ -37,7 +37,7 @@ export const DeleteAction = ({
 
 
     return (
-        <Button size="inline" variant={btnStyle === "destructive" ? "destructive" : "default"} disabled={isLoading} onClick={onDelete}>
+        <Button size="inline" variant={btnStyle === "destructive" ? "destructive" : "default"} disabled={isLoading} onClick={onDelete} className="border-red-700 border-b-4 active:border-b-0">
             {btnStyle === "destructive" ? <Trash2/> : <Trash2/>}
         </Button>
     )

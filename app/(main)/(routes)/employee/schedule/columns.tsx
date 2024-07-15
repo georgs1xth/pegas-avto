@@ -9,6 +9,7 @@ import { ArrowUpDown, MoreHorizontal, Pencil, Trash } from "lucide-react"
 import { DeleteAction } from "./[appointmentId]/_components/delete-action"
 import { Appointment } from "@prisma/client"
 import Link from "next/link"
+import { Checkbox } from "@/components/ui/checkbox"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -22,6 +23,28 @@ import Link from "next/link"
 // }
 
 export const Columns: ColumnDef<Appointment>[] = [
+  {
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
   {
     accessorKey: "date",
     header: ({ column }) => {
