@@ -1,6 +1,6 @@
-export const runtime = 'edge'; // 'nodejs' is the default
+// export const runtime = 'edge'; // 'nodejs' is the default
 // execute this function on iad1 or hnd1, based on the connecting client location
-export const preferredRegion = ['fra1', 'hnd1'];
+// export const preferredRegion = ['fra1', 'hnd1'];
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
