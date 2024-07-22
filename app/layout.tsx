@@ -1,3 +1,7 @@
+export const runtime = 'edge'; // 'nodejs' is the default
+// execute this function on iad1 or hnd1, based on the connecting client location
+export const preferredRegion = ['fra1', 'hnd1'];
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -23,8 +27,8 @@ const localization = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Pegas Avto A",
-    template: "%s | Pegas Avto A",
+    default: "Пегас avto A",
+    template: "%s | Пегас avto A",
   },
  
   description: "Официальный сайт CTO Пегас Avto A",
