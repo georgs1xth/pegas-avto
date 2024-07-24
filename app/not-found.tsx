@@ -1,6 +1,5 @@
 import BackButton from '@/components/back-btn'
-import { Button } from '@/components/ui/button'
-import { FileQuestion, MessageCircleDashed, SquareDashedMousePointer } from 'lucide-react'
+import { SquareDashedMousePointer } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 

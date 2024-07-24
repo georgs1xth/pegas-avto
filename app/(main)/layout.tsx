@@ -78,7 +78,7 @@ children : React.ReactNode
                             <h1 className="text-xl font-medium text-center">
                                 Сайт находится в разработке или на техническом обслуживании.
                             </h1>
-                            <p className="text-md">
+                            <p className="text-md text-center">
                                 Приносим извинения за предоставленные неудобства.
                             </p>
                         </div>

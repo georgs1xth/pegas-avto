@@ -29,18 +29,18 @@ export const ConfirmModal = ({
             <AlertDialogContent>
                 <AlertDialogHeader>
                     <AlertDialogTitle>
-                        Are you sure?
+                        Вы уверены?
                     </AlertDialogTitle>
                     <AlertDialogDescription>
-                        This action cannot be undone.
+                        Это действие не может быть отменено.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>
-                        Cancel
+                        Отмена
                     </AlertDialogCancel>
                     <AlertDialogAction onClick={onConfirm}>
-                        Continue
+                        Продолжить
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
