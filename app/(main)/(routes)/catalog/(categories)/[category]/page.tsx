@@ -1,5 +1,7 @@
 import { CatalogItemCard } from "@/components/catalog-item-card";
 import db from "@/lib/db";
+import { redirect } from "next/navigation";
+import { NextResponse } from "next/server";
 
 
 const CategoryPage = async ({
@@ -8,15 +10,21 @@ const CategoryPage = async ({
     params: {category: string}
 }) => {
 
+    const categoryDecoded = decodeURIComponent(params.category)
+
     const category = await db.category.findUnique({
         where: {
-            webRef: params.category
+            webRef: categoryDecoded
         }
     })
 
+    if (!category){
+        redirect("/catalog")
+    }
+
     const items = await db.catalogItem.findMany({
         where: {
-            categoryId: category?.id,
+            categoryId: category?.name,
             isPublished: true,
         },
         include: {
@@ -31,95 +39,7 @@ const CategoryPage = async ({
         }
     })
     
-    
 
-    items.push({id: "1",
-                title: "Title",
-                description: "Description",
-                Price: 1,
-                categoryId: "1",
-                brandId: "1",
-                isAvailable: true,
-                isPublished: false,
-                imageSrcs: [{id: ""}]
-    })
-    
-    items.push({id: "1",
-                title: "Title",
-                description: "Description",
-                Price: 123,
-                categoryId: "1",
-                brandId: "1",
-                isAvailable: false,
-                isPublished: true,
-                imageSrcs: [{id: ""}]
-    })
-
-    items.push({id: "1",
-                title: "Title",
-                description: "Description",
-                Price: 1,
-                categoryId: "1",
-                brandId: "1",
-                isAvailable: true,
-                isPublished: false,
-                imageSrcs: [{id: ""}]
-    })
-
-    items.push({id: "1",
-                title: "Title",
-                description: "Description",
-                Price: 1,
-                categoryId: "1",
-                brandId: "1",
-                isAvailable: true,
-                isPublished: false,
-                imageSrcs: [{id: ""}]
-    })
-
-    items.push({id: "1",
-                title: "Title",
-                description: "Description",
-                Price: 1,
-                categoryId: "1",
-                brandId: "1",
-                isAvailable: true,
-                isPublished: false,
-                imageSrcs: [{id: ""}]
-    })
-    
-    items.push({id: "1",
-                title: "Title",
-                description: "Description",
-                Price: 1,
-                categoryId: "1",
-                brandId: "1",
-                isAvailable: true,
-                isPublished: false,
-                imageSrcs: [{id: ""}]
-    })
-
-    items.push({id: "1",
-                title: "Title",
-                description: "Description",
-                Price: 1,
-                categoryId: "1",
-                brandId: "1",
-                isAvailable: true,
-                isPublished: false,
-                imageSrcs: [{id: ""}]
-    })
-
-    items.push({id: "1",
-                title: "Title",
-                description: "Description",
-                Price: 1,
-                categoryId: "1",
-                brandId: "1",
-                isAvailable: true,
-                isPublished: false,
-                imageSrcs: [{id: ""}]
-    })
 
     return ( 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-3">

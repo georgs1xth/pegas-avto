@@ -46,7 +46,7 @@ const CreateCatalogItemPage = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try{
       const response = await axios.post("/api/catalogItem/", values)
-      router.push(`/admin/catalog/${response.data.id}`)
+      router.push(`/admin/catalog/catalog-items/${response.data.id}`)
       toast.success("Товар создан")
     } catch {
       toast.error("Что-то пошло не так");

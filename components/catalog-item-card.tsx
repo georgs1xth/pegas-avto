@@ -13,6 +13,7 @@ interface CatalogItemCardProps {
     isAvailable: boolean;
     brandId: string;
     categoryId: string;
+    isAdmin?: boolean;
 }
 
 export const CatalogItemCard = async ({
@@ -21,19 +22,23 @@ export const CatalogItemCard = async ({
     title,
     price,
     isAvailable,
-    categoryId
+    categoryId,
+    isAdmin,
 }: CatalogItemCardProps) => {
 
-    const categoryItem = await db.category.findUnique({
-        where: {
-            id: categoryId
-        }
-    })
+        const categoryItem = await db.category.findUnique({
+            where: {
+                id: categoryId
+            }
+        })
 
     const webReference = !!categoryItem?.webRef ? categoryItem.webRef : "Другое"
 
+    const linkHref = !!isAdmin ? `/admin/catalog/catalog-items/${id}` :  `/catalog/categories/${webReference}/${id}`
+
+
   return (
-    <Link href={`/catalog/categories/${webReference}/${id}`}>
+    <Link href={linkHref}>
         <div className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition">
             <div>
                 <AspectRatio ratio={15 / 9} className="rounded-lg border flex justify-center items-center w-full">
