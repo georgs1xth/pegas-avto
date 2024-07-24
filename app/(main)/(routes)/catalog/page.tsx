@@ -9,7 +9,6 @@ import CatalogCategories from "./_components/catalog-categories";
 interface CatalogPageProps {
     searchParams: {
         title: string;
-        categoryId: string;
     }
 }
 
@@ -29,7 +28,7 @@ const CatalogPage = async ({
     });
 
 
-    categories.push({id: "1", name: "Автосигнализации", webRef: "Автосигнализации", imageSrc: "/slider-images/Starline.jpeg"})
+    categories.push({id: "1", name: "Автосигнализации", webRef: "Автосигнализации", imageSrc: "/category-images/B97v2_LTE_GPS.png"})
     categories.push({id: "2", name: "Парктроники", webRef: "Парктроники", imageSrc: "/slider-images/Starline.jpeg"})
     categories.push({id: "3", name: "Push-start кнопки", webRef: "Push-start", imageSrc: "/slider-images/Starline.jpeg"})
     categories.push({id: "4", name: "Системы отслеживания", webRef: "Системы-отслеживания", imageSrc: "/slider-images/Starline.jpeg"})

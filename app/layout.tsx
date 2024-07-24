@@ -39,6 +39,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  if(process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "false") {
+    return(
+      <ClerkProvider localization={localization}>
+      <html lang="en">
+        <body className="{inter.className} h-screen">
+          <ToastProvider />
+          <NextSSRPlugin
+          /**
+           * The `extractRouterConfig` will extract **only** the route configs
+           * from the router to prevent additional information from being
+           * leaked to the client. The data passed to the client is the same
+           * as if you were to fetch `/api/uploadthing` directly.
+           */
+          routerConfig={extractRouterConfig(OurFileRouter)}
+        />
+
+          <div>
+            Under Maintenance
+          </div>
+          <SpeedInsights/>
+        </body>
+      </html>
+    </ClerkProvider>
+    )
+  }
+
+
+
   return (
     <ClerkProvider localization={localization}>
       <html lang="en">

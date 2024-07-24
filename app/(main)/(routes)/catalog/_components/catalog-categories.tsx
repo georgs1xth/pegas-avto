@@ -9,7 +9,7 @@ const CatalogCategories = ({
   items,
 }: CatalogCategoriesProps) => {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 md:divide-x">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 md:divide-x">
       {items.map((item) => (
         <CatalogCategoryItem
           key={item.id}
