@@ -17,7 +17,39 @@ children : React.ReactNode
 
     const { userId, sessionClaims } = auth();
 
-    if(process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true" && sessionClaims?.metadata.role !== 'admin' || sessionClaims?.metadata.role !== "moderator"){
+    if(sessionClaims?.metadata.role === "admin" || process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "false"){
+        
+    return (
+        <div className="h-full">
+            <div className="h-[80px] fixed inset-y-0 w-full z-50" >
+                <Navbar>
+                    {checkRole("admin") ?
+                    <Link href="/admin/main" className="flex justify-center items-center">
+                        <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
+                            <LucideShieldAlert className="h-5 w-5"/>
+                        </Button>
+                    </Link> 
+                    : checkRole("moderator") ?
+                    <Link href="/employee/schedule" className="flex justify-center items-center">
+                        <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
+                            <Pencil className="h-5 w-5"/>
+                        </Button>
+                    </Link> : null
+                    }                    
+                </Navbar>
+            </div>
+            <div className="hidden md:flex h-full md:w-56 xl:w-72 flex-col fixed inset-y-0 z-50 pt-[80px]">
+                <Sidebar />
+            </div>
+            <main className="pt-[80px] h-full md:pl-56 xl:pl-72">
+                {children}
+            </main>
+        </div>
+    )
+    }
+
+
+    if(process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true"){
         return (
             <div className="h-full">
                 <div className="h-[80px] fixed inset-y-0 w-full z-50" >
@@ -46,7 +78,7 @@ children : React.ReactNode
                             <h1 className="text-xl font-medium text-center">
                                 Сайт находится в разработке или на техническом обслуживании.
                             </h1>
-                            <p className="text-">
+                            <p className="text-md">
                                 Приносим извинения за предоставленные неудобства.
                             </p>
                         </div>
