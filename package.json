@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/localizations": "^2.4.6",
     "@clerk/nextjs": "^5.1.6",
+    "@hello-pangea/dnd": "^16.6.0",
     "@internationalized/date": "^3.5.4",
     "@prisma/client": "^5.16.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",

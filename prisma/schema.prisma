@@ -58,9 +58,12 @@ model CatalogItem {
 
 model ImageSrcMultiple {
   id String @id @default(uuid())
-  name String
-  imageSrc String
+  
+  imageSrc String?
+  position Int
 
+  name String
+  
   itemId String
   item CatalogItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
 

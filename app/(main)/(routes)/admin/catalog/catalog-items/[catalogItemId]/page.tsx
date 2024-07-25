@@ -3,7 +3,7 @@ import db from "@/lib/db"
 import { checkRole } from "@/app/utils/check-role"
 import { Banner } from "@/components/banner"
 import { IconBadge } from "@/components/icon-badge"
-import { LayoutDashboard } from "lucide-react"
+import { Image, LayoutDashboard } from "lucide-react"
 import { redirect } from "next/navigation"
 import { Carousel, CarouselContent } from "@/components/ui/carousel"
 import CarouselItems from "@/app/(main)/(routes)/(root)/_components/CarouselItems"
@@ -21,6 +21,7 @@ import { TitleForm } from "./_components/title-form"
 import { DescriptionForm } from "./_components/description-form"
 import { IsAvailableForm } from "./_components/is-available-form"
 import { PriceForm } from "./_components/price-form"
+import { ImagesForm } from "./_components/images-form"
 
 const AdminCatalogItemPage = async ({
     params
@@ -35,7 +36,14 @@ const AdminCatalogItemPage = async ({
     const catalogItem = await db.catalogItem.findUnique({
         where: {
             id: params.catalogItemId
-        } 
+        },
+        include: {
+            imageSrcs: {
+                orderBy: {
+                    position: "asc"
+                }
+            }
+        }
     });
 
     if(!catalogItem){
@@ -135,6 +143,18 @@ const AdminCatalogItemPage = async ({
                         /> */}
                     
                     <PriceForm
+                        initialData={catalogItem}
+                        catalogItemId={catalogItem.id}
+                        />
+                </div>
+                <div className="w-full h-full">
+                    <div className="flex items-center gap-x-2">
+                        <IconBadge icon={Image}/>
+                        <h2 className="text-xl">
+                            Галерея товара
+                        </h2>
+                    </div>
+                    <ImagesForm
                         initialData={catalogItem}
                         catalogItemId={catalogItem.id}
                         />

@@ -36,13 +36,23 @@ export const CatalogItemCard = async ({
 
     const linkHref = !!isAdmin ? `/admin/catalog/catalog-items/${id}` :  `/catalog/categories/${webReference}/${id}`
 
+    const imageFromImageSrc = !!imageSrc ? await db.imageSrcMultiple.findUnique({
+        where: {
+            id: imageSrc
+        }
+    }) :
+    0
+    
+     
+
+
 
   return (
     <Link href={linkHref}>
         <div className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition">
             <div>
                 <AspectRatio ratio={15 / 9} className="rounded-lg border flex justify-center items-center w-full">
-                    {!!imageSrc ? <Image src={imageSrc} alt={title}/> : <CameraOff/>}
+                    {!!imageFromImageSrc ? <Image fill src={imageFromImageSrc?.imageSrc!} alt={title}/> : <CameraOff/>}
                 </AspectRatio>
             </div>
             <div className="px-2 py-1 overflow-hidden">
