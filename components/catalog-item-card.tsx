@@ -51,7 +51,7 @@ export const CatalogItemCard = async ({
     <Link href={linkHref}>
         <div className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition">
             <div>
-                <AspectRatio ratio={15 / 9} className="rounded-lg border flex justify-center items-center w-full">
+                <AspectRatio ratio={16 / 12} className="rounded-lg  flex justify-center items-center w-full">
                     {!!imageFromImageSrc ? <Image fill src={imageFromImageSrc?.imageSrc!} alt={title}/> : <CameraOff/>}
                 </AspectRatio>
             </div>
