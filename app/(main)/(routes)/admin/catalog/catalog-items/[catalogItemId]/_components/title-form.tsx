@@ -23,18 +23,18 @@ interface TitleFormProps {
   initialData: {
     title: string;
   };
-  slideId: string;
+  catalogItemId: string;
 };
 
 const formSchema = z.object({
   title: z.string().min(1, {
-    message: "Title is required",
+    message: "Необходим заголовок",
   }),
 });
 
 export const TitleForm = ({
   initialData,
-  slideId
+  catalogItemId
 }: TitleFormProps) =>{
   const [isEditing, setIsEditing] = useState(false);
 
@@ -51,19 +51,19 @@ export const TitleForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try{
-      await axios.patch(`/api/main/slider-items/${slideId}`, values);
-      toast.success("Course updated");
+      await axios.patch(`/api/catalogItem/${catalogItemId}`, values);
+      toast.success("Товар обновлен");
       toggleEdit();
       router.refresh();
     } catch {
-      toast.error("Something went wrong")
+      toast.error("Что-то пошло не так")
     }
   }
 
   return(
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Заголовок слайда 
+        Заголовок товара
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Отмена</>
@@ -94,7 +94,7 @@ export const TitleForm = ({
                   <FormControl>
                     <Input 
                       disabled={isSubmitting}
-                      placeholder="Например: хз"
+                      placeholder="Например: Starline e96 GSM GPS 2CAN-4LIN"
                       {...field}
                     />
                   </FormControl>

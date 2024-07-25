@@ -17,6 +17,10 @@ import {
     BreadcrumbSeparator,
   } from "@/components/ui/breadcrumb"
 import { Actions } from "./_components/actions"
+import { TitleForm } from "./_components/title-form"
+import { DescriptionForm } from "./_components/description-form"
+import { IsAvailableForm } from "./_components/is-available-form"
+import { PriceForm } from "./_components/price-form"
 
 const AdminCatalogItemPage = async ({
     params
@@ -109,26 +113,31 @@ const AdminCatalogItemPage = async ({
                             Редактирование товара
                         </h2>
                     </div>
-                    {/* <TitleForm 
-                        initialData={slide}
-                        slideId={slide.id}
+                    <TitleForm 
+                        initialData={catalogItem}
+                        catalogItemId={catalogItem.id}
                         />
                     <DescriptionForm
-                        initialData={slide}
-                        slideId={slide.id}
+                        initialData={catalogItem}
+                        catalogItemId={catalogItem.id}
                         />
-                    <ImageForm
-                        initialData={slide}
-                        slideId={slide.id}
-                        />
-                    <BtnHrefForm
-                        initialData={slide}
-                        slideId={slide.id}
-                        />
-                    <PositionForm
+                    <IsAvailableForm
+                        initialData={catalogItem}
+                        catalogItemId={catalogItem.id}
+                    />
+                    {/* <ImageForm
+                        initialData={catalogItem}
+                        catalogItemId={catalogItem.id}
+                        /> */}
+                    {/* <BtnHrefForm
                         initialData={slide}
                         slideId={slide.id}
                         /> */}
+                    
+                    <PriceForm
+                        initialData={catalogItem}
+                        catalogItemId={catalogItem.id}
+                        />
                 </div>
             </div>
         </>

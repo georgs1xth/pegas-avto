@@ -9,33 +9,34 @@ import { useState } from "react";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+
 import { Pencil } from "lucide-react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Textarea } from "@/components/ui/textarea";
 import { CatalogItem } from "@prisma/client";
 
-interface DescriptionFormProps {
-  initialData: CatalogItem
+interface IsAvailableFormProps {
+  initialData: CatalogItem;
   catalogItemId: string;
 };
 
 const formSchema = z.object({
-  description: z.string().min(1, {
-    message: "Необходимо описание",
-  }),
+  isAvailable: z.boolean().default(false),
 });
 
-export const DescriptionForm = ({
+export const IsAvailableForm = ({
   initialData,
-  catalogItemId
-}: DescriptionFormProps) =>{
+  catalogItemId,
+}: IsAvailableFormProps) =>{
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
@@ -45,7 +46,7 @@ export const DescriptionForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      description: initialData?.description || ""
+        isAvailable: !!initialData.isAvailable
     }, 
   });
 
@@ -54,25 +55,25 @@ export const DescriptionForm = ({
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try{
       await axios.patch(`/api/catalogItem/${catalogItemId}`, values);
-      toast.success("Товар обновлен");
+      toast.success("Chapter updated");
       toggleEdit();
       router.refresh();
     } catch {
-      toast.error("Что-то пошло не так")
+      toast.error("Something went wrong")
     }
   }
 
   return(
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Описание товара
+        Наличие товара
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Отмена</>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Изменить описание
+              Изменить наличие
             </>
           )}
         </Button>
@@ -80,9 +81,17 @@ export const DescriptionForm = ({
       {!isEditing && (
         <p className={cn(
           "text-sm mt-2",
-          !initialData.description && "text-slate-400 italic"
+          !initialData.isAvailable && "text-slate-400 italic"
         )}>
-          {initialData.description || "Нет описания"}
+          {initialData.isAvailable ? (
+            <>
+              Этот товар есть в наличии
+            </>
+          ) : (
+            <>
+              Этого товара нет в наличии
+            </>
+          )}
         </p>
       )}
       {isEditing && (
@@ -93,16 +102,20 @@ export const DescriptionForm = ({
           >
             <FormField 
               control={form.control}
-              name="description"
+              name="isAvailable"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex flew-row items-start space-x-3 space-y-0 rounded-md border p-4">
                   <FormControl>
-                    <Textarea 
-                      disabled={isSubmitting}
-                      placeholder="Например: бла-бла"
-                      {...field}
+                    <Checkbox 
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
                     />
                   </FormControl>
+                  <div className="spacee-y-1 leading-none">
+                    <FormDescription>
+                      Поставьте галочку если товар есть в наличии
+                    </FormDescription>
+                  </div>
                   <FormMessage />
                 </FormItem>
               )}

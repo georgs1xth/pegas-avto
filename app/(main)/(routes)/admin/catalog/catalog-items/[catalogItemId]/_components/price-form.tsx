@@ -19,22 +19,22 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
-import { MainCarouselItem } from "@prisma/client";
+import { CatalogItem, MainCarouselItem } from "@prisma/client";
 import { Input } from "@/components/ui/input";
 
-interface PositionFormProps {
-  initialData: MainCarouselItem
-  slideId: string;
+interface PriceFormProps {
+  initialData: CatalogItem
+  catalogItemId: string;
 };
 
 const formSchema = z.object({
-  position: z.number().positive()
+  Price: z.number().positive()
 });
 
-export const PositionForm = ({
+export const PriceForm = ({
   initialData,
-  slideId
-}: PositionFormProps) =>{
+  catalogItemId
+}: PriceFormProps) =>{
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
@@ -44,7 +44,7 @@ export const PositionForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      position: initialData?.position || 1
+      Price: initialData?.Price || 10000
     },
   });
 
@@ -52,26 +52,26 @@ export const PositionForm = ({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try{
-      await axios.patch(`/api/main/slider-items/${slideId}`, values);
-      toast.success("Slide updated");
+      await axios.patch(`/api/catalogItem/${catalogItemId}`, values);
+      toast.success("Товар обновлен");
       toggleEdit();
       router.refresh();
     } catch {
-      toast.error("Something went wrong")
+      toast.error("Что-то пошло не так")
     }
   }
 
   return(
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Позиция слайда 
+        Цена товара
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Отмена</>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Изменить позицию
+              Изменить цену
             </>
           )}
         </Button>
@@ -79,9 +79,9 @@ export const PositionForm = ({
       {!isEditing && (
         <p className={cn(
           "text-sm mt-2",
-          !initialData.position && "text-slate-400 italic"
+          !initialData.Price && "text-slate-400 italic"
         )}>
-          {initialData.position || "Нет позиции"}
+          {initialData.Price || "Нет позиции"}
         </p>
       )}
       {isEditing && (
@@ -92,14 +92,14 @@ export const PositionForm = ({
           >
             <FormField 
               control={form.control}
-              name="position"
+              name="Price"
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
                     <Input
                       type="number" 
                       disabled={isSubmitting}
-                      placeholder="Например: Установка автосигнализаций"
+                      placeholder="Например: 7777"
                       {...field}
                       onChange={ (e) => {
                         const value = parseFloat(e.target.value);
