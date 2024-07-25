@@ -105,7 +105,7 @@ const AdminCatalogItemPage = async ({
                     isPublished={catalogItem.isPublished}
                 />
             </div>
-            <div className="grid grid-cols-1 gap-6 mt-16 px-4">
+            <div className="grid grid-cols-1 gap-6 mt-16 px-4 pb-4">
                 <div>
                     <div className="flex items-center gap-x-2">
                         <IconBadge icon={LayoutDashboard}/>
