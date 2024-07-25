@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 import db from "@/lib/db";
+import { checkRole } from "@/app/utils/check-role";
 
 export async function PATCH(
     req: Request,
@@ -10,8 +11,12 @@ export async function PATCH(
     try {
         const { userId } = auth()
 
+        if (!checkRole("admin") && userId || !checkRole("admin") &&!userId){
+            return new NextResponse("Not enough rights", { status: 401})
+        }
+        
         if (!userId) {
-            return new NextResponse("Unauthorized", { status: 401 })
+            return new NextResponse("Unauthorized", { status: 401 });
         }
 
         const slide = await db.mainCarouselItem.findUnique({
