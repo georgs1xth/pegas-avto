@@ -101,7 +101,7 @@ export const PriceForm = ({
                       disabled={isSubmitting}
                       placeholder="Например: 7777"
                       {...field}
-                      onChange={ (e) => {
+                      onChange={(e) => {
                         const value = parseFloat(e.target.value);
                         field.onChange(value);
                       }}
