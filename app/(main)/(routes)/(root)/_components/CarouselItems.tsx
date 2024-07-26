@@ -50,7 +50,7 @@ const CarouselItems = ({
                             <PlusCircle className="w-14 h-14 text-slate-600"/>
                         </div> :
                         !!imageSrc ?
-                        <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt}/> :
+                        <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt} loading="eager"/> :
                         <div className="flex justify-center items-center w-full h-full">
                             <Ban className="w-14 h-14 text-red-500"/>
                         </div>
