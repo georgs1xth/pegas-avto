@@ -6,12 +6,12 @@ export default function Loading() {
             <div className="flex flex-row gap-4">
                 <div className="basis-full md:grid md:basis-1/2 xl:basis-1/3 h-full">
                     <div className="h-full">
-                        <Skeleton className="rounded-xl shadow-md h-full w-full overflow-hidden aspect-[16/9]"/>
+                        <Skeleton className="rounded-xl shadow-md h-full w-full overflow-hidden aspect-[15/9]"/>
                     </div>
                     <div className="flex flex-col justify-between md:min-h-[135px] max-h-max">
-                        <div className="flex flex-col justify-center items-center text-center mt-6 gap-2">
+                        <div className="flex flex-col justify-center items-center text-center mt-3 md:mt-6 gap-2">
                             <Skeleton className="w-5/6 h-4 rounded-xl"/>
-                            <Skeleton className="w-4/6 h-4 rounded-xl"/>
+                            <Skeleton className="hidden md:block w-4/6 h-4 rounded-xl"/>
                             <Skeleton className="w-5/6 h-3 rounded-xl mt-2"/>
                         </div>
                         <Skeleton className="mt-4 hidden md:flex w-full h-10 rounded-2xl"/>
@@ -19,7 +19,7 @@ export default function Loading() {
                 </div>
                 <div className="hidden basis-full md:grid md:basis-1/2 xl:basis-1/3 h-full">
                     <div className="h-full">
-                        <Skeleton className="rounded-xl shadow-md h-full w-full overflow-hidden aspect-[16/9]"/>
+                        <Skeleton className="rounded-xl shadow-md h-full w-full overflow-hidden aspect-[15/9]"/>
                     </div>
                     <div className="flex flex-col justify-between md:min-h-[135px] max-h-max">
                         <div className="flex flex-col justify-center items-center text-center mt-6 gap-2">
@@ -32,7 +32,7 @@ export default function Loading() {
                 </div>
                 <div className="hidden basis-full md:hidden xl:grid xl:basis-1/3 h-full">
                     <div className="h-full">
-                        <Skeleton className="rounded-xl shadow-md h-full w-full overflow-hidden aspect-[16/9]"/>
+                        <Skeleton className="rounded-xl shadow-md h-full w-full overflow-hidden aspect-[15/9]"/>
                     </div>
                     <div className="flex flex-col justify-between md:min-h-[135px] max-h-max">
                         <div className="flex flex-col justify-center items-center text-center mt-6 gap-2">
