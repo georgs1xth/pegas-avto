@@ -1,50 +1,51 @@
-import { CatalogItemCard } from "@/components/catalog-item-card"
-import db from "@/lib/db"
-const AdminCatalogItemsPage = async () => {
-  
+import { SearchCatalog } from "@/components/search-input";
+import db from "@/lib/db";
+import { Suspense } from "react";
+import { CatalogItemCard } from "../../../../components/catalog-item-card";
+import { getCatalogItems } from "@/actions/getCatalogItems";
+// import { CatalogItemsList } from "@/components/catalog-items-list";
+import CatalogCategories from "./_components/catalog-categories";
 
-    const catalogItems = await db.catalogItem.findMany({
-        where: {
-            isPublished: true
-        },
-        include: {
-            category:{
-                select:{
-                    id: true
-                }
-            },
-            imageSrcs: {
-                select: {
-                    id: true,
-                }
-            }
-        },
-        orderBy: {
-            isAvailable: "desc",
-        }
-    })
-
-    return (
-    <div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
-            {catalogItems.map((item) => (
-                <CatalogItemCard
-                    key={item.id}
-                    id={item.id}
-                    title={item.title}
-                    price={item.Price!}
-                    imageSrc={item.imageSrcs[0]?.id}
-                    isAvailable={item.isAvailable}
-                    brandId={item.brandId!}
-                    categoryId={item.category?.id!}
-                    isAdmin={false}
-                    isPublished={item.isPublished}
-                    // description={item.description}
-                />
-            ))}
-        </div>
-    </div>
-  )
+interface CatalogPageProps {
+    searchParams: {
+        title: string;
+    }
 }
 
-export default AdminCatalogItemsPage
+
+const CatalogPage = async ({
+    searchParams
+}: CatalogPageProps) => {
+
+    // const catalogItems = await getCatalogItems({
+    //     ...searchParams
+    // })
+
+    const categories = await db.category.findMany({
+        orderBy: {
+            name: "asc"
+        }
+    });
+
+
+    // categories.push({id: "1", name: "Автосигнализации", webRef: "Автосигнализации", imageSrc: "/category-images/B97v2_LTE_GPS.png"})
+    // categories.push({id: "2", name: "Парктроники", webRef: "Парктроники", imageSrc: "/slider-images/Starline.jpeg"})
+    // categories.push({id: "3", name: "Push-start кнопки", webRef: "Push-start", imageSrc: "/slider-images/Starline.jpeg"})
+    // categories.push({id: "4", name: "Системы отслеживания", webRef: "Системы-отслеживания", imageSrc: "/slider-images/Starline.jpeg"})
+
+    return ( 
+        <div className="p-4 py-4 md:p-4 xl:p-6 flex flex-col gap-y-4">
+            {/* <div className="md:hidden">
+                <Suspense>
+                    <SearchCatalog/>
+                </Suspense>
+            </div> */}
+            <CatalogCategories
+                items={categories}
+            />
+        </div>
+     );
+}
+ 
+export default CatalogPage;
+

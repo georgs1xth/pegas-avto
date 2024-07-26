@@ -1,4 +1,5 @@
 import BackButton from '@/components/back-btn'
+import { Button } from '@/components/ui/button'
 import { SquareDashedMousePointer } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
@@ -19,8 +20,10 @@ const NotFound = () => {
         </h2>
         <div className='flex gap-3'>
           <BackButton/>
-          <Link href="/" className='inline-flex items-center justify-center whitespace-nowrap rounded-md text-md font-normal ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2'>
-            На главную
+          <Link href="/">
+            <Button type='button'>
+              На главную
+            </Button>
           </Link>
         </div>
       </div>
