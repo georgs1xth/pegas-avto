@@ -16,14 +16,7 @@ import { Actions } from "./_components/actions"
 import { IconBadge } from "@/components/icon-badge"
 import { LayoutDashboard } from "lucide-react"
 import { TitleForm } from "./_components/title-form"
-
-
-// import { Actions } from "./_components/actions"
-// import { TitleForm } from "./_components/title-form"
-// import { DescriptionForm } from "./_components/description-form"
-// import { IsAvailableForm } from "./_components/is-available-form"
-// import { PriceForm } from "./_components/price-form"
-// import { ImagesForm } from "./_components/images-form"
+import { ImageForm } from "./_components/image-form"
 
 const AdminCatalogItemPage = async ({
     params
@@ -116,41 +109,11 @@ const AdminCatalogItemPage = async ({
                         initialData={category}
                         categoryId={category.id}
                         />
-                        
-                    {/* <DescriptionForm
-                        initialData={catalogItem}
-                        catalogItemId={catalogItem.id}
+                    <ImageForm
+                        initialData={category}
+                        categoryId={category.id}
                         />
-                    <IsAvailableForm
-                        initialData={catalogItem}
-                        catalogItemId={catalogItem.id}
-                    /> */}
-                    {/* <ImageForm
-                        initialData={catalogItem}
-                        catalogItemId={catalogItem.id}
-                        /> */}
-                    {/* <BtnHrefForm
-                        initialData={slide}
-                        slideId={slide.id}
-                        /> */}
-                    
-                    {/* <PriceForm
-                        initialData={catalogItem}
-                        catalogItemId={catalogItem.id}
-                        /> */}
                 </div>
-                {/* <div className="w-full h-full">
-                    <div className="flex items-center gap-x-2">
-                        <IconBadge icon={Image}/>
-                        <h2 className="text-xl">
-                            Галерея товара
-                        </h2>
-                    </div>
-                    <ImagesForm
-                        initialData={catalogItem}
-                        catalogItemId={catalogItem.id}
-                        />
-                </div> */}
             </div>
         </>
     )
