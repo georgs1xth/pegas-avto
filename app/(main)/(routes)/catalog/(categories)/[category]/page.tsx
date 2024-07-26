@@ -1,7 +1,6 @@
 import { CatalogItemCard } from "@/components/catalog-item-card";
 import db from "@/lib/db";
 import { redirect } from "next/navigation";
-import { NextResponse } from "next/server";
 
 
 const CategoryPage = async ({
@@ -24,7 +23,7 @@ const CategoryPage = async ({
 
     const items = await db.catalogItem.findMany({
         where: {
-            categoryId: category?.name,
+            categoryId: category?.id,
             isPublished: true,
         },
         include: {
