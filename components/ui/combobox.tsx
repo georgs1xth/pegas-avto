@@ -52,7 +52,9 @@ export function Combobox({
           <CommandInput placeholder="Search option..." />
           <CommandList>
             <CommandEmpty>No option found.</CommandEmpty>
-            <CommandGroup>
+            <CommandGroup
+              aria-disabled={false}
+            >
               {options.map((option) => (
                 <CommandItem
                   key={option.value}
