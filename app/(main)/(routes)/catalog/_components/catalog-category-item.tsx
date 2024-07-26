@@ -13,6 +13,7 @@ interface CatalogCategoryItemProps {
     value: string;
     label: string;
     webRef: string;
+    isAdmin?: boolean;
 }
 
 const CatalogCategoryItem = ({
@@ -20,12 +21,15 @@ const CatalogCategoryItem = ({
     value,
     imageSrc,
     webRef,
+    isAdmin
 } : CatalogCategoryItemProps) => {
 
     const router = useRouter();
 
+    const href = !!isAdmin ? `/admin/catalog/categories/${value}` : `/catalog/${webRef}` 
+
     const onClick = () => {
-        router.push(`/catalog/${webRef}`)
+        router.push(href)
 
 }
 

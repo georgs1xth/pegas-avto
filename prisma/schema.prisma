@@ -81,6 +81,7 @@ model Category {
   name String @unique
   imageSrc String?
   webRef String? @unique
+  isPublished Boolean @default(false)
   items CatalogItem[]
 }
 

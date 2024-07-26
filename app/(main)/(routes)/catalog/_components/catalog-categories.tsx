@@ -17,6 +17,7 @@ const CatalogCategories = ({
           value={item.id}
           label={item.name}
           webRef={item.webRef!}
+          isAdmin={false}
         />
       ))
 
