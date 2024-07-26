@@ -37,7 +37,7 @@ const AdminCatalogItemsPage = async () => {
                     isAvailable={item.isAvailable}
                     brandId={item.brandId!}
                     categoryId={item.category?.id!}
-                    isAdmin={true}
+                    isAdmin={false}
                     // description={item.description}
                 />
             ))}
