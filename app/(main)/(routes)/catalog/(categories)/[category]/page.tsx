@@ -54,6 +54,7 @@ const CategoryPage = async ({
                     isAvailable={item.isAvailable}
                     brandId={item.brandId!}
                     categoryId={item.categoryId!}
+                    isPublished={item.isPublished}
                     // description={item.description}
                 />
             ))}
