@@ -22,6 +22,8 @@ import { DescriptionForm } from "./_components/description-form"
 import { IsAvailableForm } from "./_components/is-available-form"
 import { PriceForm } from "./_components/price-form"
 import { ImagesForm } from "./_components/images-form"
+import { CategoryForm } from "./_components/category-form"
+import { value } from "effect/Redacted"
 
 const AdminCatalogItemPage = async ({
     params
@@ -45,6 +47,14 @@ const AdminCatalogItemPage = async ({
             }
         }
     });
+
+
+    const categories = await db.category.findMany({
+        orderBy: {
+            name: "asc"
+        }
+    })
+
 
     if(!catalogItem){
         return redirect("/")
@@ -101,7 +111,7 @@ const AdminCatalogItemPage = async ({
             <div className="flex items-center justify-between p-4">
                 <div className="flex flex-col gap-y-2">
                     <h1 className="text-2xl font-medium">
-                        Настройки слайда
+                        Настройки Товара
                     </h1>
                     <span className="text-sm text-slate-700">
                         Заполните все строки {completionText}
@@ -133,15 +143,14 @@ const AdminCatalogItemPage = async ({
                         initialData={catalogItem}
                         catalogItemId={catalogItem.id}
                     />
-                    {/* <ImageForm
+                    <CategoryForm
                         initialData={catalogItem}
                         catalogItemId={catalogItem.id}
-                        /> */}
-                    {/* <BtnHrefForm
-                        initialData={slide}
-                        slideId={slide.id}
-                        /> */}
-                    
+                        options={categories.map((category) => ({
+                            label: category.name,
+                            value: category.id,
+                        }))}
+                        />
                     <PriceForm
                         initialData={catalogItem}
                         catalogItemId={catalogItem.id}
