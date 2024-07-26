@@ -1,3 +1,5 @@
+"use client";
+
 import { Handshake, Info, Layout, LogOut, Pencil, ShoppingBag, Wrench } from "lucide-react";
 import SidebarItem from "./sidebar-item";
 import { usePathname } from "next/navigation";

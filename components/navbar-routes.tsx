@@ -29,9 +29,14 @@ children: React.ReactNode
         )}>
             <Popover>
                 <PopoverTrigger>
-                    <Button variant="ghost" className={!!children ? "p-2" : ""}>
+                    <div className={cn(
+                        "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2",
+                        !!children ?
+                        "p-2" :
+                        null
+                    )}>
                         <MapPin className="h-5 w-5"/>
-                    </Button>
+                    </div>
                 </PopoverTrigger>
                 <PopoverContent >
                     <div className=" grid gap-2">
@@ -63,9 +68,14 @@ children: React.ReactNode
             {children}
             <Popover>
                 <PopoverTrigger>
-                    <Button variant="ghost" className={!!children ? "p-2" : ""}>
+                    <div className={cn(
+                            "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2",
+                            !!children ?
+                            "p-2" :
+                            null
+                        )}>
                         <PhoneCall className="h-5 w-5"/>
-                    </Button>
+                    </div>
                 </PopoverTrigger>
                 <PopoverContent >
                     <div className=" grid gap-2">
