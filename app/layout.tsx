@@ -18,6 +18,7 @@ import {
 } from '@clerk/nextjs'
 import { OurFileRouter } from "./api/uploadthing/core";
 import { ToastProvider } from "@/components/providers/toaster-provider";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
   description: "Официальный сайт CTO Пегас Avto A",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,6 +44,9 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={localization}>
       <html lang="en">
+        <Head>
+          <meta name="yandex-verification" content="2bb381a9224af3e5" />
+        </Head>
         <body className="{inter.className} h-screen">
           <ToastProvider />
           <NextSSRPlugin
@@ -53,7 +58,6 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(OurFileRouter)}
         />
-
           {children}
           <SpeedInsights/>
         </body>
