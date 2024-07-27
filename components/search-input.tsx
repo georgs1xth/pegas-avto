@@ -12,23 +12,24 @@ export const SearchCatalog = () => {
     const [value, setValue] = useState("")
     const debouncedValue = useDebounce(value);
 
-    const searchParams = useSearchParams();
+    // const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
 
-    const currentCategoryId = searchParams.get("categoryId");
+    // const currentCategoryId = searchParams.get("categoryId");
 
     useEffect(() => {
         const url = qs.stringifyUrl({
             url: pathname,
             query: {
-                CategoryId: currentCategoryId,
                 title: debouncedValue,
             }
         }, {skipEmptyString: true, skipNull: true});
 
         router.push(url);
-    }, [debouncedValue, currentCategoryId, router, pathname])
+    }, [debouncedValue,  router, pathname])
+
+    // currentCategoryId,
 
     return (
         <Suspense>
