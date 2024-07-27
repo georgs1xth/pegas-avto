@@ -18,7 +18,6 @@ import {
 } from '@clerk/nextjs'
 import { OurFileRouter } from "./api/uploadthing/core";
 import { ToastProvider } from "@/components/providers/toaster-provider";
-import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,9 +30,10 @@ export const metadata: Metadata = {
     default: "Пегас avto A",
     template: "%s | Пегас avto A",
   },
-
   description: "Официальный сайт CTO Пегас Avto A",
-  other: { "yandex-verification": "ea147b33ef8a8a61"}
+  other: {  "yandex-verification": "ea147b33ef8a8a61",
+            "google-site-verification": "YGfdW5HMTs0VsVfYZmKLqpQm2KfGiOQ5D3a0CUKYr8c"        
+  }
 };
 
 
@@ -45,9 +45,6 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={localization}>
       <html lang="en">
-        <Head>
-          <meta name="yandex-verification" content="2bb381a9224af3e5" />
-        </Head>
         <body className="{inter.className} h-screen">
           <ToastProvider />
           <NextSSRPlugin
