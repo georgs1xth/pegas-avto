@@ -36,6 +36,7 @@ children: React.ReactNode
                         null
                     )}>
                         <MapPin className="h-5 w-5"/>
+                        <p className="sr-only">Ссылки на местоположение</p>
                     </div>
                 </PopoverTrigger>
                 <PopoverContent >
@@ -75,6 +76,7 @@ children: React.ReactNode
                             null
                         )}>
                         <PhoneCall className="h-5 w-5"/>
+                        <p className="sr-only">Номера телефонов</p>
                     </div>
                 </PopoverTrigger>
                 <PopoverContent >

@@ -25,8 +25,9 @@ children : React.ReactNode
                 <Navbar>
                     {checkRole("admin") ?
                     <Link href="/admin/main" className="flex justify-center items-center">
-                        <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
+                        <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20" type="button">
                             <LucideShieldAlert className="h-5 w-5"/>
+                            <p className="sr-only">Страница администратора</p>
                         </Button>
                     </Link> 
                     : checkRole("moderator") ?
@@ -56,8 +57,9 @@ children : React.ReactNode
                     <Navbar>
                         {checkRole("admin") ?
                         <Link href="/admin/main" className="flex justify-center items-center">
-                            <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
+                            <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20" type="button">
                                 <LucideShieldAlert className="h-5 w-5"/>
+                                <p className="sr-only">Страница администратора</p>
                             </Button>
                         </Link> 
                         : checkRole("moderator") ?
@@ -88,33 +90,33 @@ children : React.ReactNode
           );
     }
 
-    return (
-        <div className="h-full">
-            <div className="h-[80px] fixed inset-y-0 w-full z-50" >
-                <Navbar>
-                    {checkRole("admin") ?
-                    <Link href="/admin/main" className="flex justify-center items-center">
-                        <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
-                            <LucideShieldAlert className="h-5 w-5"/>
-                        </Button>
-                    </Link> 
-                    : checkRole("moderator") ?
-                    <Link href="/employee/schedule" className="flex justify-center items-center">
-                        <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
-                            <Pencil className="h-5 w-5"/>
-                        </Button>
-                    </Link> : null
-                    }                    
-                </Navbar>
-            </div>
-            <div className="hidden md:flex h-full md:w-56 xl:w-72 flex-col fixed inset-y-0 z-50 pt-[80px]">
-                <Sidebar />
-            </div>
-            <main className="pt-[80px] h-full md:pl-56 xl:pl-72">
-                {children}
-            </main>
-        </div>
-      );
+    // return (
+    //     <div className="h-full">
+    //         <div className="h-[80px] fixed inset-y-0 w-full z-50" >
+    //             <Navbar>
+    //                 {checkRole("admin") ?
+    //                 <Link href="/admin/main" className="flex justify-center items-center">
+    //                     <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
+    //                         <LucideShieldAlert className="h-5 w-5"/>
+    //                     </Button>
+    //                 </Link> 
+    //                 : checkRole("moderator") ?
+    //                 <Link href="/employee/schedule" className="flex justify-center items-center">
+    //                     <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
+    //                         <Pencil className="h-5 w-5"/>
+    //                     </Button>
+    //                 </Link> : null
+    //                 }                    
+    //             </Navbar>
+    //         </div>
+    //         <div className="hidden md:flex h-full md:w-56 xl:w-72 flex-col fixed inset-y-0 z-50 pt-[80px]">
+    //             <Sidebar />
+    //         </div>
+    //         <main className="pt-[80px] h-full md:pl-56 xl:pl-72">
+    //             {children}
+    //         </main>
+    //     </div>
+    //   );
 }
  
 export default MainLayout;
