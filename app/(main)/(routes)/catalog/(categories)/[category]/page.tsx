@@ -45,8 +45,8 @@ const CategoryPage = async ({
 
 
     return ( 
-        <div>
-            <div className="md:hidden">
+        <>
+            <div className="md:hidden px-2 py-4">
                 <Suspense>
                     <SearchCatalog/>
                 </Suspense>
@@ -54,7 +54,7 @@ const CategoryPage = async ({
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
                 <Suspense fallback={
                     simpleKeys.map((item) => (
-                        <Skeleton key={item} className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg aspect-[3/4]"/>
+                        <Skeleton key={item} className="p-2 flex shadow-sm hover:shadow-md rounded-lg aspect-[3/4]"/>
                         
                     ))}>
                 {items.map((item) => (
@@ -76,7 +76,7 @@ const CategoryPage = async ({
                     ))}
                 </Suspense>
             </div>
-        </div>
+        </>
      );
 }
  
