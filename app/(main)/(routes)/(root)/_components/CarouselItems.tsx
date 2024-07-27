@@ -8,6 +8,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Ban, PlusCircle } from "lucide-react";
+import { Suspense } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface CarouselItemsProps {
     id: string,
@@ -45,16 +47,18 @@ const CarouselItems = ({
             <Link href={btnHref} className="cursor-pointer">
                 <div className="h-full">
                     <AspectRatio ratio={15 / 9} className="rounded-xl shadow-md h-full w-full overflow-hidden">
-                        {id === "addCarouselItem" ?
-                        <div className="flex justify-center items-center w-full h-full bg-slate-200/50">
-                            <PlusCircle className="w-14 h-14 text-slate-600"/>
-                        </div> :
-                        !!imageSrc ?
-                        <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt} loading="eager"/> :
-                        <div className="flex justify-center items-center w-full h-full">
-                            <Ban className="w-14 h-14 text-red-500"/>
-                        </div>
-                        }
+                        <Suspense fallback={<Skeleton></Skeleton>}>
+                            {id === "addCarouselItem" ?
+                            <div className="flex justify-center items-center w-full h-full bg-slate-200/50">
+                                <PlusCircle className="w-14 h-14 text-slate-600"/>
+                            </div> :
+                            !!imageSrc ?
+                            <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt} loading="eager"/> :
+                            <div className="flex justify-center items-center w-full h-full">
+                                <Ban className="w-14 h-14 text-red-500"/>
+                            </div>
+                            }
+                        </Suspense>
                     </AspectRatio>
                 </div>
             </Link>
