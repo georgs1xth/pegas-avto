@@ -1,8 +1,8 @@
-import { CatalogItem, Category } from "@prisma/client";
+import { CatalogItem, Category, ImageSrcMultiple } from "@prisma/client";
 import db from "@/lib/db";
 
 type CatalogItemWithCategory = CatalogItem & {
-    category: Category | null;
+    imageSrcs: ImageSrcMultiple[] 
 }
 
 type GetCatalogItems = {
@@ -15,21 +15,39 @@ export const getCatalogItems = async ({
     categoryId,
 }: GetCatalogItems): Promise<CatalogItemWithCategory[]> => {
     try{
+
+
         const catalogItems = await db.catalogItem.findMany({
             where: {
                 isPublished: true,
                 title: {
                     contains: title,
                 },
-                categoryId,
+                categoryId: categoryId,
             },
             include: {
-                category: true,
+                imageSrcs : true,
             },
             orderBy: {
-                title: "asc"
+                isAvailable: "desc",
             }
-        });
+        })
+
+        // const catalogItems = await db.catalogItem.findMany({
+        //     where: {
+        //         isPublished: true,
+        //         title: {
+        //             contains: title,
+        //         },
+        //         categoryId,
+        //     },
+        //     include: {
+        //         category: true,
+        //     },
+        //     orderBy: {
+        //         title: "asc"
+        //     }
+        // });
 
         const catalogItemsWithCategory: CatalogItemWithCategory[] = await Promise.all(
             catalogItems.map(async catalogItem => {
