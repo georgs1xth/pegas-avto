@@ -40,12 +40,18 @@ const CategoryPage = async ({
         }
     })
     
+    const simpleKeys=[1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
     return ( 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
+            <Suspense fallback={
+                simpleKeys.map((item) => (
+                <Skeleton key={item} className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg aspect-[3/4]"/>
+                    
+            ))}>
             {items.map((item) => (
-                <Suspense fallback={<Skeleton className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg"/>}>
+                
                 <CatalogItemCard
                     key={item.id}
                     id={item.id}
@@ -58,8 +64,8 @@ const CategoryPage = async ({
                     isPublished={item.isPublished}
                     // description={item.description}
                     />
-                </Suspense>
-            ))}
+                ))}
+            </Suspense>
         </div>
      );
 }
