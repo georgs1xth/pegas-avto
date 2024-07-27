@@ -31,8 +31,9 @@ export const metadata: Metadata = {
     default: "Пегас avto A",
     template: "%s | Пегас avto A",
   },
- 
+
   description: "Официальный сайт CTO Пегас Avto A",
+  other: { "yandex-verification": "ea147b33ef8a8a61"}
 };
 
 
