@@ -5,6 +5,8 @@ import { CameraOff, Check, CircleCheck, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
+import { Suspense } from "react";
+import { Skeleton } from "./ui/skeleton";
 
 interface CatalogItemCardProps {
     id: string;
@@ -54,9 +56,11 @@ export const CatalogItemCard = async ({
     <Link href={linkHref}>
         <div className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition">
             <div className="relative flex justify-center items-center">
-                <AspectRatio ratio={16 / 12} className="rounded-lg  flex justify-center items-center w-full">
-                    {!!imageFromImageSrc ? <Image fill src={imageFromImageSrc?.imageSrc!} alt={title}/> : <CameraOff/>}
-                </AspectRatio>
+                <Suspense fallback={<Skeleton className="w-full h-full aspect-[16/12]"/>}>
+                    <AspectRatio ratio={16 / 12} className="rounded-lg  flex justify-center items-center w-full">
+                            {!!imageFromImageSrc ? <Image fill src={imageFromImageSrc?.imageSrc!} alt={title}/> : <CameraOff/>}
+                    </AspectRatio>
+                </Suspense>
                 {!!isAdmin ? (
                     <>
                     {!!isPublished ? (

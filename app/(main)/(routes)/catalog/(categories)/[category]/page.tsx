@@ -1,6 +1,8 @@
 import { CatalogItemCard } from "@/components/catalog-item-card";
+import { Skeleton } from "@/components/ui/skeleton";
 import db from "@/lib/db";
 import { redirect } from "next/navigation";
+import { Suspense } from "react";
 
 
 const CategoryPage = async ({
@@ -43,7 +45,7 @@ const CategoryPage = async ({
     return ( 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
             {items.map((item) => (
-
+                <Suspense fallback={<Skeleton className="p-2 grid gap shadow-sm hover:shadow-md rounded-lg"/>}>
                 <CatalogItemCard
                     key={item.id}
                     id={item.id}
@@ -55,7 +57,8 @@ const CategoryPage = async ({
                     categoryId={item.categoryId!}
                     isPublished={item.isPublished}
                     // description={item.description}
-                />
+                    />
+                </Suspense>
             ))}
         </div>
      );
