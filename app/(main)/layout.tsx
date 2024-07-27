@@ -64,8 +64,9 @@ children : React.ReactNode
                         </Link> 
                         : checkRole("moderator") ?
                         <Link href="/employee/schedule" className="flex justify-center items-center">
-                            <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20">
+                            <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20" type="button">
                                 <Pencil className="h-5 w-5"/>
+                                <p className="sr-only">Создать запись</p>
                             </Button>
                         </Link> : null
                         }                    

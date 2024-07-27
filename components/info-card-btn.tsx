@@ -20,6 +20,7 @@ const InfoCardBtn = ({
     return ( 
         <Button variant="secondary" onClick={onClick} className="h-full ml-3">
             <ArrowUpRight/>
+            <p className="sr-only">Подробнее</p>
         </Button>
      );
 }
