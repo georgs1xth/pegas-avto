@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Пегас avto A",
   },
   description: "Официальный сайт CTO Пегас Avto A",
-  other: {  "yandex-verification": "ea147b33ef8a8a61",
+  other: {  "yandex-verification": "2bb381a9224af3e5",
             "google-site-verification": "YGfdW5HMTs0VsVfYZmKLqpQm2KfGiOQ5D3a0CUKYr8c"        
   }
 };
