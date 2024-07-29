@@ -18,6 +18,7 @@ import {
 } from '@clerk/nextjs'
 import { OurFileRouter } from "./api/uploadthing/core";
 import { ToastProvider } from "@/components/providers/toaster-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,6 +46,12 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={localization}>
       <html lang="en">
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <body className="{inter.className} h-screen">
           <ToastProvider />
           <NextSSRPlugin
@@ -59,6 +66,7 @@ export default function RootLayout({
           {children}
           <SpeedInsights/>
         </body>
+        </ThemeProvider>
       </html>
     </ClerkProvider>
   );
