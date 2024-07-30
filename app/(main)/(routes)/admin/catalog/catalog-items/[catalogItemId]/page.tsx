@@ -64,7 +64,7 @@ const AdminCatalogItemPage = async ({
         catalogItem.Price,
         catalogItem.title,
         catalogItem.description,
-        catalogItem.brandId,
+        // catalogItem.brandId,
         catalogItem.categoryId,
         catalogItem.isAvailable,
     ]

@@ -1,56 +1,49 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["fullTextIndex", "fullTextSearch"]
 }
 
+// prisma/schema.prisma
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // uncomment next line if you use Prisma <5.10
+  // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
-// model MainSliderItem {
-//   id          String   @id @default(uuid())
-//   title       String
-//   description String
-//   isPublished Boolean  @default(false)
-//   imageSrc    String
-//   updatedAt   DateTime @updatedAt
-//   createdAt   DateTime @default(now())
+// datasource db {
+//   provider     = "mysql"
+//   url          = env("DATABASE_URL")
+//   relationMode = "prisma"
 // }
 
 model MainCarouselItem {
-  id String @id @default(uuid())
-  title String
+  id          String  @id @default(uuid())
+  title       String
   description String?
   isPublished Boolean @default(false)
-  imageUrl String?
-  btnHref String?
-  position Int @default(10) 
+  imageUrl    String?
+  btnHref     String?
+  position    Int     @default(10)
 }
 
 model CatalogItem {
-  id String @id @default(uuid())
-  title String
+  id          String  @id @default(uuid())
+  title       String
   description String? @db.Text
-  Price Float?
-  
+  Price       Float?
+
   categoryId String?
-  category Category? @relation(fields: [categoryId], references: [id])
+  category   Category? @relation(fields: [categoryId], references: [id])
 
   brandId String?
-  brand Brand? @relation(fields: [brandId], references: [id])
+  brand   Brand?  @relation(fields: [brandId], references: [id])
 
   isAvailable Boolean @default(false)
   isPublished Boolean @default(false)
 
   imageSrcs ImageSrcMultiple[]
+
   // imageSrc String?
   @@index([categoryId])
   @@index([brandId])
@@ -58,62 +51,39 @@ model CatalogItem {
 
 model ImageSrcMultiple {
   id String @id @default(uuid())
-  
+
   imageSrc String?
   position Int
 
   name String
-  
+
   itemId String
-  item CatalogItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  item   CatalogItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
 
   @@index([itemId])
 }
 
 model Brand {
-  id String @id @default(uuid())
-  name String @unique
+  id    String        @id @default(uuid())
+  name  String        @unique
   items CatalogItem[]
 }
 
 model Category {
-  id String @id @default(uuid())
-  name String @unique
-  imageSrc String?
-  webRef String? @unique
-  isPublished Boolean @default(false)
-  items CatalogItem[]
+  id          String        @id @default(uuid())
+  name        String        @unique
+  imageSrc    String?
+  webRef      String?       @unique
+  isPublished Boolean       @default(false)
+  items       CatalogItem[]
 }
 
 model Appointment {
-  id String @id @default(uuid())
-  name String?
-  phone String
-  car String?
-  amount Int @default(0)
-  total Int @default(5000)
-  date DateTime @default(now())
+  id     String   @id @default(uuid())
+  name   String?
+  phone  String
+  car    String?
+  amount Int      @default(0)
+  total  Int      @default(5000)
+  date   DateTime @default(now())
 }
-
-// model InfoCard {
-//   id String @id @default(uuid())
-//   icon String @default("Clock")
-//   label String
-//   description String?
-//   wideness String?
-//   position Int
-//   addButton Boolean @default(false)
-//   btnHref String?
-// }
-
-
-// model ImageSrc {
-//   id String @id @default(uuid())
-//   imageSrc String
-
-//   catalogItemId String
-
-//   catalogItem CatalogItem @relation(fields: [catalogItemId], references: [id], onDelete: Cascade)
-
-//   @@index([imageSrc])
-// }
