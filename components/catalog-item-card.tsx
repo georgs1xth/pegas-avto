@@ -56,8 +56,9 @@ export const CatalogItemCard = async ({
     <Link href={linkHref}>
         <div className="p-2 flex flex-col justify-evenly shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition aspect-[3/4]">
             <div className="relative flex justify-center items-center py-2">
-                <AspectRatio ratio={16 / 12} className="rounded-lg flex justify-center items-center w-full">
-                    {!!imageFromImageSrc ? <Image fill src={imageFromImageSrc?.imageSrc!} alt={title}/> : <CameraOff/>}
+                <AspectRatio ratio={16 / 12} className="rounded-lg flex justify-center items-center w-full relative">
+                    <Skeleton className="w-full h-full z-0"/>
+                    {!!imageFromImageSrc ? <Image fill src={imageFromImageSrc?.imageSrc!} alt={title} className="z-1 bg-white"/> : <CameraOff/>}
                 </AspectRatio>
                 {!!isAdmin ? (
                     <>
