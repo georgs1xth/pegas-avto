@@ -46,12 +46,12 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={localization}>
       <html lang="en">
-      <ThemeProvider
+      {/* <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
+          > */}
         <body className="{inter.className} h-screen">
           <ToastProvider />
           <NextSSRPlugin
@@ -66,7 +66,7 @@ export default function RootLayout({
           {children}
           <SpeedInsights/>
         </body>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </html>
     </ClerkProvider>
   );
