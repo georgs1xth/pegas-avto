@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import db from "@/lib/db";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
-import { CameraOff, Check, CircleCheck, X } from "lucide-react";
+import { CameraOff, Check, CircleCheck, Loader2Icon, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
@@ -57,6 +57,15 @@ export const CatalogItemCard = async ({
         <div className="p-2 flex flex-col justify-evenly shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition aspect-[3/4]">
             <div className="relative flex justify-center items-center py-2">
                 <AspectRatio ratio={16 / 12} className="rounded-lg flex justify-center items-center w-full relative">
+                    {!!imageFromImageSrc ?
+                    <Loader2Icon
+                        className='absolute animate-spin w-20 h-20 text-accent-foreground/70'
+                        strokeWidth="1"
+                        style={{
+                            animationDuration: "1.5s"
+                        }}
+                    /> : null
+                    }
                     {!!imageFromImageSrc ? <Image fill src={imageFromImageSrc?.imageSrc!} alt={title}/> : <CameraOff/>}
                 </AspectRatio>
                 {!!isAdmin ? (

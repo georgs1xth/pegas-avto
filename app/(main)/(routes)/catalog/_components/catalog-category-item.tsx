@@ -38,7 +38,7 @@ const CatalogCategoryItem = ({
         <AspectRatio ratio={16 / 12} className="rounded-sm overflow-hidden flex justify-center items-center relative">
             {!!imageSrc ?
             <Loader2Icon
-                className='absolute animate-spin w-20 h-20 text-accent-foreground'
+                className='absolute animate-spin w-20 h-20 text-accent-foreground/70'
                 strokeWidth="1"
                 style={{
                     animationDuration: "1.5s"
