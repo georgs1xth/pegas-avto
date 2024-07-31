@@ -39,7 +39,7 @@ export const CatalogItemCard = async ({
 
     const webReference = !!categoryItem?.webRef ? categoryItem.webRef : "Другое"
 
-    const linkHref = !!isAdmin ? `/admin/catalog/catalog-items/${id}` :  `/catalog/categories/${webReference}/${id}`
+    const linkHref = !!isAdmin ? `/admin/catalog/catalog-items/${id}` :  `/catalog/${webReference}/${id}`
 
     const imageFromImageSrc = !!imageSrc ? await db.imageSrcMultiple.findUnique({
         where: {
