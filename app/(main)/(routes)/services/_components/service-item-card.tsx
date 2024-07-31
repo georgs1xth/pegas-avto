@@ -30,7 +30,7 @@ const ServiceItemCrad = ({
                 <h2 className="text-md font-medium text-accent-foreground">{title}</h2>
                 <p className="text-xs text-accent-foreground/90">{description}</p>
                 <Link href={`services/${id}`} className="w-[80%] rounded-xl">
-                    <Button variant="outline" className="w-full text-accent-foreground/90" type="button">Подробнее</Button>
+                    <Button variant="outline" className="w-full text-accent-foreground/90 rounded-xl" type="button">Подробнее</Button>
                 </Link>
             </div>
         </div>
