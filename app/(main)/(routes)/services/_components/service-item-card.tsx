@@ -26,11 +26,11 @@ const ServiceItemCrad = ({
                 <Image src={imageSrc} alt={title} layout="fill" objectFit="cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background opacity-100"></div>
             </div>
-            <div className="flex flex-col items-end gap-2 w-[60%] text-end mr-2 relative z-1">
+            <div className="flex flex-col items-end gap-2 w-[65%] text-end mr-2 relative z-1">
                 <h2 className="text-md font-medium text-accent-foreground">{title}</h2>
                 <p className="text-xs text-accent-foreground/90">{description}</p>
-                <Link href={`services/${id}`} className="w-[80%] rounded-xl">
-                    <Button variant="outline" className="w-full text-accent-foreground/90 rounded-xl" type="button">Подробнее</Button>
+                <Link href={`services/${id}`} className="rounded-xl">
+                    <Button variant="default" className="rounded-xl px-6" type="button">Подробнее</Button>
                 </Link>
             </div>
         </div>
