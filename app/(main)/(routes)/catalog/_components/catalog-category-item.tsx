@@ -2,7 +2,7 @@
 
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { cn } from '@/lib/utils';
-import { CameraOff } from 'lucide-react';
+import { CameraOff, Loader2Icon, LoaderPinwheel } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -30,13 +30,21 @@ const CatalogCategoryItem = ({
 
     const onClick = () => {
         router.push(href)
-
-}
+    }
 
 
   return (
     <button className={cn('overflow-hidden p-2 flex flex-col items-center divide-y gap-2 md:gap-4 hover:bg-slate-100 transition-all hover:rounded-lg active:bg-green-800/10')} onClick={onClick}>
-        <AspectRatio ratio={16 / 12} className="rounded-sm overflow-hidden flex justify-center items-center">
+        <AspectRatio ratio={16 / 12} className="rounded-sm overflow-hidden flex justify-center items-center relative">
+            {!!imageSrc ?
+            <Loader2Icon
+                className='absolute animate-spin w-20 h-20 text-accent-foreground'
+                strokeWidth="1"
+                style={{
+                    animationDuration: "1.5s"
+                }}
+            /> : null
+            }
             {!!imageSrc ? <Image fill src={imageSrc} alt={label} loading='eager'/> : <CameraOff className='h-20 w-20' strokeWidth="1"/>}
         </AspectRatio>
         <p className={cn('text-slate-900/90 text-sm md:text-base truncate',
