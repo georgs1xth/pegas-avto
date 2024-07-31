@@ -87,3 +87,14 @@ model Appointment {
   total  Int      @default(5000)
   date   DateTime @default(now())
 }
+
+model ServiceItem {
+  id          String  @id @default(uuid())
+  title       String
+  description String? @db.Text
+  price       Float?
+
+  imageSrc    String?
+
+  isPublished Boolean @default(false)
+}
