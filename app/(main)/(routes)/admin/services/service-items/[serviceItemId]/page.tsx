@@ -40,7 +40,6 @@ const AdminCatalogItemPage = async ({
     }
 
     const requiredFields = [
-        serviceItem.price,
         serviceItem.title,
         serviceItem.description,
         serviceItem.imageSrc

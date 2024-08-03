@@ -8,7 +8,7 @@ const ServicesPage = async () => {
             isPublished: true,
         },
         orderBy: {
-            title: "asc"
+            title: "desc"
         }
     });
 
