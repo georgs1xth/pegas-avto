@@ -92,6 +92,7 @@ model ServiceItem {
   id          String  @id @default(uuid())
   title       String
   description String? @db.Text
+  moreDescription String? @db.Text
   price       Float?
 
   imageSrc    String?
