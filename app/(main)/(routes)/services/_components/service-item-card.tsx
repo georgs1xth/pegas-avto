@@ -33,7 +33,13 @@ const ServiceItemCrad = ({
             <div className="absolute left-0 inset-0 h-full w-[60%] z-0">
                 {/* gradient with img */}
                 {!!imageSrc ?
-                <Image src={imageSrc} alt={title} layout="fill" objectFit="cover" /> :
+                <Image 
+                    src={imageSrc} 
+                    alt={title}  
+                    style={{ objectFit: 'cover' }} 
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                /> :
                 null
                 }
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background opacity-100"></div>

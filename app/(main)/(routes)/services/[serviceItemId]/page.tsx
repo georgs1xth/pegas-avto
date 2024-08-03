@@ -51,9 +51,9 @@ const CatalogItemPage = async ({
                                 <BreadcrumbPage>{item.title}</BreadcrumbPage>
                             </BreadcrumbItem>
 
-                    </BreadcrumbList>
-                </Breadcrumb>
-            </div>
+                </BreadcrumbList>
+            </Breadcrumb>
+        </div>
         <div className="rounded-3xl overflow-hidden shadow-lg md:max-w-2xl">
             <AspectRatio ratio={18 / 9}>
                 <Image src={item.imageSrc!} alt={item.title} style={{ objectFit: 'cover' }} fill/>

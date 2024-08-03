@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: */admin/*
+Disallow: /admin/*
+Allow: /catalog/*
+Allow: /catalog
+Allow: /services/*
+Allow: /services
+Allow: /
