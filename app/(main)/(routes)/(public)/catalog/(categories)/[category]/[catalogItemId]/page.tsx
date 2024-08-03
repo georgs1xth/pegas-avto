@@ -4,6 +4,7 @@ import Image from "next/image"
 import { redirect } from "next/navigation"
 import CatalogItemCarousel from "./_components/catalogItemCarousel"
 import { cn } from "@/lib/utils"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 
 const CatalogItemPage = async ({
   params,
@@ -44,6 +45,34 @@ const CatalogItemPage = async ({
 
   return (
     <div className="p-4 flex flex-col gap-3 md:flex-row md:gap-6">
+      <Breadcrumb>
+        <BreadcrumbList>
+            
+                <BreadcrumbItem>
+                    <BreadcrumbLink href="/">Главная</BreadcrumbLink>
+                </BreadcrumbItem>
+            
+            <BreadcrumbSeparator />
+            
+                <BreadcrumbItem>
+                    <BreadcrumbLink href="/catalog">Все товары</BreadcrumbLink>
+                </BreadcrumbItem>
+            
+            <BreadcrumbSeparator />
+
+                <BreadcrumbItem>
+                    <BreadcrumbLink href={`/catalog/${params.category}`}>{decodeURI(params.category)}</BreadcrumbLink>
+                </BreadcrumbItem>
+            
+            <BreadcrumbSeparator />
+                
+                <BreadcrumbItem>
+                    <BreadcrumbPage>{item.title}</BreadcrumbPage>
+                </BreadcrumbItem>
+
+        </BreadcrumbList>
+      </Breadcrumb>
+
       <div className="md:w-[calc(50%-12px)]">
         <CatalogItemCarousel
           carouselItems={item.imageSrcs}
@@ -66,8 +95,8 @@ const CatalogItemPage = async ({
               !!item.isAvailable && "text-emerald-600",
               !item.isAvailable && "text-red-600"
             )}>
-              {!!item.isAvailable && <p>Есть в наличии</p>}
-              {!item.isAvailable && <p>Нет в наличии</p>}
+              {!!item.isAvailable && <>Есть в наличии</>}
+              {!item.isAvailable && <>Нет в наличии</>}
             </p>
           </div>
 
@@ -78,7 +107,7 @@ const CatalogItemPage = async ({
         <div className="flex flex-col gap-1">
           <h3 className="text-base font-medium">Краткое описание</h3>
           <p className="text-xs">
-            Автосигнализация старлайн b97
+            {item.description}
           </p>
         </div>
       </div>
