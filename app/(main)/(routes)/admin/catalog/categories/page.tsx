@@ -1,6 +1,6 @@
 import { CatalogItemCard } from "@/components/catalog-item-card"
 import db from "@/lib/db"
-import CatalogCategoryItem from "../../../catalog/_components/catalog-category-item"
+import CatalogCategoryItem from "../../../(public)/catalog/_components/catalog-category-item"
 const AdminCategoriesPage = async () => {
   
 

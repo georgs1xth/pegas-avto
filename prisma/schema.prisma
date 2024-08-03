@@ -3,19 +3,11 @@ generator client {
   previewFeatures = ["fullTextIndex", "fullTextSearch"]
 }
 
-// prisma/schema.prisma
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  // uncomment next line if you use Prisma <5.10
-  // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
-// datasource db {
-//   provider     = "mysql"
-//   url          = env("DATABASE_URL")
-//   relationMode = "prisma"
-// }
 
 model MainCarouselItem {
   id          String  @id @default(uuid())

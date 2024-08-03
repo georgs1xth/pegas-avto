@@ -1,6 +1,6 @@
 import { CatalogItemCard } from "@/components/catalog-item-card"
 import db from "@/lib/db"
-import ServiceItemCrad from "../../../services/_components/service-item-card"
+import ServiceItemCrad from "../../../(public)/services/_components/service-item-card"
 const AdminCatalogItemsPage = async () => {
   
 

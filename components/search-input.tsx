@@ -10,7 +10,7 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 export const SearchCatalog = () => {
 
     const [value, setValue] = useState("")
-    const debouncedValue = useDebounce(value);
+    const debouncedValue = useDebounce(value, 0);
 
     // const searchParams = useSearchParams();
     const router = useRouter();
@@ -27,7 +27,7 @@ export const SearchCatalog = () => {
         }, {skipEmptyString: true, skipNull: true});
 
         router.push(url);
-    }, [debouncedValue,  router, pathname])
+    }, [debouncedValue, router, pathname])
 
     // currentCategoryId,
 
