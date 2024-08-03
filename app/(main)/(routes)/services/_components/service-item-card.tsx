@@ -29,9 +29,9 @@ const ServiceItemCrad = ({
                 <Image src={imageSrc} alt={title} layout="fill" objectFit="cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background opacity-100"></div>
             </div>
-            <div className="flex flex-col items-end gap-2 w-[65%] text-end mr-2 relative z-1">
+            <div className="flex flex-col items-end gap-2 w-[100%] text-end mr-2 relative z-1">
                 <h2 className="text-md font-medium text-accent-foreground">{title}</h2>
-                <p className="text-xs text-accent-foreground/90 line-clamp-2">{description}</p>
+                <p className="text-xs text-accent-foreground/90 line-clamp-2 w-[65%]">{description}</p>
                 <Link href={`services/${id}`} className="rounded-xl z-10">
                     <Button variant="default" className={cn("rounded-xl px-6", styles.btnOverlay)} type="button">Подробнее</Button>
                 </Link>
