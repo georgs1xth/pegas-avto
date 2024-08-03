@@ -1,5 +1,7 @@
 import CallUs from "@/components/call-us"
+import { Preview } from "@/components/preview"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import db from "@/lib/db"
 import Image from "next/image"
@@ -23,6 +25,29 @@ const CatalogItemPage = async ({
 
   return (
     <div className="flex flex-col p-2 gap-4 md:px-12 md:pt-14 lg:px-28">
+        <div className="p-4">
+                <Breadcrumb>
+                    <BreadcrumbList>
+                        
+                            <BreadcrumbItem>
+                                <BreadcrumbLink href="/">Главная</BreadcrumbLink>
+                            </BreadcrumbItem>
+                        
+                        <BreadcrumbSeparator />
+                        
+                            <BreadcrumbItem>
+                                <BreadcrumbLink href="/services">Все услуги</BreadcrumbLink>
+                            </BreadcrumbItem>
+                        
+                        <BreadcrumbSeparator />
+                            
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>{item.title}</BreadcrumbPage>
+                            </BreadcrumbItem>
+
+                    </BreadcrumbList>
+                </Breadcrumb>
+            </div>
         <div className="rounded-3xl overflow-hidden shadow-lg md:max-w-2xl">
             <AspectRatio ratio={18 / 9}>
                 <Image src={item.imageSrc!} alt={item.title} style={{ objectFit: 'cover' }} fill/>
@@ -39,14 +64,14 @@ const CatalogItemPage = async ({
                 {item.description}
             </p>
         </div>
-        {!item.moreDescription ? 
+        {!!item.moreDescription ? 
         <div className="flex flex-col text-start px-2 gap-2">
             <h2 className="text-lg">
                 Подробнее
             </h2>
-            <p className="text-sm px-2">
-                {item.moreDescription}
-            </p>
+            <Preview 
+                value={item.moreDescription}
+            />
         </div> : null}
         <div className="p-2">
             <CallUs variant="servicesPage"/>
