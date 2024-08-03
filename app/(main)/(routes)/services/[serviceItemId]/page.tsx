@@ -32,6 +32,9 @@ const CatalogItemPage = async ({
             <h2 className="text-lg">
                 {item.title}
             </h2>
+            <h3 className="text-xl">
+                {!!item.price ? <>От {item.price} тг</> : <>Цена обговаривается</>}
+            </h3>
             <p className="text-sm px-2">
                 {item.description}
             </p>
