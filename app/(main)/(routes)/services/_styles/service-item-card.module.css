@@ -1,0 +1,10 @@
+.cardContainer:hover .hoverOverlay{
+    opacity: 1;
+}
+.descriptionOverflow{
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
