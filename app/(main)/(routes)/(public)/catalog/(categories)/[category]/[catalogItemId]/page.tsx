@@ -44,8 +44,8 @@ const CatalogItemPage = async ({
   }
 
   return (
-    <div className="p-4 flex flex-col gap-3 md:flex-row md:gap-6">
-      <Breadcrumb>
+    <>
+    <Breadcrumb className="p-4 pb-0">
         <BreadcrumbList>
             
                 <BreadcrumbItem>
@@ -72,7 +72,7 @@ const CatalogItemPage = async ({
 
         </BreadcrumbList>
       </Breadcrumb>
-
+    <div className="p-4 flex flex-col gap-3 md:flex-row md:gap-6">
       <div className="md:w-[calc(50%-12px)]">
         <CatalogItemCarousel
           carouselItems={item.imageSrcs}
@@ -112,6 +112,7 @@ const CatalogItemPage = async ({
         </div>
       </div>
     </div>
+    </>
   )
 }
 
