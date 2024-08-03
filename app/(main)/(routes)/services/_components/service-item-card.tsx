@@ -37,12 +37,12 @@ const ServiceItemCrad = ({
                 </Link>
             </div>
             <div className={cn("opacity-0 z-5 absolute backdrop-blur-md bg-white bg-opacity-30 w-full h-full inset-0 transition-all p-3 flex justify-start" ,styles.hoverOverlay)}>
-                <div className="flex flex-col items-start gap-2 w-[65%]">
+                <div className="flex flex-col items-start gap-2 max-w-[calc(100%-3rem-90px)]">
                     {price > 1000 ?
                         <h2 className="text-lg font-medium text-accent-foreground">От {price} тг</h2>
                     : <h2 className='text-lg font-medium text-accent-foreground'>Цена договорная</h2>
                     }
-                    <p className="text-xs font-medium text-accent-foreground/90 line-clamp-3">{description}</p>
+                    <p className="text-xs font-medium text-accent-foreground/90 line-clamp-4">{description}</p>
                 </div>
 
             </div>
