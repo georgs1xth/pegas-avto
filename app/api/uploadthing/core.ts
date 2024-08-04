@@ -19,7 +19,10 @@ const handleAuth = () => {
 }
 
 export const OurFileRouter = {
-    Image: f({image: { maxFileSize: "8MB", maxFileCount: 1 }})
+    Image: f({image: { maxFileSize: "2MB", maxFileCount: 1 }})
+        .middleware(() => handleAuth())
+        .onUploadComplete(() =>{}),
+    CatalogItemImage: f({image: { maxFileSize: "2MB", maxFileCount: 10 }})
         .middleware(() => handleAuth())
         .onUploadComplete(() =>{}),
 } satisfies FileRouter;

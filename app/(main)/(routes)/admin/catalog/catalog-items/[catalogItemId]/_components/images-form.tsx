@@ -115,16 +115,13 @@ export const ImagesForm = ({
       {isCreating && (
         <div>
           <FileUpload 
-            endpoint="Image"
+            endpoint="CatalogItemImage"
             onChange={(url, name) => {
               if (url && name) {
                 onSubmit({ url: url, name: name });
               }
             }}
             />
-            <div className="text-xs text-muted-foreground mt-4">
-              Add anything your students might need to complete the course.
-            </div>
         </div>
       )}
       {!isCreating && (

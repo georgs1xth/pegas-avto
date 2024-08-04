@@ -50,6 +50,7 @@
     "react-hook-form": "^7.52.0",
     "react-hot-toast": "^2.4.1",
     "react-quill": "^2.0.0",
+    "react-resizable-panels": "^2.0.22",
     "react-stately": "^3.31.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
