@@ -4,6 +4,32 @@
 
   .ql-container{
     font-size: 16px !important;
+    padding: 0 !important; 
+    margin: 0 !important;
+  }
+
+  .ql-editor{
+    padding: 0 !important;
+  }
+
+  .ql-container p {
+    padding: 0;
+    font-size: 14px !important;
+  }
+
+  .ql-container h3 {
+    padding: 0;
+    font-size: 15px !important;
+  }
+
+  .ql-container h2 {
+    padding: 0;
+    font-size: 16px !important;
+  }
+
+  .ql-container h1 {
+    padding: 0;
+    font-size: 18px !important;
   }
 
 

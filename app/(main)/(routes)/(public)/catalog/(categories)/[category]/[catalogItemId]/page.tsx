@@ -106,8 +106,8 @@ const CatalogItemPage = async ({
             {formatPrice(item.Price!)}
           </h3>
         </div>
-        <div className="flex flex-col gap-1">
-          <h3 className="text-base font-medium">Краткое описание</h3>
+        <div className="flex flex-col gap-2">
+          <h3 className="text-lg font-medium">Описание</h3>
           <Preview value={item.description!}/>
         </div>
       </div>
