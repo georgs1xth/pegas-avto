@@ -20,7 +20,8 @@ interface ImagesFormProps {
 };
 
 const formSchema = z.object({
-  url: z.string().min(1)
+  url: z.string().min(1),
+  name: z.string().min(1)
 });
 
 export const ImagesForm = ({
@@ -115,9 +116,9 @@ export const ImagesForm = ({
         <div>
           <FileUpload 
             endpoint="Image"
-            onChange={(url) => {
-              if (url) {
-                onSubmit({ url: url });
+            onChange={(url, name) => {
+              if (url && name) {
+                onSubmit({ url: url, name: name });
               }
             }}
             />

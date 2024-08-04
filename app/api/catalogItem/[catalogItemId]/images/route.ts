@@ -8,7 +8,7 @@ export async function POST(
     { params }: { params: { catalogItemId: string } }
 ) {
     try {
-        const { url } = await req.json()
+        const { url, name } = await req.json()
 
         const { userId } = auth()
 
@@ -35,7 +35,7 @@ export async function POST(
 
         const image = await db.imageSrcMultiple.create({
             data: {
-                name: (new Date()).toLocaleString(),
+                name: name,
                 imageSrc: url,
                 itemId: params.catalogItemId,
                 position: newPosition
