@@ -1,16 +1,18 @@
 "use client"
-
 import {
     Carousel,
-    CarouselContent,
+    CarouselMainContainer,
     CarouselNext,
-    CarouselPrevious
-  } from "@/components/ui/carousel"
-import CarouselItems from "@/app/(main)/(routes)/(root)/_components/CarouselItems";
-
+    CarouselPrevious,
+    CarouselThumbsContainer,
+    SliderThumbItem,
+  } from "@/components/ui-extension/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { CatalogItem, ImageSrcMultiple, MainCarouselItem } from "@prisma/client";
+import Fade from "embla-carousel-fade";
+import {ImageSrcMultiple} from "@prisma/client";
 import CatalogCarouselItem from "./catalogCarouselItem";
+import Image from "next/image";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface CatalogItemCarouselProps {
     carouselItems: ImageSrcMultiple[]
@@ -20,6 +22,11 @@ const CatalogItemCarousel = ({
     carouselItems
 } : CatalogItemCarouselProps) => {
 
+    // const options = {
+    //     containScroll: false
+    //   }
+
+    // const orientation = 
 
     return ( 
             <Carousel
@@ -28,27 +35,43 @@ const CatalogItemCarousel = ({
                         delay: 4000,
                     }),
                 ]}
-                className="relative"
+                className="flex flex-col gap-2 w-full h-full overflow-visible"
+                orientation="horizontal"
             >
-                {/* <CarouselPrevious className="absolute left-0 top-[50%] z-2"/>
-                <CarouselNext className="absolute right-0 top-[50%] z-2"/> */}
-                <CarouselContent>
+                <CarouselNext className="top-1/3 -translate-y-1/3" />
+                <CarouselPrevious className="top-1/3 -translate-y-1/3" />
+                <div className="relative basis-3/4">
+                <CarouselMainContainer className="">
                     { !!carouselItems && carouselItems.length > 0 ?
                     carouselItems.map((item) => (
                         <CatalogCarouselItem
-                            key={item.id}
-                            id={item.id}
+                            key={item.position}
                             imageSrc={item.imageSrc!} 
                             imageAlt={item.id}
                     />
                     )) :
                     <CatalogCarouselItem
-                            id="404"
                             imageSrc="" 
                             imageAlt="Error"
                     />
                     }
-                </CarouselContent>
+                </CarouselMainContainer>
+                </div>
+                <CarouselThumbsContainer className="w-full basis-1/4 gap-2 p-1 md:overflow-hidden">
+                    {carouselItems.map((item) => (
+                        <SliderThumbItem
+                            key={item.id}
+                            index={item.position - 1}
+                            className="aspect-[16/13] outline outline-1 outline-border size-full rounded-md"
+                        >
+                            <AspectRatio ratio={16/13}>
+                                <div className="flex items-center justify-center h-full w-full rounded-md cursor-pointer bg-bavckground py-2 aspect-[16/13]">
+                                        <Image src={item.imageSrc!} alt={`Фото номер ${item.position}`} fill/>
+                                </div>
+                            </AspectRatio>
+                        </SliderThumbItem>
+                    ))}
+                </CarouselThumbsContainer>
             </Carousel>
      );
 }

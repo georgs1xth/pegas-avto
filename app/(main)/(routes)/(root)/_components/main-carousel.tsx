@@ -24,7 +24,7 @@ const MainCarousel = ({
                 plugins={[
                     Autoplay({
                         delay: 4000,
-                    }),
+                    })
                 ]}
             >
                 <CarouselContent className="">
