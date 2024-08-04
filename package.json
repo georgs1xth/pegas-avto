@@ -1,6 +1,5 @@
 {
   "name": "chinese-automobile-rusification",
-  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +9,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "type": "module",
   "dependencies": {
+    "punycode": "^2.1.1",
     "@clerk/localizations": "^2.4.6",
     "@clerk/nextjs": "^5.1.6",
     "@hello-pangea/dnd": "^16.6.0",

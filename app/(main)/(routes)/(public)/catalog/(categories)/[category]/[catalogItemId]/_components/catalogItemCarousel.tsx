@@ -67,7 +67,7 @@ const CatalogItemCarousel = ({
                             className="aspect-[16/13] outline outline-1 outline-border size-full rounded-md"
                         >
                             <AspectRatio ratio={16/13}>
-                                <div className="flex items-center justify-center h-full w-full rounded-md cursor-pointer bg-bavckground aspect-[16/13]">
+                                <div className="flex items-center justify-center h-full w-full rounded-md cursor-pointer bg-background aspect-[16/13]">
                                     
                                         <Image src={item.imageSrc!} alt={`Фото номер ${item.position}`} fill objectFit="contain" className="object-cover"/>
                                 </div>

@@ -41,8 +41,6 @@ const CategoryPage = async ({
 
     
 
-    const simpleKeys=[1, 2, 3, 4, 5, 6, 7, 8, 9]
-
 
     return ( 
         <>
@@ -53,13 +51,11 @@ const CategoryPage = async ({
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
                 <Suspense fallback={
-                    simpleKeys.map((item) => (
+                    (new Array(10)).map((item) => (
                         <Skeleton key={item} className="p-2 flex shadow-sm hover:shadow-md rounded-lg aspect-[3/4]"/>
                         
                     ))}>
                 {items.map((item) => (
-                    <>
-                    
                     <CatalogItemCard
                         key={item.id}
                         id={item.id}
@@ -72,7 +68,6 @@ const CategoryPage = async ({
                         isPublished={item.isPublished}
                         // description={item.description}
                         />
-                    </>
                     ))}
                 </Suspense>
             </div>

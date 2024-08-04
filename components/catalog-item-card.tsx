@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { Suspense } from "react";
 import { Skeleton } from "./ui/skeleton";
+import { cn } from "@/lib/utils";
 
 interface CatalogItemCardProps {
     id: string;
@@ -66,7 +67,7 @@ export const CatalogItemCard = async ({
                         }}
                     /> : null
                     }
-                    {!!imageFromImageSrc ? <Image fill src={imageFromImageSrc?.imageSrc!} alt={title}/> : <CameraOff/>}
+                    {!!imageFromImageSrc ? <Image  fill className="object-contain" src={imageFromImageSrc?.imageSrc!} alt={title}/> : <CameraOff/>}
                 </AspectRatio>
                 {!!isAdmin ? (
                     <>
@@ -84,9 +85,22 @@ export const CatalogItemCard = async ({
                 ) : null}
             </div>
             <div className="px-2 py-1 overflow-hidden">
-                {!!price && !!isAvailable ? <h2 className="text-lg font-semibold text-slate-900">{price.toString()} тг </h2> :
-                !price && !!isAvailable ? <h2 className="text-base text-slate-400">цена уточняется</h2> :
-                <h2 className="text-md text-slate-400">Нет в наличии</h2>}
+                <h2
+                    className={cn(  "text-lg",
+                                    !price && !!isAvailable && "text-accent-foreground/40",
+                                    !isAvailable && "text-accent-foreground/40",
+                                    !!price && !!isAvailable && "text-accent-foreground/90 font-semibold",
+                    )}
+                >
+                    {!!isAvailable && !!price ? <>{price.toString()}</>
+                    : !!isAvailable && !price ? <>Цена уточняется</>
+                    : <>Нет в наличии</>}
+
+                </h2>
+                {/* {!!price && !!isAvailable ? <h2 className="text-lg font-semibold text-slate-900">{price.toString()} тг </h2> :
+                !price && !!isAvailable ? <h2 className="text-lg text-slate-400">цена уточняется</h2> :
+                <h2 className="text-lg text-slate-400">Нет в наличии</h2>} */}
+
                 <div className="flex flex-col gap-1 justify-between">
                         <div className="text-sm line-clamp-2 max-h-max">{title}</div>
                     <div>
