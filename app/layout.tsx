@@ -28,12 +28,11 @@ const localization = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Пегас avto A",
-    template: "%s | Пегас avto A",
+    default: "СТО Пегас avto A",
+    template: "%s | СТО Пегас avto A",
   },
-  description: "Официальный сайт CTO Пегас Avto A",
-  other: {  "yandex-verification": "2bb381a9224af3e5",
-            "google-site-verification": "YGfdW5HMTs0VsVfYZmKLqpQm2KfGiOQ5D3a0CUKYr8c"        
+  description: "Широкий выбор услуг для вашего автомобиля. Ремонт, установка доп. оборудования, заправка автокондиционеров и многое другое.",
+  other: { "google-site-verification": "YGfdW5HMTs0VsVfYZmKLqpQm2KfGiOQ5D3a0CUKYr8c"        
   }
 };
 

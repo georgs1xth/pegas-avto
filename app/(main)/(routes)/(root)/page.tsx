@@ -2,6 +2,13 @@ import { Clock, Handshake, Smile } from "lucide-react";
 import MainCarousel from "./_components/main-carousel";
 import InfoCard from "@/components/info-card";
 import db from "@/lib/db";
+import { Metadata } from "next";
+
+
+
+export const metadata: Metadata = {
+  description: "Широкий выбор услуг для вашего автомобиля. Ремонт, установка доп. оборудования, заправка автокондиционеров и многое другое.",
+};
 
 const Home = async () => {
 

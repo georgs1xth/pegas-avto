@@ -1,6 +1,13 @@
 import { SearchCatalog } from "@/components/search-input";
 import db from "@/lib/db";
 import CatalogCategories from "./_components/catalog-categories";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+    title: "Каталог товаров",
+    description: "Широкий выбор товаров для вашего автомобиля. Ремонт, установка доп. оборудования, заправка автокондиционеров и многое другое.",    
+};
 
 interface CatalogPageProps {
 }

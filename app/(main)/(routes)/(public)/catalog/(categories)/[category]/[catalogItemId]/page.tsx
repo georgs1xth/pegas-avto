@@ -6,6 +6,36 @@ import CatalogItemCarousel from "./_components/catalogItemCarousel"
 import { cn } from "@/lib/utils"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Preview } from "@/components/preview"
+import { Metadata } from "next"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: {category: string, catalogItemId: string},
+}): Promise<Metadata> {
+  // read route params
+  const category = decodeURI(params.category)
+  const id = params.catalogItemId
+ 
+  // fetch data
+  const item = await db.catalogItem.findUnique({
+      where: {
+          id
+      }
+  })
+
+  if(!item){
+      return redirect(`/catalog`)
+  }
+
+  return {
+    title: item.title,
+    description: item.description
+  }
+}
+
+
+
 
 const CatalogItemPage = async ({
   params,

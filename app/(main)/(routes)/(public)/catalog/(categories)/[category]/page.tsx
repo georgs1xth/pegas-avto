@@ -3,9 +3,35 @@ import { CatalogItemCard } from "@/components/catalog-item-card";
 import { SearchCatalog } from "@/components/search-input";
 import { Skeleton } from "@/components/ui/skeleton";
 import db from "@/lib/db";
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
+
+
+export async function generateMetadata({
+    params,
+ }: {
+    params: {category: string}},
+  ): Promise<Metadata> {
+    // read route params
+    const category = decodeURI(params.category)
+   
+    // fetch data
+    const item = await db.category.findUnique({
+        where: {
+            webRef: category
+        }
+    })
+
+    if(!item){
+        return redirect(`/catalog`)
+    }
+
+    return {
+      title: item.name,
+    }
+  }
 
 const CategoryPage = async ({
     params,

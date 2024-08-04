@@ -1,6 +1,19 @@
 import db from "@/lib/db";
 import ServiceItemCrad from "./_components/service-item-card";
 
+
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+    title: {
+        default: "Каталог услуг",
+        template: "%s | Услуги"
+    },
+    description: "Услуги по автоэлектрике в городе Атырау.",    
+};
+
+
 const ServicesPage = async () => {
     
     const servicesItems = await db.serviceItem.findMany({

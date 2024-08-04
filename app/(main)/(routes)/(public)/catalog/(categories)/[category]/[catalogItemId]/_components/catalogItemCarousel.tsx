@@ -69,7 +69,7 @@ const CatalogItemCarousel = ({
                             <AspectRatio ratio={16/13}>
                                 <div className="flex items-center justify-center h-full w-full rounded-md cursor-pointer bg-background aspect-[16/13]">
                                     
-                                        <Image src={item.imageSrc!} alt={`Фото номер ${item.position}`} fill objectFit="contain" className="object-cover"/>
+                                        <Image src={item.imageSrc!} alt={`Фото номер ${item.position}`} fill className="object-contain"/>
                                 </div>
                             </AspectRatio>
                         </SliderThumbItem>

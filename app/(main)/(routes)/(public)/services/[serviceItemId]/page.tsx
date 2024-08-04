@@ -12,6 +12,35 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "@/components/ui/accordion"
+import { Metadata, ResolvingMetadata } from "next"
+
+
+
+export async function generateMetadata({
+    params,
+ }: {
+    params: {serviceItemId: string}},
+    parent: ResolvingMetadata
+  ): Promise<Metadata> {
+    // read route params
+    const id = params.serviceItemId
+   
+    // fetch data
+    const item = await db.serviceItem.findUnique({
+        where: {
+            id
+        }
+    })
+
+    if(!item){
+        return redirect(`/services`)
+    }
+
+    return {
+      title: item.title,
+      description: item.description,
+    }
+  }
 
 const CatalogItemPage = async ({
   params,
@@ -26,7 +55,7 @@ const CatalogItemPage = async ({
   })
 
   if(!item){
-    return redirect(`/services/`)
+    return redirect(`/services`)
   }
 
   return (
