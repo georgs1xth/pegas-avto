@@ -59,7 +59,7 @@ const CatalogItemCarousel = ({
                     }
                 </CarouselMainContainer>
                 </div>
-                <CarouselThumbsContainer className="w-full basis-1/4 gap-2 p-1 md:overflow-hidden">
+                <CarouselThumbsContainer className="w-full basis-1/4 gap-2 p-1">
                     {carouselItems.map((item) => (
                         <SliderThumbItem
                             key={item.id}
@@ -67,7 +67,7 @@ const CatalogItemCarousel = ({
                             className="aspect-[16/13] outline outline-1 outline-border size-full rounded-md"
                         >
                             <AspectRatio ratio={16/13}>
-                                <div className="flex items-center justify-center h-full w-full rounded-md cursor-pointer bg-bavckground py-2 aspect-[16/13]">
+                                <div className="flex items-center justify-center h-full w-full rounded-md cursor-pointer bg-bavckground aspect-[16/13]">
                                         <Image src={item.imageSrc!} alt={`Фото номер ${item.position}`} fill/>
                                 </div>
                             </AspectRatio>
