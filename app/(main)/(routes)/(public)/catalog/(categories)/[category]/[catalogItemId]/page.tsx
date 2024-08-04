@@ -5,6 +5,7 @@ import { redirect } from "next/navigation"
 import CatalogItemCarousel from "./_components/catalogItemCarousel"
 import { cn } from "@/lib/utils"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
+import { Preview } from "@/components/preview"
 
 const CatalogItemPage = async ({
   params,
@@ -107,9 +108,7 @@ const CatalogItemPage = async ({
         </div>
         <div className="flex flex-col gap-1">
           <h3 className="text-base font-medium">Краткое описание</h3>
-          <p className="text-xs">
-            {item.description}
-          </p>
+          <Preview value={item.description!}/>
         </div>
       </div>
     </div>
