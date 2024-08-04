@@ -20,6 +20,8 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
 import { CatalogItem } from "@prisma/client";
+import { Editor } from "@/components/editor";
+import { Preview } from "@/components/preview";
 
 interface DescriptionFormProps {
   initialData: CatalogItem
@@ -82,7 +84,10 @@ export const DescriptionForm = ({
           "text-sm mt-2",
           !initialData.description && "text-slate-400 italic"
         )}>
-          {initialData.description || "Нет описания"}
+          {!initialData.description && "Нет описания"}
+          {initialData.description && (
+            <Preview value={initialData.description}/>
+          )}
         </p>
       )}
       {isEditing && (
@@ -97,9 +102,7 @@ export const DescriptionForm = ({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Textarea 
-                      disabled={isSubmitting}
-                      placeholder="Например: бла-бла"
+                    <Editor
                       {...field}
                     />
                   </FormControl>

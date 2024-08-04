@@ -18,7 +18,7 @@ import { TitleForm } from "./_components/title-form"
 import { DescriptionForm } from "./_components/description-form"
 import { PriceForm } from "./_components/price-form"
 import { ImageForm } from "./_components/image-form"
-import { MoreDescriptionForm } from "./_components/more-description-form copy"
+import { MoreDescriptionForm } from "./_components/more-description-form"
 
 const AdminCatalogItemPage = async ({
     params
