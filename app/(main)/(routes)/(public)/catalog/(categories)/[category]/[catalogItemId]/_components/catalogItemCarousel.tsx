@@ -63,7 +63,7 @@ const CatalogItemCarousel = ({
                     {carouselItems.map((item) => (
                         <SliderThumbItem
                             key={item.id}
-                            index={item.position - 1}
+                            index={item.position}
                             className="aspect-[16/13] outline outline-1 outline-border size-full rounded-md"
                         >
                             <AspectRatio ratio={16/13}>

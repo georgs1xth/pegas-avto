@@ -66,7 +66,7 @@ const AdminCatalogItemPage = async ({
         catalogItem.description,
         // catalogItem.brandId,
         catalogItem.categoryId,
-        catalogItem.isAvailable,
+        // catalogItem.isAvailable,
     ]
 
     const totalFields = requiredFields.length;
