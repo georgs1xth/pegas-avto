@@ -40,8 +40,8 @@ const CatalogItemCarousel = ({
                 className="flex flex-col gap-2 w-full h-full overflow-visible"
                 orientation="horizontal"
             >
-                <CarouselNext className="top-1/3 -translate-y-1/3" />
-                <CarouselPrevious className="top-1/3 -translate-y-1/3" />
+                <CarouselNext className="top-1/3 right-2 -translate-y-1/3" />
+                <CarouselPrevious className="top-1/3 left-2 -translate-y-1/3" />
                 <div className="relative basis-3/4">
                 <CarouselMainContainer className="">
                     { !!carouselItems && carouselItems.length > 0 ?
