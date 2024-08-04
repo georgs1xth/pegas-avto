@@ -32,7 +32,9 @@ const CatalogItemCarousel = ({
             <Carousel
                 plugins={[
                     Autoplay({
-                        delay: 4000,
+                        delay: 2000,
+                        stopOnInteraction: false,
+                        stopOnFocusIn: false,
                     }),
                 ]}
                 className="flex flex-col gap-2 w-full h-full overflow-visible"
