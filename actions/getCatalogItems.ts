@@ -22,6 +22,7 @@ export const getCatalogItems = async ({
                 isPublished: true,
                 title: {
                     contains: title,
+                    mode: 'insensitive',
                 },
                 categoryId: categoryId,
             },
