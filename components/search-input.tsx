@@ -10,7 +10,7 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 export const SearchCatalog = () => {
 
     const [value, setValue] = useState("")
-    const debouncedValue = useDebounce(value, 0);
+    const debouncedValue = useDebounce(value, 500);
 
     // const searchParams = useSearchParams();
     const router = useRouter();
