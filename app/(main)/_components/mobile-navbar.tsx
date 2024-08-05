@@ -15,7 +15,7 @@ const MobileNavbar = ({
 }) => {
 
   return (
-    <div className='h-[60px] w-full flex justify-end items-center px-3 bg-background rounded-s-xl gap-1.5'>
+    <div className='h-[65px] w-full flex justify-end items-center px-3 bg-background rounded-s-xl gap-1.5'>
         <NavbarRoutes>
             {children}
         </NavbarRoutes>
