@@ -42,7 +42,7 @@ export async function generateMetadata({
     }
   }
 
-const CatalogItemPage = async ({
+const ServicesItemPage = async ({
   params,
 }: {
   params: {serviceItemId: string},
@@ -103,7 +103,7 @@ const CatalogItemPage = async ({
         <Accordion type="single" collapsible className="px-2">
             <AccordionItem value="item-1">
                 <AccordionTrigger className="text-lg">Подробнее</AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className="">
                     <Preview 
                         value={item.moreDescription}
                     />
@@ -117,4 +117,4 @@ const CatalogItemPage = async ({
   )
 }
 
-export default CatalogItemPage
+export default ServicesItemPage
