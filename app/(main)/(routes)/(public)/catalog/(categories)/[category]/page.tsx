@@ -59,18 +59,13 @@ const CategoryPage = async ({
         categoryId,
     })
 
-    
-
     if (!category){
         redirect("/catalog")
     }
 
-    
-
-
     return ( 
         <>
-            <div className="md:hidden px-2 py-4">
+            <div className="md:hidden px-3 pt-3">
                 <Suspense>
                     <SearchCatalog/>
                 </Suspense>

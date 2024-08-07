@@ -54,8 +54,8 @@ const SlideOverview = ({
                         <div className="w-full h-full">
 
                         {id === "addCarouselItem" ?
-                        <div className="flex justify-center items-center w-full h-full bg-slate-200/50">
-                            <PlusCircle className="w-14 h-14 text-slate-600"/>
+                        <div className="flex justify-center items-center w-full h-full bg-accent">
+                            <PlusCircle className="w-14 h-14 text-accent-foreground"/>
                         </div> :
                         !!imageSrc ?
                         <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt}/> :
@@ -79,7 +79,7 @@ const SlideOverview = ({
             </Link>
             <div className="flex flex-col justify-between md:min-h-[135px] max-h-max">
                 <div className="flex flex-col justify-center items-center text-center mt-2">
-                    <h3 className="lg:text-xl md:text-lg text-lg font-normal text-slate-700">
+                    <h3 className="lg:text-xl md:text-lg text-lg font-normal text-accent-foreground">
                         {itemTitle}
                     </h3>
                     {!!itemDescription ? <p className="text-muted-foreground text-sm">

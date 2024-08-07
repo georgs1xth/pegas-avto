@@ -34,7 +34,7 @@ const CatalogCarouselItem = ({
         <SliderMainItem className="h-full">
             <div className="h-full">
                 <AspectRatio ratio={16 / 13} className="rounded-xl h-full w-full overflow-hidden">
-                    <Image fill objectFit="contain" className="object-cover overflow-hidden py-4 rounded-xl border border-muted bg-gray-50" src={imageSrc} alt={imageAlt} loading="eager"/>
+                    <Image fill objectFit="contain" className="object-cover overflow-hidden py-4 rounded-xl border border-muted bg-accent/10" src={imageSrc} alt={imageAlt} loading="eager"/>
                 </AspectRatio>
             </div>
         </SliderMainItem>
