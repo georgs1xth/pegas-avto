@@ -9,6 +9,8 @@ import { Metadata } from "next";
 import { auth } from "@clerk/nextjs/server";
 import RoleButton from "@/components/role-button";
 import { Nabla } from "next/font/google";
+import toast from "react-hot-toast";
+import WarningDialog from "@/components/warning-dialog";
 
 
 const MainLayout = ({
@@ -22,9 +24,12 @@ children : React.ReactNode
     const isAdmin = checkRole('admin') ? true : checkRole('moderator') ? true : false 
 
     if(sessionClaims?.metadata.role === "admin" || process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "false"){
-        
+
     return (
         <div className="h-full">
+            
+            {process.env.WARNING === "true" && <WarningDialog/>}
+
             <div className="h-[60px] md:h-[80px] fixed inset-y-0 w-full z-50" >
                 <Navbar isAdmin={isAdmin}>
                     <RoleButton/>

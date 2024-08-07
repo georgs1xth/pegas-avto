@@ -64,10 +64,10 @@ const CarouselItems = ({
             </Link>
             <div className="flex flex-col justify-between md:min-h-[135px] max-h-max">
                 <div className="flex flex-col justify-center items-center text-center mt-2">
-                    <h2 className="lg:text-xl md:text-lg text-lg font-normal text-slate-700">
+                    <h2 className="text-xl text-accent-foreground/90">
                         {itemTitle}
                     </h2>
-                    {!!itemDescription ? <p className="text-muted-foreground text-sm">
+                    {!!itemDescription ? <p className="text-muted-foreground text-base font-normal">
                         {itemDescription}
                     </p> : null}
                 </div>

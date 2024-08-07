@@ -4,7 +4,7 @@ import React from 'react'
 
 const AccountButtons = () => {
   return (
-    <div className="flex justify-center items-center border rounded-md shadow-sm overflow-hidden hover:bg-slate-200 transition text-slate-700 justify-self-start">
+    <div className="flex justify-center items-center border rounded-md shadow-sm overflow-hidden hover:bg-accent-foreground transition text-foreground/90 justify-self-start">
                     <SignedOut>
                         <SignInButton>
                             <div className="px-4 py-2 hover:cursor-pointer bg-background/40 font-medium text-sm">

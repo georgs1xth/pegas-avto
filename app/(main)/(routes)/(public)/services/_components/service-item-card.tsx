@@ -38,6 +38,7 @@ const ServiceItemCrad = ({
                     alt={title}  
                     style={{ objectFit: 'cover' }} 
                     fill
+                    loading='eager'
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 /> :
                 null
@@ -51,7 +52,7 @@ const ServiceItemCrad = ({
                     <Button variant="default" className={cn("rounded-xl px-6", styles.btnOverlay)} type="button">Подробнее</Button>
                 </Link>
             </div>
-            <div className={cn("opacity-0 z-5 absolute backdrop-blur-md bg-white bg-opacity-[0.50] w-full h-full inset-0 transition-all p-3 flex justify-start" ,styles.hoverOverlay)}>
+            <div className={cn("opacity-0 z-5 absolute backdrop-blur-md bg-background/50 dark:bg-background/30 w-full h-full inset-0 transition-all p-3 flex justify-start" ,styles.hoverOverlay)}>
                 <div className="flex flex-col items-start gap-2 max-w-[calc(100%-3rem-90px)]">
                     {price > 1000 ?
                         <h2 className="text-lg font-medium text-accent-foreground">От {price} тг</h2>

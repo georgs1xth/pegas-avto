@@ -19,7 +19,7 @@ const MobileSidebar = ({
             <SheetTrigger className="md:hidden hover:opacity-75 transition">
                 <Menu/>
             </SheetTrigger>
-            <SheetContent side="right" className="p-0 gap-2 flex flex-col border-none bg-slate-200/70 rounded-s-xl">
+            <SheetContent side="right" className="p-0 gap-2 flex flex-col border-none bg-accent/20 dark:bg-accent-foreground/20 rounded-s-xl">
                 <MobileNavbar>
                     {children}
                 </MobileNavbar>
