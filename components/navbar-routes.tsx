@@ -40,17 +40,17 @@ children: React.ReactNode
                             </p>
                         </div>
                         <div className="flex-col">
-                            <a onClick={onClick} className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md cursor-pointer">
+                            <a onClick={onClick} className="flex gap-2 items-center hover:bg-accent transition pt-1 pb-2 px-2 rounded-md cursor-pointer">
                                 <p>
                                     Курмангазы 70Б
                                 </p>
                             </a>
-                            <a href={`https://yandex.com/maps/-/CDvdjJmz`} className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md cursor-pointer">
+                            <a href={`https://yandex.com/maps/-/CDvdjJmz`} className="flex gap-2 items-center hover:bg-accent transition pt-1 pb-2 px-2 rounded-md cursor-pointer">
                                 <p>
                                     Яндекс Карты
                                 </p>
                             </a>
-                            <a href={`https://maps.app.goo.gl/pWSmmUwydV6qeomk7`} className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md cursor-pointer">
+                            <a href={`https://maps.app.goo.gl/pWSmmUwydV6qeomk7`} className="flex gap-2 items-center hover:bg-accent transition pt-1 pb-2 px-2 rounded-md cursor-pointer">
                                 <p>
                                     Google Карты
                                 </p>
@@ -75,20 +75,20 @@ children: React.ReactNode
                             </p>
                         </div>
                         <div className="flex-col md:hidden">
-                            <a href={`tel:${87023923222}`} className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md">
-                                <h3 className="text-md text-slate-800">Влад:</h3>
+                            <a href={`tel:${87023923222}`} className="flex gap-2 items-center hover:bg-accent transition pt-1 pb-2 px-2 rounded-md">
+                                <h3 className="text-md text-accent-foreground">Влад:</h3>
                                 <p>
                                     +7 702 392 3222
                                 </p>
                             </a>
-                            <a href={`tel:${87058707885}`} className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md">
-                                <h3 className="text-md text-slate-800">Макс:</h3>
+                            <a href={`tel:${87058707885}`} className="flex gap-2 items-center hover:bg-accent transition pt-1 pb-2 px-2 rounded-md">
+                                <h3 className="text-md text-accent-foreground">Макс:</h3>
                                 <p>
                                     +7 705 870 7885
                                 </p>
                             </a>
-                            <a href={`tel:${87077050852}`} className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md">
-                                <h3 className="text-md text-slate-800">Георгий:</h3>
+                            <a href={`tel:${87077050852}`} className="flex gap-2 items-center hover:bg-accent transition pt-1 pb-2 px-2 rounded-md">
+                                <h3 className="text-md text-accent-foreground">Георгий:</h3>
                                 <p>
                                     +7 707 705 0852
                                 </p>
@@ -96,19 +96,19 @@ children: React.ReactNode
                         </div>
                         <div className="flex-col hidden md:flex">
                             <div className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md">
-                                <h3 className="text-md text-slate-800">Влад:</h3>
+                                <h3 className="text-md text-accent-foreground">Влад:</h3>
                                 <p>
                                     +7 702 392 3222
                                 </p>
                             </div>
                             <div className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md">
-                                <h3 className="text-md text-slate-800">Макс:</h3>
+                                <h3 className="text-md text-accent-foreground">Макс:</h3>
                                 <p>
                                     +7 705 870 7885
                                 </p>
                             </div>
                             <div className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md">
-                                <h3 className="text-md text-slate-800">Георгий:</h3>
+                                <h3 className="text-md text-accent-foreground">Георгий:</h3>
                                 <p>
                                     +7 707 705 0852
                                 </p>
