@@ -32,9 +32,9 @@ const Navbar = ({
                     <div className="hidden justify-center w-100px md:scale-125 md:w-[180px] xl:scale-150 xl:w-[240px] md:flex">
                     {!!isAdmin ? 
                         <h1 className="text-md font-medium flex gap-1 justify-center items-center">
-                            <Zap className="text-slate-800"/>
+                            <Zap className="text-accent"/>
                             <div className="flex flex-col gap-0">
-                                <span className="text-xs h-[10px] text-slate-700">made by </span>
+                                <span className="text-xs h-[10px] text-accent">made by </span>
                                 Georgiy
                             </div>
                         </h1>
@@ -45,18 +45,17 @@ const Navbar = ({
                 </Link>
 
             {isCatalogPage && (
-                <Suspense>
+                
                     <div className="ml-10 hidden md:block">
                         <SearchCatalog/>
                     </div>
-                </Suspense>
             )}
             
             <div className="justify-center md:hidden flex ml-4">
                 <Link href="/">
                     {!!isAdmin ? 
                         <h1 className="text-md font-medium flex flex-col gap-0">
-                            <span className="text-xs h-[8px] text-slate-700">made by </span>
+                            <span className="text-xs h-[8px] text-accent">made by </span>
                             Georgiy
                         </h1>
                         :            
