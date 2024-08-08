@@ -27,7 +27,11 @@ export const getCatalogItems = async ({
                 categoryId: categoryId,
             },
             include: {
-                imageSrcs : true,
+                imageSrcs: {
+                    orderBy: {
+                        position: "asc"
+                    }
+                },
             },
             orderBy: {
                 isAvailable: "desc",
