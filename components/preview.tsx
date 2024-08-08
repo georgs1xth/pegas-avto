@@ -14,7 +14,7 @@ interface PreviewProps {
 export const Preview = ({
     value
 }: PreviewProps) => {
-    const ReactQuill = useMemo(() => dynamic(() => import("react-quill"), { ssr: false, loading: () => <p className="flex gap-2 text-base font-base"><Activity strokeWidth={2}/>Загрузка...</p>, } ), [])
+    const ReactQuill = useMemo(() => dynamic(() => import("react-quill"), { ssr: false, loading: () => <><Activity strokeWidth={2}/>Загрузка...</>, } ), [])
 
     return (
             <ReactQuill 

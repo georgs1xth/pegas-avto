@@ -78,16 +78,16 @@ export const ImagesList = ({
                                     {(provided) => (
                                         <div 
                                             className={cn(
-                                                "flex items-center gap-x-2 bg-slate-200 border-slate-200 border text-slate-700 rounded-md mb-4 text-sm",
-                                                "bg-sky-100 border-sky-200 text-sky-700"
+                                                "flex items-center gap-x-2 bg-accent-foreground border-accent-foreground border rounded-md mb-4 text-sm",
+                                                "bg-accent border-accent-foreground/30 text-accent-foreground"
                                             )}
                                             ref={provided.innerRef}
                                             {...provided.draggableProps}
                                         >
                                             <div
                                                 className={cn(
-                                                    "px-2 py-3 border-r border-r-slate-200 hover:bg-slate-300 rounded-l-md transition",
-                                                    "border-sky-200 hover:bg-sky-200"
+                                                    "px-2 py-3 border-r border-r-accent-foreground/30 hover:bg-accent-foreground/20 rounded-l-md transition",
+                                                    "border-accent-foreground/30 hover:bg-accent-foreground/20"
                                                 )}
                                                 {...provided.dragHandleProps}
                                             >

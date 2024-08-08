@@ -79,10 +79,10 @@ export const ImagesForm = ({
   }
 
   return(
-    <div className="relative mt-6 border bg-slate-100 rounded-md p-4">
+    <div className="relative mt-6 border bg-accent/50 rounded-md p-4">
       {isUpdating && (
-        <div className="absolute z-10 h-full w-full bg-slate-500/20 top-0 right-0 bottom-0 rounded-md flex items-center justify-center">
-          <Loader2 className="animate-spin h-6 w-6 text-sky-700"/>
+        <div className="absolute z-10 h-full w-full bg-accent-foreground/40 top-0 right-0 bottom-0 rounded-md flex items-center justify-center">
+          <Loader2 className="animate-spin h-6 w-6 text-accent brightness-75"/>
         </div>
       )}
       <div className="font-medium flex items-center justify-between">
@@ -102,7 +102,7 @@ export const ImagesForm = ({
       {!isCreating && (
         <div className={cn(
           "text-sm mt-2",
-          !initialData.imageSrcs.length && "text-slate-500 italic"
+          !initialData.imageSrcs.length && "text-accent italic"
         )}>
           {!initialData.imageSrcs.length && "Фотографий не обнаружено"}
           <ImagesList
