@@ -28,7 +28,7 @@ children : React.ReactNode
     return (
         <div className="h-full">
             
-            {process.env.WARNING === "true" && <WarningDialog/>}
+            {process.env.WARNING === "true" && sessionClaims?.metadata.role !== "admin" && sessionClaims?.metadata.role !== "moderator" && <WarningDialog/>}
 
             <div className="h-[60px] md:h-[80px] fixed inset-y-0 w-full z-50" >
                 <Navbar isAdmin={isAdmin}>

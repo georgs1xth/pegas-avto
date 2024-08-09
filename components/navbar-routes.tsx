@@ -9,6 +9,7 @@ import { Popover,
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./mode-toggle";
+import React from "react";
 
 const NavbarRoutes = ({
     children
@@ -27,7 +28,7 @@ children: React.ReactNode
             <ModeToggle/>
             <Popover>
                 <PopoverTrigger>
-                    <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-2.5 py-2">
+                    <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border hover:bg-accent hover:text-accent-foreground h-10 px-2.5 py-2">
                         <MapPin className="h-5 w-5"/>
                         <p className="sr-only">Ссылки на местоположение</p>
                     </div>
@@ -59,10 +60,14 @@ children: React.ReactNode
                     </div>
                 </PopoverContent>
             </Popover>
-            {children}
+            <div className={cn(
+                children && React.Children.count(children) > 0 ? "flex" : "hidden"
+            )}>
+                {children}
+            </div>
             <Popover>
                 <PopoverTrigger>
-                    <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-2.5 py-2">
+                    <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border hover:bg-accent hover:text-accent-foreground h-10 px-2.5 py-2">
                         <PhoneCall className="h-5 w-5"/>
                         <p className="sr-only">Номера телефонов</p>
                     </div>

@@ -24,6 +24,8 @@ const Navbar = ({
 
     const isCatalogPage = pathname.includes("/catalog/");
 
+    const isMainPage = pathname === "/";
+
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -77,17 +79,18 @@ const Navbar = ({
         // </div>
     //  );
     <header className={cn('flex p-2 h-full w-full transition-all duration-100 border-b bg-background/50 backdrop-blur-md',
-        !!isScrolled ? 'shadow-lg dark:shadow-accent/30 md:shadow-none md:duration-0' : 'bg-transparent'
+        !!isScrolled && !!isMainPage ? 'shadow-lg dark:shadow-accent/30 md:shadow-none md:duration-0' : null,
     )}>
       <div className='flex items-center justify-between transition-all duration-100 w-full'>
         <Link href="/" className={cn("transition-all transform translate-x-1/2 scale-150",
-                        !!isScrolled ? "transform translate-x-0 scale-100 md:scale-150 md:translate-x-1/2" : null 
+                        !!isScrolled && !!isMainPage && "transform translate-x-0 scale-100 md:scale-150 md:translate-x-1/2",
+                        !isMainPage && "translate-x-0 md:translate-x-1/2 scale-100 md:scale-150"
         )}>
             <Logo/>
         </Link>
         {isCatalogPage && (
-                
-                <div className="ml-10 hidden md:block">
+            
+            <div className="ml-10 hidden md:block">
                     <SearchCatalog/>
                 </div>
         )}

@@ -5,7 +5,7 @@ import { LucideShieldAlert, Pencil } from "lucide-react"
 
 const RoleButton = () => {
   return (
-    <div>
+    <>
         {checkRole("admin") ?
                     <Link href="/admin/main" className="flex justify-center items-center">
                         <Button variant="ghost" className="p-3 hover:bg-slate-200/70 border-slate-200/20" type="button">
@@ -20,7 +20,7 @@ const RoleButton = () => {
                         </Button>
                     </Link> : null
                     }
-    </div>
+    </>
   )
 }
 
