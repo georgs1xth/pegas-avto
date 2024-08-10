@@ -84,23 +84,23 @@ const Navbar = ({
       <div className='flex items-center justify-between transition-all duration-100 w-full'>
         <Link href="/" className={cn("transition-all transform translate-x-1/2 scale-150",
                         !!isScrolled && !!isMainPage && "transform translate-x-0 scale-100 md:scale-150 md:translate-x-1/2",
-                        !isMainPage && "translate-x-0 md:translate-x-1/2 scale-100 md:scale-150"
+                        !isMainPage && "translate-x-0 md:translate-x-1/3 xl:translate-x-1/2 scale-100 md:scale-125 xl:scale-150"
         )}>
             <Logo/>
         </Link>
         {isCatalogPage && (
             
-            <div className="ml-10 hidden md:block">
-                    <SearchCatalog/>
-                </div>
+            <div className="ml-[5.5rem] xl:ml-40 hidden md:block">
+                <SearchCatalog/>
+            </div>
         )}
-        <div className=" hidden ml-auto gap-3 justify-center items-center md:flex">
+        <div className="hidden ml-auto gap-3 justify-center items-center md:flex">
             <AccountButtons/>
             <NavbarRoutes>
                 {children}
             </NavbarRoutes>
         </div>
-        <div className=" md:hidden flex justify-center items-center gap-4 pr-2">
+        <div className="md:hidden flex justify-center items-center gap-4 pr-2">
             <AccountButtons/>
             <MobileSidebar>
                 {children}

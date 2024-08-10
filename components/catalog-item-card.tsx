@@ -1,12 +1,9 @@
-import { Button } from "@/components/ui/button";
 import db from "@/lib/db";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
-import { CameraOff, Check, CircleCheck, Loader2Icon, X } from "lucide-react";
+import { CameraOff, Check, Loader2Icon, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
-import { Suspense } from "react";
-import { Skeleton } from "./ui/skeleton";
 import { cn } from "@/lib/utils";
 
 interface CatalogItemCardProps {
@@ -47,9 +44,7 @@ export const CatalogItemCard = async ({
             id: imageSrc
         }
     }) :
-    0
-    
-     
+    0     
 
 
 
@@ -84,7 +79,7 @@ export const CatalogItemCard = async ({
                     </>
                 ) : null}
             </div>
-            <div className="px-2 py-1 overflow-hidden">
+            <div className="px-2 py-1 overflow-hidden flex-grow">
                 <h2
                     className={cn(  "text-lg",
                                     !price && !!isAvailable && "text-accent-foreground/40",
