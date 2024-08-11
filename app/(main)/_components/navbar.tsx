@@ -89,7 +89,6 @@ const Navbar = ({
             <Logo/>
         </Link>
         {isCatalogPage && (
-            
             <div className="ml-[5.5rem] xl:ml-40 hidden md:block">
                 <SearchCatalog/>
             </div>
