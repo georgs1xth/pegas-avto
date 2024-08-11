@@ -24,7 +24,7 @@ const Home = async () => {
 
     return (
         <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4">
-            {/* <WinterSeason/> */}
+            <WinterSeason/>
             <MainCarousel
                 carouselItems={carouselItems}
             />
