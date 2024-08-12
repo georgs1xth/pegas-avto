@@ -1,5 +1,4 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
-import { LogIn } from 'lucide-react'
 import React from 'react'
 
 const AccountButtons = () => {
