@@ -13,8 +13,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import {
   ClerkProvider,
-  SignInButton,
-  SignUpButton,
 } from '@clerk/nextjs'
 import { OurFileRouter } from "./api/uploadthing/core";
 import { ToastProvider } from "@/components/providers/toaster-provider";
