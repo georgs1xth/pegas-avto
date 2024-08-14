@@ -43,7 +43,7 @@ const WinterSeason = () => {
   return (
     <div className="flex flex-col w-full h-[calc(100svh-75px)] overflow-hidden md:hidden px-4 pt-[5svh] pb-[10svh]">
         <div className="gap-1">
-          <TextEffect per='char' as='h2' preset='blur' className="text-3xl font-semibold text-center">
+          <TextEffect per="char" as='h2' preset='blur' className="text-3xl font-semibold text-center">
             {texts[currentText]}
           </TextEffect>
           <TextEffect per="char" as="h3" preset="blur" className="text-2xl font-normal text-center">
@@ -80,8 +80,9 @@ const WinterSeason = () => {
               },
             },
           }}
+          className="mx-auto"
         >
-        <Button variant="super" size="default" className="text-lg rounded-xl w-full">
+        <Button variant="super" size="lg" className="text-lg rounded-xl w-max">
             Подобрать автосигнализацию
         </Button>
         </InView>
