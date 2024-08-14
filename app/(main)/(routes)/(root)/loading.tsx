@@ -2,6 +2,21 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
     return (
+        <>
+        {/* <div className="flex flex-col w-full h-[calc(100svh-75px)] overflow-hidden md:hidden px-4 pt-[5svh] pb-[10svh]">
+            <div className="gap-1">
+                <Skeleton className="text-3xl font-semibold text-center"/>
+                <Skeleton className="text-2xl font-normal text-center"/>  
+            </div>
+
+            <div className='flex-grow relative'>
+                <Skeleton
+                className="size-full -mt-[1svh]"
+                />
+            </div>
+
+            <Skeleton className="mx-auto w-full"/>
+        </div> */}
         <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4"> 
             <div className="flex flex-row gap-4">
                 <div className="basis-full md:grid md:basis-1/2 xl:basis-1/3 h-full">
@@ -78,19 +93,10 @@ export default function Loading() {
                         <Skeleton className="w-64 sm:w-72 md:w-96 h-3"/>
                         <Skeleton className=" w-48 sm:w-60 md:w-80 h-3"/>
                     </div>
-                    {/* <InfoCardBtn/> */}
                 </div>
-                {/*
-                <InfoCard
-                icon={Handshake}
-                label="Работаем с организациями"
-                description="Мы предоставляем организациям полный пакет документов для бухгалтерии. Акты выполненных работ, cчета-фактуры и т.д. Всё профессионально и в срок."
-                wideness="two"
-                addButton
-                btnHref="/partnership"
-                /> */}
             </div>
             
         </div>
+        </>
     )
 }
