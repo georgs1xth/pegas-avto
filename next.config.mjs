@@ -1,7 +1,7 @@
 const cspHeader = `
- default-src 'self https://*.s3.amazonaws.com';
+ default-src 'self' https://*.s3.amazonaws.com https://api.uploadthing.com;
  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://clerk.pegas-avto-a.com https://challenges.cloudflare.com;
- connect-src 'self' https://clerk.pegas-avto-a.com https://*.s3.amazonaws.com;
+ connect-src 'self' https://clerk.pegas-avto-a.com https://*.s3.amazonaws.com https://api.uploadthing.com;
  img-src 'self' https://img.clerk.com https://uploadthing.com/ https://*.s3.amazonaws.com;
  worker-src 'self' blob:;
  style-src 'self' 'unsafe-inline';
