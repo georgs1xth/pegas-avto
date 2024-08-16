@@ -1,5 +1,5 @@
 import { CatalogItemCard } from "@/components/catalog-item-card"
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@/components/ui/breadcrumb"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import db from "@/lib/db"
 const AdminCatalogItemsPage = async () => {
 
@@ -22,9 +22,17 @@ const AdminCatalogItemsPage = async () => {
 
     return (
     <div>
-        <Breadcrumb>
+        <Breadcrumb className="p-3">
             <BreadcrumbItem>
                     <BreadcrumbLink href="/admin">Главная администратора</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator/>
+            <BreadcrumbItem>
+                    <BreadcrumbLink href="/admin/catalog">Настройки каталога</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator/>
+            <BreadcrumbItem>
+                    <BreadcrumbPage>Настройки товаров</BreadcrumbPage>
             </BreadcrumbItem>
         </Breadcrumb>
 
