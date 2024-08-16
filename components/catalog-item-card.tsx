@@ -44,7 +44,21 @@ export const CatalogItemCard = async ({
             id: imageSrc
         }
     }) :
-    0     
+    0    
+    
+    function formatPrice(price: number) {
+        // Assuming price is a number (e.g., 1234.56)
+        const formattedPrice = price.toFixed(0); // Always show 2 decimal places
+      
+        // Add thousands separators (optional)
+        const parts = formattedPrice.split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      
+        // Add currency symbol (optional)
+        const currencySymbol = '₸'; // You can customize this
+        return `${parts.join('.')} ${currencySymbol}`;
+      }
+    
 
   return (
     <Link href={linkHref} className="w-full aspect-[16/7] p-2 grid grid-cols-2 gap-2 border shadow-sm hover:shadow-md rounded-lg hover:scale-[1.02] transition overflow-hidden">
@@ -85,7 +99,7 @@ export const CatalogItemCard = async ({
                                 !!price && !!isAvailable && "text-accent-foreground/90 font-semibold",
                 )}
             >
-                {!!isAvailable && !!price ? <>{price.toString()}</>
+                {!!isAvailable && !!price ? <>{formatPrice(price)}</>
                 : !!isAvailable && !price ? <>Цена уточняется</>
                 : <>Нет в наличии</>}
 
