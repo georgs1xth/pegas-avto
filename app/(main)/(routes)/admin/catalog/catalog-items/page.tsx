@@ -1,4 +1,5 @@
 import { CatalogItemCard } from "@/components/catalog-item-card"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@/components/ui/breadcrumb"
 import db from "@/lib/db"
 const AdminCatalogItemsPage = async () => {
 
@@ -21,6 +22,12 @@ const AdminCatalogItemsPage = async () => {
 
     return (
     <div>
+        <Breadcrumb>
+            <BreadcrumbItem>
+                    <BreadcrumbLink href="/admin">Главная администратора</BreadcrumbLink>
+            </BreadcrumbItem>
+        </Breadcrumb>
+
         <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-3 p-3">
             {catalogItems.map((item) => (
                 <CatalogItemCard
