@@ -93,7 +93,7 @@ export const CatalogItemCard = async ({
         
         <div className="flex flex-col px-2 py-1 overflow-hidden">
             <h2
-                className={cn(  "text-lg",
+                className={cn(  "text-2xl",
                                 !price && !!isAvailable && "text-accent-foreground/40",
                                 !isAvailable && "text-accent-foreground/40",
                                 !!price && !!isAvailable && "text-accent-foreground/90 font-semibold",
@@ -105,7 +105,7 @@ export const CatalogItemCard = async ({
 
             </h2>
 
-            <div className="text-sm line-clamp-2 max-h-max flex-grow">{title}</div>
+            <div className="text-base line-clamp-3 max-h-max flex-grow">{title}</div>
 
             <p className="text-muted-foreground text-xs line-clamp-1">{!!categoryItem?.name ? categoryItem.name : <>Другое</>}</p>
         </div>
