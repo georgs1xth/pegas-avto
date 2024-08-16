@@ -17,13 +17,13 @@ const AdminCatalogItemsPage = async () => {
             }
         },
         orderBy: {
-            isAvailable: "desc",
+            categoryId: "desc"
         }
     })
 
     return (
     <div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-3 p-3">
             {catalogItems.map((item) => (
                 <CatalogItemCard
                     key={item.id}

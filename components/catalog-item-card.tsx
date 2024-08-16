@@ -94,7 +94,6 @@ export const CatalogItemCard = async ({
             <div className="text-sm line-clamp-2 max-h-max flex-grow">{title}</div>
 
             <p className="text-muted-foreground text-xs line-clamp-1">{!!categoryItem?.name ? categoryItem.name : <>Другое</>}</p>
-
         </div>
     </Link>
   )
