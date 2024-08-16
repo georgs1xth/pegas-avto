@@ -47,7 +47,7 @@ export const CatalogItemCard = async ({
     0     
 
   return (
-    <Link href={linkHref} className="w-full aspect-[16/7] p-2 grid grid-cols-2 gap-2 border shadow-sm hover:shadow-md rounded-lg hover:scale-105 transition overflow-hidden">
+    <Link href={linkHref} className="w-full aspect-[16/7] p-2 grid grid-cols-2 gap-2 border shadow-sm hover:shadow-md rounded-lg hover:scale-[1.02] transition overflow-hidden">
         <div className="flex justify-center items-center py-2 ">
                 <AspectRatio ratio={16 / 12} className="rounded-lg flex justify-center items-center w-full relative">
                     {!!imageFromImageSrc ?
@@ -94,7 +94,7 @@ export const CatalogItemCard = async ({
             <div className="text-sm line-clamp-2 max-h-max flex-grow">{title}</div>
 
             <p className="text-muted-foreground text-xs line-clamp-1">{!!categoryItem?.name ? categoryItem.name : <>Другое</>}</p>
-            
+
         </div>
     </Link>
   )
