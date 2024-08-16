@@ -3,18 +3,36 @@ import db from "@/lib/db"
 const AdminCatalogItemsPage = async () => {
   
 
+    // const catalogItems = await db.catalogItem.findMany({
+    //     include: {
+    //         category:{
+    //             select:{
+    //                 id: true
+    //             }
+    //         },
+    //         imageSrcs: {
+    //             select: {
+    //                 id: true,
+    //             }
+    //         }
+    //     },
+    //     orderBy: {
+    //         categoryId: "desc"
+    //     }
+    // })
+
+
     const catalogItems = await db.catalogItem.findMany({
         include: {
-            category:{
-                select:{
-                    id: true
-                }
-            },
             imageSrcs: {
                 select: {
                     id: true,
+                    position: true,
+                },
+                orderBy: {
+                    position: "asc"
                 }
-            }
+            },
         },
         orderBy: {
             categoryId: "desc"
@@ -33,7 +51,7 @@ const AdminCatalogItemsPage = async () => {
                     imageSrc={item.imageSrcs[0]?.id}
                     isAvailable={item.isAvailable}
                     brandId={item.brandId!}
-                    categoryId={item.category?.id!}
+                    categoryId={item.categoryId!}
                     isAdmin={true}
                     isPublished={item.isPublished}
                     // description={item.description}
