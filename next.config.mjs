@@ -1,5 +1,4 @@
 const cspHeader = `
- default-src 'self';
  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://clerk.pegas-avto-a.com https://challenges.cloudflare.com;
  connect-src 'self' https://clerk.pegas-avto-a.com;
  img-src *;
