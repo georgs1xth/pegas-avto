@@ -2,7 +2,7 @@ const cspHeader = `
  default-src 'self';
  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://clerk.pegas-avto-a.com https://challenges.cloudflare.com;
  connect-src 'self' https://clerk.pegas-avto-a.com;
- img-src 'self' https://img.clerk.com;
+ img-src 'self' https://img.clerk.com https://uploadthing.com/;
  worker-src 'self' blob:;
  style-src 'self' 'unsafe-inline';
  frame-src 'self' https://challenges.cloudflare.com;
@@ -10,7 +10,7 @@ const cspHeader = `
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // assetPrefix: '',
+    assetPrefix: '',
     async headers() {
         return [
         {
