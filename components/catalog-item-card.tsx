@@ -48,7 +48,7 @@ export const CatalogItemCard = async ({
 
   return (
     <Link href={linkHref} className="w-full aspect-[16/7] p-2 grid grid-cols-2 gap-2 border shadow-sm hover:shadow-md rounded-lg hover:scale-[1.02] transition overflow-hidden">
-        <div className="flex justify-center items-center py-2 ">
+        <div className="flex justify-center items-center py-2 relative">
                 <AspectRatio ratio={16 / 12} className="rounded-lg flex justify-center items-center w-full relative">
                     {!!imageFromImageSrc ?
                     <Loader2Icon

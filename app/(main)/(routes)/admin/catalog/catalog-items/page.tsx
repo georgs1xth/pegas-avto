@@ -1,26 +1,6 @@
 import { CatalogItemCard } from "@/components/catalog-item-card"
 import db from "@/lib/db"
 const AdminCatalogItemsPage = async () => {
-  
-
-    // const catalogItems = await db.catalogItem.findMany({
-    //     include: {
-    //         category:{
-    //             select:{
-    //                 id: true
-    //             }
-    //         },
-    //         imageSrcs: {
-    //             select: {
-    //                 id: true,
-    //             }
-    //         }
-    //     },
-    //     orderBy: {
-    //         categoryId: "desc"
-    //     }
-    // })
-
 
     const catalogItems = await db.catalogItem.findMany({
         include: {
