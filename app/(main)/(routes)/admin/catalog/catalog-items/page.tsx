@@ -26,11 +26,9 @@ const AdminCatalogItemsPage = async () => {
             <BreadcrumbItem>
                     <BreadcrumbLink href="/admin">Главная администратора</BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator/>
             <BreadcrumbItem>
                     <BreadcrumbLink href="/admin/catalog">Настройки каталога</BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator/>
             <BreadcrumbItem>
                     <BreadcrumbPage>Настройки товаров</BreadcrumbPage>
             </BreadcrumbItem>
