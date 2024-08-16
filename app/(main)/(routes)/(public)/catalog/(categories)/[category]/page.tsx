@@ -70,12 +70,11 @@ const CategoryPage = async ({
                     <SearchCatalog/>
                 </Suspense>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 p-3">
-                <Suspense fallback={
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-3 p-3">
+                {/* <Suspense fallback={
                     (new Array(10)).map((item) => (
-                        <Skeleton key={item} className="p-2 flex shadow-sm hover:shadow-md rounded-lg aspect-[3/4]"/>
-                        
-                    ))}>
+                        <Skeleton key={item} className="p-2 flex shadow-sm rounded-lg aspect-[3/4]"/>
+                    ))}> */}
                 {items.map((item) => (
                     <CatalogItemCard
                         key={item.id}
@@ -90,7 +89,7 @@ const CategoryPage = async ({
                         // description={item.description}
                         />
                     ))}
-                </Suspense>
+                {/* </Suspense> */}
             </div>
         </>
      );

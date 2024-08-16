@@ -46,12 +46,9 @@ export const CatalogItemCard = async ({
     }) :
     0     
 
-
-
   return (
-    <Link href={linkHref}>
-        <div className="p-2 flex flex-col justify-evenly border shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition aspect-[3/4]">
-            <div className="relative flex justify-center items-center py-2">
+    <Link href={linkHref} className="w-full aspect-[16/7] p-2 grid grid-cols-2 gap-2 border shadow-sm hover:shadow-md rounded-lg hover:scale-105 transition overflow-hidden">
+        <div className="flex justify-center items-center py-2 ">
                 <AspectRatio ratio={16 / 12} className="rounded-lg flex justify-center items-center w-full relative">
                     {!!imageFromImageSrc ?
                     <Loader2Icon
@@ -78,31 +75,34 @@ export const CatalogItemCard = async ({
                     )}
                     </>
                 ) : null}
-            </div>
-            <div className="px-2 py-1 overflow-hidden flex-grow">
-                <h2
-                    className={cn(  "text-lg",
-                                    !price && !!isAvailable && "text-accent-foreground/40",
-                                    !isAvailable && "text-accent-foreground/40",
-                                    !!price && !!isAvailable && "text-accent-foreground/90 font-semibold",
-                    )}
-                >
-                    {!!isAvailable && !!price ? <>{price.toString()}</>
-                    : !!isAvailable && !price ? <>Цена уточняется</>
-                    : <>Нет в наличии</>}
+        </div>
+        
+        <div className="flex flex-col px-2 py-1 overflow-hidden">
+            <h2
+                className={cn(  "text-lg",
+                                !price && !!isAvailable && "text-accent-foreground/40",
+                                !isAvailable && "text-accent-foreground/40",
+                                !!price && !!isAvailable && "text-accent-foreground/90 font-semibold",
+                )}
+            >
+                {!!isAvailable && !!price ? <>{price.toString()}</>
+                : !!isAvailable && !price ? <>Цена уточняется</>
+                : <>Нет в наличии</>}
 
-                </h2>
-                {/* {!!price && !!isAvailable ? <h2 className="text-lg font-semibold text-slate-900">{price.toString()} тг </h2> :
-                !price && !!isAvailable ? <h2 className="text-lg text-slate-400">цена уточняется</h2> :
-                <h2 className="text-lg text-slate-400">Нет в наличии</h2>} */}
+            </h2>
 
-                <div className="flex flex-col gap-1 justify-between">
-                        <div className="text-sm line-clamp-2 max-h-max">{title}</div>
-                    <div>
-                        <p className="text-muted-foreground text-xs">{!!categoryItem?.name ? categoryItem.name : <>Другое</>}</p>            
-                    </div>
-                </div>
-            </div>
+            <div className="text-sm line-clamp-2 max-h-max flex-grow">{title}</div>
+
+            <p className="text-muted-foreground text-xs line-clamp-1">{!!categoryItem?.name ? categoryItem.name : <>Другое</>}</p>
+            
+        </div>
+    </Link>
+  )
+
+  return (
+    <Link href={linkHref}>
+        <div className="p-2 flex flex-col justify-evenly border shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition aspect-[3/4]">
+            
         </div>
     </Link>
   )
