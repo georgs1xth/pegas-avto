@@ -25,6 +25,7 @@ export const getCatalogItems = async ({
                     mode: 'insensitive',
                 },
                 categoryId: categoryId,
+                isAvailable: true,
             },
             include: {
                 imageSrcs: {
@@ -34,7 +35,7 @@ export const getCatalogItems = async ({
                 },
             },
             orderBy: {
-                isAvailable: "desc",
+                Price: "desc"
             }
         })
 
