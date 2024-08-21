@@ -7,15 +7,22 @@ type CatalogItemWithCategory = CatalogItem & {
 
 type GetCatalogItems = {
     title?: string;
+    sort?: "asc" | "desc" | "none"
     categoryId?: string;
 }
 
 export const getCatalogItems = async ({
     title,
+    sort,
     categoryId,
 }: GetCatalogItems): Promise<CatalogItemWithCategory[]> => {
+    
+    if(sort != "none"){sort = sort}
+    else{sort = undefined}
+    
     try{
 
+        
 
         const catalogItems = await db.catalogItem.findMany({
             where: {
@@ -35,7 +42,7 @@ export const getCatalogItems = async ({
                 },
             },
             orderBy: {
-                Price: "desc"
+                Price: sort
             }
         })
 

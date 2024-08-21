@@ -1,11 +1,14 @@
 import { getCatalogItems } from "@/actions/getCatalogItems";
 import { CatalogItemCard } from "@/components/catalog-item-card";
 import { SearchCatalog } from "@/components/search-input";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Skeleton } from "@/components/ui/skeleton";
 import db from "@/lib/db";
+import { Filter } from "lucide-react";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
+import FilterPrice from "./_components/filter-price";
 
 
 
@@ -40,6 +43,7 @@ const CategoryPage = async ({
     params: {category: string},
     searchParams: {
         title: string;
+        sort: "asc" | "desc";
     }
 }) => {
 
@@ -54,21 +58,36 @@ const CategoryPage = async ({
 
     const categoryId = category?.id;
 
+    
+    if (!category){
+        redirect("/catalog")
+    }
+    
     const items = await getCatalogItems({
         ...searchParams,
         categoryId,
     })
 
-    if (!category){
-        redirect("/catalog")
-    }
+    const SORT_OPTIONS = [
+        {name: "По умолчанию", value: "none"},
+        {name: "По возрастанию цены", value: "asc"},
+        {name: "По убыванию цены", value: "desc"},
+
+    ] as const
+
+
 
     return ( 
         <>
-            <div className="md:hidden px-3 pt-3">
-                <Suspense>
-                    <SearchCatalog/>
-                </Suspense>
+            <div className="px-3 pt-3 flex flex-col gap-2 w-full">
+                <div className="md:hidden">
+                    <Suspense>
+                        <SearchCatalog/>
+                    </Suspense>
+                </div>
+                <FilterPrice
+                    options={SORT_OPTIONS}
+                />
             </div>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-3 p-3">
                 {/* <Suspense fallback={
