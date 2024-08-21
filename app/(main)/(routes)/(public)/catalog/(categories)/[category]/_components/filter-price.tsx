@@ -48,7 +48,6 @@ const FilterPrice = ({
                 Сортировка
                 <Filter className=" h-5 w-5 flex-shrink-0 text-accent-foreground group-hover:text-accent-foreground/80 transition-colors duration-100"/>
             </DropdownMenuTrigger>
-
             <DropdownMenuContent align="end">
                 {options.map((option) => (
                     <button 

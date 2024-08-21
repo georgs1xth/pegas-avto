@@ -70,8 +70,8 @@ const CategoryPage = async ({
 
     const SORT_OPTIONS = [
         {name: "По умолчанию", value: "none"},
-        {name: "По возрастанию цены", value: "asc"},
-        {name: "По убыванию цены", value: "desc"},
+        {name: "Сначала дешевые", value: "asc"},
+        {name: "Сначала дорогие", value: "desc"},
 
     ] as const
 
