@@ -8,7 +8,8 @@ import WinterSeason from "@/components/seasons/winter/winter-season";
 
 
 export const metadata: Metadata = {
-  description: "Широкий выбор услуг для вашего автомобиля. Ремонт, установка доп. оборудования, заправка автокондиционеров и многое другое.",
+    title: { absolute: "СТО Пегас avto A"},
+    description: "Широкий выбор услуг для вашего автомобиля. Ремонт, установка доп. оборудования, заправка автокондиционеров и многое другое.",
 };
 
 const Home = async () => {

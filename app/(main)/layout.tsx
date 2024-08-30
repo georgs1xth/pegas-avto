@@ -13,6 +13,15 @@ import toast from "react-hot-toast";
 import WarningDialog from "@/components/warning-dialog";
 
 
+export const metadata: Metadata = {
+    title: {
+      default: "СТО Пегас avto A",
+      template: "%s | СТО Пегас avto A",
+    },
+    other: { "google-site-verification": "YGfdW5HMTs0VsVfYZmKLqpQm2KfGiOQ5D3a0CUKYr8c"        
+    }
+  };
+
 const MainLayout = ({
     children
 }: {
