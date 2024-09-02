@@ -9,6 +9,7 @@ import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import FilterPrice from "./_components/filter-price";
+import FilterParameters from "./_components/filter-parameters";
 
 
 
@@ -72,10 +73,13 @@ const CategoryPage = async ({
         {name: "По умолчанию", value: "none"},
         {name: "Сначала дешевые", value: "asc"},
         {name: "Сначала дорогие", value: "desc"},
-
     ] as const
 
-
+    const PARAMETERS = await db.categoryParam.findMany({
+        where: {
+            categoryId
+        }
+    })
 
     return ( 
         <>
@@ -89,6 +93,9 @@ const CategoryPage = async ({
                     options={SORT_OPTIONS}
                 />
             </div>
+            <FilterParameters
+                options={PARAMETERS}
+            />
             <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-3 p-3">
                 {/* <Suspense fallback={
                     (new Array(10)).map((item) => (

@@ -68,6 +68,19 @@ model Category {
   webRef      String?       @unique
   isPublished Boolean       @default(false)
   items       CatalogItem[]
+  categoryParams CategoryParam[]
+}
+
+model CategoryParam {
+  id String @id @default(uuid())
+
+  name String
+  value String
+  
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@index([categoryId])
 }
 
 model Appointment {
