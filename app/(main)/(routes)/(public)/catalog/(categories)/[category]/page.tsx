@@ -93,9 +93,9 @@ const CategoryPage = async ({
                     options={SORT_OPTIONS}
                 />
             </div>
-            <FilterParameters
+            {/* <FilterParameters
                 options={PARAMETERS}
-            />
+            /> */}
             <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-3 p-3">
                 {/* <Suspense fallback={
                     (new Array(10)).map((item) => (
