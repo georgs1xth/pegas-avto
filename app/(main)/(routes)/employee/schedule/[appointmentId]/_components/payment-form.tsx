@@ -30,6 +30,10 @@ const formSchema = z.object({
   amount: z.number({
     required_error: "Необходима предоплата",
     invalid_type_error: "Введите только цифры"
+  }),
+  fullPrice: z.number({
+    required_error: "Необходима предоплата",
+    invalid_type_error: "Введите только цифры",
   })
 });
 
@@ -46,7 +50,8 @@ export const PaymentForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-        amount: initialData.amount
+        amount: initialData.amount,
+        fullPrice: initialData.fullPrice | 0,
     }, 
   });
 
@@ -66,7 +71,7 @@ export const PaymentForm = ({
   return(
     <div className="mt-6 border bg-accent/50 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Предоплата
+        Оплата
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Отмена</>
@@ -99,6 +104,28 @@ export const PaymentForm = ({
                       type="number"
                       disabled={isSubmitting}
                       placeholder="Например: 5000"
+                      {...field}
+                      onChange={ (e) => {
+                        const value = parseFloat(e.target.value);
+                        field.onChange(value);
+                      }}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
+            <FormField 
+              control={form.control}
+              name="fullPrice"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input 
+                      type="number"
+                      disabled={isSubmitting}
+                      placeholder="Например: 10000"
                       {...field}
                       onChange={ (e) => {
                         const value = parseFloat(e.target.value);

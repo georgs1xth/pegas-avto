@@ -56,8 +56,6 @@ const AppointmentIdPage = async ({
     
     const completionText = `(${completedFields}/${totalFields})`
 
-    const isComplete = requiredFields.every(Boolean);
-    
     return (
         <>
             <div className="p-4">
