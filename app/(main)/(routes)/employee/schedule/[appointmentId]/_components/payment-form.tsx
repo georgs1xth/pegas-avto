@@ -11,6 +11,7 @@ import {
   FormControl,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input";
@@ -99,6 +100,7 @@ export const PaymentForm = ({
               name="amount"
               render={({ field }) => (
                 <FormItem>
+                  <FormLabel>Предоплата</FormLabel>
                   <FormControl>
                     <Input 
                       type="number"
@@ -121,6 +123,7 @@ export const PaymentForm = ({
               name="fullPrice"
               render={({ field }) => (
                 <FormItem>
+                  <FormLabel>Полная оплата</FormLabel>
                   <FormControl>
                     <Input 
                       type="number"
