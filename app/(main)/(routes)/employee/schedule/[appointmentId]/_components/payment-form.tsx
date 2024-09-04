@@ -72,7 +72,9 @@ export const PaymentForm = ({
   return(
     <div className="mt-6 border bg-accent/50 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Оплата
+        {!isEditing ? <>Осталось оплатить</> :
+        <>Оплата</>
+        }
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Отмена</>
@@ -86,7 +88,7 @@ export const PaymentForm = ({
       </div>
       {!isEditing && (
         <p className="text-sm mt-2">
-          {initialData.amount}
+          {initialData.fullPrice-initialData.amount}
         </p>
       )}
       {isEditing && (
