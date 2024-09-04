@@ -109,6 +109,19 @@ export const Columns: ColumnDef<Appointment>[] = [
     }
   },
   {
+    accessorKey: "fullPrice",
+    header: () => <div className='text-right'>Полная оплата</div>,
+    cell: ({row}) => {
+      const fullPrice = parseFloat(row.getValue("fullPrice"))
+      const formatted = new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "KZT",
+      }).format(fullPrice)
+
+      return <div className="text-right font-medium">{formatted}</div>
+    }
+  },
+  {
     id: "actions",
     cell: ({ row }) => {
       const appointment = row.original

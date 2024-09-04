@@ -76,7 +76,7 @@ model CategoryParam {
 
   name String
   value String
-  
+
   categoryId String
   category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
@@ -89,6 +89,7 @@ model Appointment {
   phone  String
   car    String?
   amount Int      @default(0)
+  fullPrice   Int        @default(0)
   total  Int      @default(5000)
   date   DateTime @default(now())
 }
