@@ -1,7 +1,17 @@
 const PartnershipPage = () => {
     return ( 
         <div>
-            This is partnership page!
+            <div>
+                <h3>
+                    По поводу сотрудничества звоните по номеру:
+                </h3>
+                <p>
+                    +7 702 392 3222
+                </p>
+            </div>
+            <p>
+                Раздел дополняется
+            </p>
         </div>
      );
 }

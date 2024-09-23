@@ -4,7 +4,7 @@ const AboutPage = () => {
     return ( 
         <div>
             <GoAdmin/>
-            This is about page!
+            Раздел дополняется
         </div>
      );
 }
