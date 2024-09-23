@@ -1,6 +1,6 @@
 const PartnershipPage = () => {
     return ( 
-        <div>
+        <div className="justify-center items-center text-center">
             <div>
                 <h3>
                     По поводу сотрудничества звоните по номеру:
