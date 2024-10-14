@@ -7,6 +7,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { InView } from "@/components/core/in-view";
+import { useRouter } from "next/navigation";
 
 const WinterSeason = () => {
 
@@ -38,7 +39,11 @@ const WinterSeason = () => {
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [texts.length]);
 
+  const router = useRouter();
 
+  const goToStarline = () => {
+    router.push("/catalog/Охранные-комплексы?sort=none");
+  }
 
   return (
     <div className="flex flex-col w-full h-[calc(100svh-75px)] overflow-hidden md:hidden px-4 pt-[5svh] pb-[10svh]">
@@ -82,7 +87,7 @@ const WinterSeason = () => {
           }}
           className="mx-auto"
         >
-        <Button variant="super" size="lg" className="text-lg rounded-xl w-max">
+        <Button variant="super" size="lg" className="text-lg rounded-xl w-max" onClick={goToStarline}>
             Подобрать автосигнализацию
         </Button>
         </InView>
