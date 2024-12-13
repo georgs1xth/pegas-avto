@@ -13,7 +13,7 @@ interface CatalogItemCardProps {
     price: number;
     isAvailable: boolean;
     brandId: string;
-    categoryId: string;
+    categoryId?: string;
     isAdmin?: boolean;
     isPublished: boolean;
 }
@@ -111,14 +111,6 @@ export const CatalogItemCard = async ({
             <div className="text-base line-clamp-3 max-h-max flex-grow">{title}</div>
 
             <p className="text-muted-foreground text-xs line-clamp-1">{!!categoryItem?.name ? categoryItem.name : <>Другое</>}</p>
-        </div>
-    </Link>
-  )
-
-  return (
-    <Link href={linkHref}>
-        <div className="p-2 flex flex-col justify-evenly border shadow-sm hover:shadow-md rounded-lg hover:scale-[1.03] md:hover:scale-105 hover:-rotate-[0.5deg] md:hover:-rotate-[1deg] transition aspect-[3/4]">
-            
         </div>
     </Link>
   )

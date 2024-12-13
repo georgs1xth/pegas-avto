@@ -93,7 +93,7 @@ const ServicesItemPage = async ({
                 {item.title}
             </h2>
             <h3 className="text-2xl font-medium">
-                {!!item.price ? <>От {item.price} тг</> : <>Цена обговаривается</>}
+                {!!item.price ? <>От {item.price} тг</> : <>Цена договорная</>}
             </h3>
             <p className="text-sm px-2">
                 {item.description}
