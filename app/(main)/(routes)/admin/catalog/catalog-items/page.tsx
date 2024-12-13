@@ -8,7 +8,7 @@ const AdminCatalogItemsPage = async () => {
         const catalogItems = await db.catalogItem.findMany({
             where: {
                 id: {
-                    not: null
+                    not: undefined
                 }
             },
             include: {
