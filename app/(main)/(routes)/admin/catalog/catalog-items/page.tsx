@@ -6,6 +6,11 @@ const AdminCatalogItemsPage = async () => {
 
     try {
         const catalogItems = await db.catalogItem.findMany({
+            where: {
+                id: {
+                    not: null
+                }
+            },
             include: {
                 imageSrcs: {
                     select: {
