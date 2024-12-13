@@ -1,12 +1,14 @@
 import { CatalogItemCard } from "@/components/catalog-item-card"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import db from "@/lib/db"
+
 const AdminCatalogItemsPage = async () => {
 
-    const catalogItems = await db.catalogItem.findMany({
-        include: {
-            imageSrcs: {
-                select: {
+    try {
+        const catalogItems = await db.catalogItem.findMany({
+            include: {
+                imageSrcs: {
+                    select: {
                     id: true,
                     position: true,
                 },
@@ -19,7 +21,7 @@ const AdminCatalogItemsPage = async () => {
             categoryId: "desc"
         }
     })
-
+    
     return (
     <div>
         <Breadcrumb className="p-3">
@@ -56,7 +58,14 @@ const AdminCatalogItemsPage = async () => {
             ))}
         </div>
     </div>
+    
   )
+  
+}
+    catch
+    {
+        console.log("[ADMIN_CATALOG_ITEMS_PAGE]")
+    }
 }
 
 export default AdminCatalogItemsPage
