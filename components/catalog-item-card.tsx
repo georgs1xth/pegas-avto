@@ -29,12 +29,15 @@ export const CatalogItemCard = async ({
     isPublished,
 }: CatalogItemCardProps) => {
 
-        const categoryItem = await db.category.findUnique({
+    let categoryItem = null;
+    if (categoryId != null)
+    {
+        categoryItem = await db.category.findUnique({
             where: {
                 id: categoryId
             }
         })
-
+    }
     const webReference = !!categoryItem?.webRef ? categoryItem.webRef : "Другое"
 
     const linkHref = !!isAdmin ? `/admin/catalog/catalog-items/${id}` :  `/catalog/${webReference}/${id}`
