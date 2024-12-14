@@ -112,18 +112,18 @@ const CatalogItemPage = async ({
       </div>
       <div className="flex flex-col text-start w-full md:w-[calc(50%-12px)] gap-2.5">
         <div className="flex flex-col text-start gap-1.5">
-          <h2 className="text-lg font-medium">
+          <h2 className="text-2xl font-medium">
             {item.title}
           </h2>
 
           {/* category and availability div  */}
 
           <div className="flex gap-2">
-            <p className="text-xs">
+            <p className="text-sm">
               {decodeURI(params.category)}
             </p>
-            <div className="h-[16px] w-[1px] bg-accent-foreground/60"/>
-            <p className={cn("text-xs",
+            <div className="h-[20px] w-[1px] bg-accent-foreground/60"/>
+            <p className={cn("text-sm",
               !!item.isAvailable && "text-emerald-600",
               !item.isAvailable && "text-red-600"
             )}>
