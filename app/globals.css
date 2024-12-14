@@ -11,29 +11,35 @@
 
   .ql-editor{
     padding: 0 !important;
+    color: inherit;
   }
 
   .ql-container p {
     padding: 0;
     font-size: 14px !important;
+    color: inherit;
   }
 
   .ql-container h3 {
     padding: 0;
     font-size: 16px !important;
+    color: inherit;
   }
 
   .ql-container h2 {
     padding: 0;
     font-size: 18px !important;
+    color: inherit;
   }
 
   .ql-container h1 {
     padding: 0;
     font-size: 20px !important;
+    color: inherit;
   }
 
   .ql-container strong {
+    color: inherit;
     font-weight: bold;
   } 
 
