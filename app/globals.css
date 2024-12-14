@@ -163,4 +163,9 @@
     body {
       @apply bg-background text-foreground;
     }
+    .ql-editor,
+    .ql-container
+    {
+      @apply text-foreground
+    }
   }
