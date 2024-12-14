@@ -78,7 +78,7 @@ const AnimationComponent: React.FC<{
   word: string;
   variants: Variants;
   per: 'word' | 'char';
-}> = React.memo(({ word, variants, per }) => {
+}> = ({ word, variants, per }) => {
   if (per === 'word') {
     return (
       <motion.span
@@ -105,7 +105,7 @@ const AnimationComponent: React.FC<{
       ))}
     </span>
   );
-});
+};
 
 AnimationComponent.displayName = 'AnimationComponent';
 
