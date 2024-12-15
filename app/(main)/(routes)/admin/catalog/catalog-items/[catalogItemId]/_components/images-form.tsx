@@ -21,7 +21,8 @@ interface ImagesFormProps {
 
 const formSchema = z.object({
   url: z.string().min(1),
-  name: z.string().min(1)
+  name: z.string().min(1),
+  position: z.number().min(1)
 });
 
 export const ImagesForm = ({
@@ -118,7 +119,7 @@ export const ImagesForm = ({
             endpoint="CatalogItemImage"
             onChange={(url, name) => {
               if (url && name) {
-                onSubmit({ url: url, name: name });
+                onSubmit({ url: url, name: name, position: initialData.imageSrcs.length + 1});
               }
             }}
             />
