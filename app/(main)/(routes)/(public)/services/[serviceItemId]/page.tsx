@@ -89,10 +89,10 @@ const ServicesItemPage = async ({
             </AspectRatio>
         </div>
         <div className="flex flex-col text-start px-2 gap-2">
-            <h2 className="text-lg">
+            <h2 className="text-2xl font-medium">
                 {item.title}
             </h2>
-            <h3 className="text-2xl font-medium">
+            <h3 className="text-lg md:text-base">
                 {!!item.price ? <>От {item.price} тг</> : <>Цена договорная</>}
             </h3>
             <p className="text-sm px-2">
