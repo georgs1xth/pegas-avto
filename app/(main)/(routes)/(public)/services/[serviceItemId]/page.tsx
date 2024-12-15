@@ -110,7 +110,7 @@ const ServicesItemPage = async ({
                 </AccordionContent>
             </AccordionItem>
         </Accordion>: null}
-        <div>
+        <div className="p-2">
             <CallUs variant="servicesPage"/>
         </div>
     </div>
