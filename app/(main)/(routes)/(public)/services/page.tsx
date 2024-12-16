@@ -86,7 +86,7 @@ const ServicesPage = async () => {
                             </div>
                         )}
                         {company.name == "Инжектор Сервис" && (
-                            <div className="p-2 flex justify-center items-center text-2xl font-bold text-yellow-800 dark:text-red-700">
+                            <div className="pb-2 flex justify-center items-center text-2xl font-bold text-yellow-800 dark:text-red-700">
                                 Injector Service
                             </div>
                         )}
