@@ -110,8 +110,10 @@ model ServiceItem {
 
 model Company {
   id          String  @id @default(uuid())
-  name        String
+  name        String  @unique
   description String? @db.Text
+
+  logoSrc     String?
 
   serviceItems ServiceItem[]
 }

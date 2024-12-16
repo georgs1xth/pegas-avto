@@ -19,6 +19,7 @@ import { DescriptionForm } from "./_components/description-form"
 import { PriceForm } from "./_components/price-form"
 import { ImageForm } from "./_components/image-form"
 import { MoreDescriptionForm } from "./_components/more-description-form"
+import { CompanyForm } from "./_components/company-form"
 
 const AdminCatalogItemPage = async ({
     params
@@ -35,6 +36,14 @@ const AdminCatalogItemPage = async ({
             id: params.serviceItemId
         }
     });
+
+    
+    const companies = await db.company.findMany({
+        orderBy: {
+            name: "asc"
+        }
+    })
+
 
     if(!serviceItem){
         return redirect("/")
@@ -110,6 +119,14 @@ const AdminCatalogItemPage = async ({
                     <TitleForm 
                         initialData={serviceItem}
                         serviceItemId={serviceItem.id}
+                        />
+                    <CompanyForm
+                        initialData={serviceItem}
+                        serviceItemId={serviceItem.id}
+                        options={companies.map((company) => ({
+                            label: company.name,
+                            value: company.id,
+                        }))}
                         />
                     <DescriptionForm
                         initialData={serviceItem}
