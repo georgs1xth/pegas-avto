@@ -74,22 +74,23 @@ const ServicesPage = async () => {
 
 
     return ( 
-        <div className="">
+        <div className="flex flex-col gap-2 pb-4">
             {companies.map((company) => (
                 company.serviceItems.length > 0 && (
-                    <div key={company.id} className="p-2 md:p-4 gap-4 flex flex-col justify-center items-center">
+                    <div key={company.id} className="p-2 md:p-4 pb-0 md:pb-0 gap-4 flex flex-col">
                         {company.name == "Пегас avto A" && (
-                            <div className="flex justify-center items-center scale-125">
-                                <Logo/>
+                            <div className="flex justify-center items-center overflow-hidden">
+                                <div className="scale-125">
+                                    <Logo/>
+                                </div>
                             </div>
                         )}
-                        {company.name == "Injector Service" && (
-                            <div className="flex justify-center items-center text-2xl font-bold text-yellow-800 dark:text-red-700">
+                        {company.name == "Инжектор Сервис" && (
+                            <div className="p-2 flex justify-center items-center text-2xl font-bold text-yellow-800 dark:text-red-700">
                                 Injector Service
                             </div>
-
                         )}
-                        <div className=" grid lg:grid-cols-2 gap-2 md:gap-3">
+                        <div className="grid lg:grid-cols-2 gap-2 md:gap-3">
                         {company.serviceItems.map((item) => (
                             <ServiceItemCrad
                                 key={item.id}
