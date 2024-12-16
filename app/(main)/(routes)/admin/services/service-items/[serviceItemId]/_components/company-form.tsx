@@ -68,14 +68,14 @@ export const CompanyForm = ({
   return(
     <div className="mt-6 border bg-accent/50 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Категория товара 
+        Компания 
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Отмена</>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Изменить категорию
+              Изменить компанию
             </>
           )}
         </Button>
