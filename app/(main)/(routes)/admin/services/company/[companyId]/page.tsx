@@ -16,7 +16,7 @@ const AdminServicesItemsPage = async ({
                 companyId: undefined
             },
             orderBy: {
-                title: "desc"
+                companyId: "desc"
             }
         });
     } else {
@@ -25,7 +25,7 @@ const AdminServicesItemsPage = async ({
                 companyId: params.companyId
             },
             orderBy: {
-                title: "desc"
+                companyId: "desc"
             }
         });
     }
