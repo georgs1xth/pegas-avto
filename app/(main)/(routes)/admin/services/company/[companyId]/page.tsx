@@ -1,5 +1,5 @@
 import db from "@/lib/db"
-import ServiceItemCrad from "../../../(public)/services/_components/service-item-card"
+import ServiceItemCrad from "../../../../(public)/services/_components/service-item-card"
 
 const AdminServicesItemsPage = async ({
     params
