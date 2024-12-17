@@ -30,10 +30,10 @@ export const Actions = ({
 
             if (isPublished) {
                 await axios.patch(`/api/serviceItem/${serviceItemId}/unpublish`);
-                toast.success("Товар архивирован");
+                toast.success("Сервис архивирован");
             } else {
                 await axios.patch(`/api/serviceItem/${serviceItemId}/publish`);
-                toast.success("Товар опубликован");
+                toast.success("Сервис опубликован");
                 confetti.onOpen();
             }
 
@@ -51,11 +51,11 @@ export const Actions = ({
 
             await axios.delete(`/api/serviceItem/${serviceItemId}`)
 
-            toast.success("Товар удалён");
+            toast.success("Сервис удалён");
             router.refresh()
-            router.push(`/admin/catalog`)
+            router.push(`/admin/services`)
         } catch {
-            toast.error("Товар не был удалён")
+            toast.error("Сервис не был удалён")
         } finally {
             setIsLoading(false);
         }
