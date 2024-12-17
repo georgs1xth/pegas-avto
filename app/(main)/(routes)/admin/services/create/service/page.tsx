@@ -104,7 +104,7 @@ const CreateServiceItemPage = () => {
                     />
                   </FormControl>
                 <FormDescription>
-                    Введите цену услуги. Если цена договорная отсавьте 0.
+                    Введите цену услуги. Если цена договорная оставьте 0.
                 </FormDescription>
                 <FormMessage />
               </FormItem>}
