@@ -1,5 +1,6 @@
 import db from "@/lib/db"
 import ServiceItemCrad from "../../../../(public)/services/_components/service-item-card"
+import { Item } from "react-stately";
 
 const AdminServicesItemsPage = async ({
     params
@@ -33,19 +34,45 @@ const AdminServicesItemsPage = async ({
 
     return (
     <div>
-        {params.companyId}
         <div className="p-2 md:p-4 grid lg:grid-cols-2 gap-2 md:gap-3">
             {serviceItems.map((item) => (
-                <ServiceItemCrad
-                    key={item.id}
-                    id={item.id}
-                    title={item.title}
-                    price={item.price!}
-                    description={item.description!}
-                    imageSrc={item.imageSrc!}
-                    companyId={item.companyId!}
-                    isAdmin={true}
-                />
+                <>
+                {companyId == "no-company" && (
+                    <div>
+                        {item.companyId == null && (
+                            <ServiceItemCrad
+                                key={item.id}
+                                id={item.id}
+                                title={item.title}
+                                price={item.price!}
+                                description={item.description!}
+                                imageSrc={item.imageSrc!}
+                                companyId={item.companyId!}
+                                isAdmin={true}
+                            />
+                        )
+                        }       
+                    </div>
+                )    
+                }
+                {companyId != "no-company" && (
+                    <div>
+                        {item.companyId == companyId && (
+                            <ServiceItemCrad
+                            key={item.id}
+                            id={item.id}
+                            title={item.title}
+                            price={item.price!}
+                            description={item.description!}
+                            imageSrc={item.imageSrc!}
+                            companyId={item.companyId!}
+                            isAdmin={true}
+                        />
+                        )
+                        }
+                    </div>
+                )}
+                </>
             ))}
         </div>
     </div>
