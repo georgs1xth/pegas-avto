@@ -99,6 +99,7 @@ const ServicesPage = async () => {
                                 description={item.description!}
                                 price={item.price!}
                                 imageSrc={item.imageSrc!}
+                                companyId={item.companyId!}
                                 isAdmin={false}
                             />
                         ))}
