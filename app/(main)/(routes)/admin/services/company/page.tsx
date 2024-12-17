@@ -12,14 +12,14 @@ const AdminCompanyPage = async () => {
         {companies.map((company) => (
             <Link key={company.id} href={`/admin/services/company/${company.id}`} className="flex justify-center items-center bg-accent/20 rounded-2xl hover:bg-accent/40 transition-all p-8">
                 {company.name == "Пегас avto A" && (
-                    <div className="flex justify-center items-center max-w-fit bg-accent/20 rounded-xl">
+                    <div className="flex justify-center items-center max-w-fit rounded-xl">
                         <div className="scale-125">
                             <Logo/>
                         </div>
                     </div>
                 )}
                 {company.name == "Инжектор Сервис" && (
-                    <div className="pb-2 flex justify-center items-center max-w-fit text-2xl bg-accent/20 rounded-xl font-bold text-yellow-800 dark:text-red-700">
+                    <div className="pb-2 flex justify-center items-center max-w-fit text-2xl rounded-xl font-bold text-yellow-800 dark:text-red-700">
                         Injector Service
                     </div>
                 )}
