@@ -12,6 +12,7 @@ interface ServiceItemCradProps {
     description: string;
     price: number;
     imageSrc: string;
+    companyId: string | undefined;
     isAdmin: boolean;
 }
 
@@ -22,10 +23,11 @@ const ServiceItemCrad = ({
     description,
     price,
     imageSrc,
+    companyId,
     isAdmin,
 } : ServiceItemCradProps) => {
 
-    const linkHref = !!isAdmin ? `/admin/services/service-items/${id}` :  `/services/${id}`;
+    const linkHref = !!isAdmin ? `/admin/services/company/${companyId}/${id}` :  `/services/${id}`;
 
 
   return (

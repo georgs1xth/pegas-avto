@@ -28,6 +28,7 @@ const AdminServicesItemsPage = async ({
                     price={item.price!}
                     description={item.description!}
                     imageSrc={item.imageSrc!}
+                    companyId={item.companyId!}
                     isAdmin={true}
                 />
             ))}
