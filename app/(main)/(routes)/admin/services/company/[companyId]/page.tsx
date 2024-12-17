@@ -6,6 +6,8 @@ const AdminServicesItemsPage = async ({
 }: {
     params: { companyId: string}
 }) => {
+
+    const companyId = decodeURI(params.companyId)
   
     let serviceItems = await db.serviceItem.findMany({
         where: {
@@ -16,7 +18,7 @@ const AdminServicesItemsPage = async ({
         }
     })
 
-    if (params.companyId === "no-company")
+    if (companyId === "no-company")
     {
         let serviceItems = await db.serviceItem.findMany({
             where: {
@@ -30,6 +32,7 @@ const AdminServicesItemsPage = async ({
 
     return (
     <div>
+        {params.companyId}
         <div className="p-2 md:p-4 grid lg:grid-cols-2 gap-2 md:gap-3">
             {serviceItems.map((item) => (
                 <ServiceItemCrad
