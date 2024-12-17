@@ -42,7 +42,7 @@ children : React.ReactNode
                     <RoleButton/>
                 </Navbar> 
             </div>
-            <div className="hidden md:flex h-full md:w-56 xl:w-72 flex-col fixed inset-y-0 z-45 pt-[80px] border-r shadow-lg dark:shadow-accent">
+            <div className="hidden md:flex h-full md:w-56 xl:w-72 flex-col fixed inset-y-0 z-40 pt-[80px] border-r shadow-lg dark:shadow-accent">
                 <Sidebar />
             </div>
             <main className="pt-[60px] md:pt-[80px] h-full md:pl-56 xl:pl-72">

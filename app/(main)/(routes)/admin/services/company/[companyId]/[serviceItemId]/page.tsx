@@ -21,7 +21,7 @@ import { ImageForm } from "./_components/image-form"
 import { MoreDescriptionForm } from "./_components/more-description-form"
 import { CompanyForm } from "./_components/company-form"
 
-const AdminCatalogItemPage = async ({
+const AdminServiceItemPage = async ({
     params
 }: {
     params: { serviceItemId: string}
@@ -150,4 +150,4 @@ const AdminCatalogItemPage = async ({
     )
 }
 
-export default AdminCatalogItemPage;
+export default AdminServiceItemPage;

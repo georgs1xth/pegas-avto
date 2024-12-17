@@ -46,7 +46,7 @@ const CreateServiceItemPage = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try{
       const response = await axios.post("/api/serviceItem/", values)
-      router.push(`/admin/services/service-items/${response.data.id}`)
+      router.push(`/admin/services/company/no-company/${response.data.id}`)
       toast.success("Услуга создана")
     } catch {
       toast.error("Что-то пошло не так");
