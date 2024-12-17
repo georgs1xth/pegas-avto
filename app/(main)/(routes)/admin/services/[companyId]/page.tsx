@@ -1,10 +1,22 @@
-import { CatalogItemCard } from "@/components/catalog-item-card"
+
 import db from "@/lib/db"
 import ServiceItemCrad from "../../../(public)/services/_components/service-item-card"
-const AdminCatalogItemsPage = async () => {
+
+const AdminCatalogItemsPage = async ({
+    params
+}: {
+    params: { companyId: string}
+}) => {
   
 
-    const serviceItems = await db.serviceItem.findMany()
+    const serviceItems = await db.serviceItem.findMany({
+        where: {
+            companyId: params.companyId
+        },
+        orderBy: {
+            title: "desc"
+        }
+    })
 
     return (
     <div>

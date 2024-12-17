@@ -10,7 +10,7 @@ const AdminServicesPage = () => {
           Добавить услугу
         </Button>
       </Link>
-      <Link href="/admin/services/service-items" className='flex justify-center items-center'>
+      <Link href="/admin/services/company" className='flex justify-center items-center'>
         <Button type="button" variant="outline" size="inline" className="text-lg font-normal py-6 rounded-2xl">
           Настройки услуг
         </Button>
