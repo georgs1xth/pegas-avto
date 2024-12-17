@@ -24,7 +24,7 @@ import { CompanyForm } from "./_components/company-form"
 const AdminServiceItemPage = async ({
     params
 }: {
-    params: { serviceItemId: string}
+    params: { serviceItemId: string; companyId: string}
 }) => {
 
     if(!checkRole("admin")){
@@ -80,11 +80,17 @@ const AdminServiceItemPage = async ({
                         <BreadcrumbSeparator />
                         
                             <BreadcrumbItem>
-                                <BreadcrumbLink href="/admin/services/service-items">Все услуги</BreadcrumbLink>
+                                <BreadcrumbLink href="/admin/services">Все услуги</BreadcrumbLink>
                             </BreadcrumbItem>
                         
                         <BreadcrumbSeparator />
                             
+                            <BreadcrumbItem>
+                                <BreadcrumbLink href={`/admin/services/company/${params.companyId}`}>Услуги этой компании</BreadcrumbLink>
+                            </BreadcrumbItem>
+                
+                        <BreadcrumbSeparator />
+
                             <BreadcrumbItem>
                                 <BreadcrumbPage>Эта услуга</BreadcrumbPage>
                             </BreadcrumbItem>
