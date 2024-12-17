@@ -51,7 +51,7 @@ const AdminCatalogItemPage = async ({
 
     const requiredFields = [
         serviceItem.title,
-        serviceItem.description,
+        // serviceItem.description,
         serviceItem.imageSrc
     ]
 
