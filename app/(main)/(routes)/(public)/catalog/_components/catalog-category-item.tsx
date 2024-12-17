@@ -45,7 +45,7 @@ const CatalogCategoryItem = ({
                 }}
             /> : null
             }
-            {!!imageSrc ? <Image fill src={imageSrc} alt={label} loading='eager'/> : <CameraOff className='h-20 w-20 text-accent-foreground' strokeWidth="1"/>}
+            {!!imageSrc ? <Image fill style={{objectFit: "contain"}}  src={imageSrc} alt={label} loading='eager'/> : <CameraOff className='h-20 w-20 text-accent-foreground' strokeWidth="1"/>}
         </AspectRatio>
         <p className={cn('text-accent-foreground line-clamp-2',
         )}>{label}</p>

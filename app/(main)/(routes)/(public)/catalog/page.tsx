@@ -19,7 +19,7 @@ const CatalogPage = async ({
 
     const categories = await db.category.findMany({
         orderBy: {
-            name: "asc"
+            id: "asc"
         }
     });
 
