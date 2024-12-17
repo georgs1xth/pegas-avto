@@ -111,7 +111,7 @@ const ServicesItemPage = async ({
             </AccordionItem>
         </Accordion>: null}
         <div className="p-2">
-            <CallUs variant="servicesPage"/>
+            <CallUs companyId={item.companyId!} variant="servicesPage"/>
         </div>
     </div>
   )
