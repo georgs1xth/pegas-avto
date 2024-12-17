@@ -1,8 +1,7 @@
-
 import db from "@/lib/db"
 import ServiceItemCrad from "../../../(public)/services/_components/service-item-card"
 
-const AdminCatalogItemsPage = async ({
+const AdminServicesItemsPage = async ({
     params
 }: {
     params: { companyId: string}
@@ -37,4 +36,4 @@ const AdminCatalogItemsPage = async ({
   )
 }
 
-export default AdminCatalogItemsPage
+export default AdminServicesItemsPage
