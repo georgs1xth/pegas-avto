@@ -6,29 +6,30 @@ const AdminServicesItemsPage = async ({
 }: {
     params: { companyId: string}
 }) => {
+    const companyId = decodeURI(params.companyId);
 
-    const companyId = decodeURI(params.companyId)
-  
-    let serviceItems = await db.serviceItem.findMany({
-        where: {
-            companyId: params.companyId
-        },
-        orderBy: {
-            title: "desc"
-        }
-    })
-
-    if (companyId === "no-company")
-    {
-        let serviceItems = await db.serviceItem.findMany({
+    let serviceItems;
+    
+    if (companyId === "no-company") {
+        serviceItems = await db.serviceItem.findMany({
             where: {
-                companyId: null
+                companyId: undefined
             },
             orderBy: {
                 title: "desc"
             }
-        })
+        });
+    } else {
+        serviceItems = await db.serviceItem.findMany({
+            where: {
+                companyId: params.companyId
+            },
+            orderBy: {
+                title: "desc"
+            }
+        });
     }
+    
 
     return (
     <div>
