@@ -25,6 +25,13 @@ const AdminCompanyPage = async () => {
                 )}
             </Link>
         ))}
+        <Link key="no-company" href={`/admin/services/company/no-company`} className="flex justify-center items-center bg-accent/20 rounded-2xl hover:bg-accent/40 transition-all p-8">
+            <div className="flex justify-center items-center max-w-fit rounded-xl">
+                <div className="scale-125">
+                    Без Компании
+                </div>
+            </div>
+        </Link>
     </div>
   )
 }
