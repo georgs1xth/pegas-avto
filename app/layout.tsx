@@ -1,7 +1,3 @@
-// export const runtime = 'edge'; // 'nodejs' is the default
-// execute this function on iad1 or hnd1, based on the connecting client location
-// export const preferredRegion = ['fra1', 'hnd1'];
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -9,7 +5,6 @@ import { ruRU } from "@clerk/localizations"
 
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin"
 import { extractRouterConfig } from "uploadthing/server";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import {
   ClerkProvider,
@@ -34,7 +29,6 @@ export const metadata: Metadata = {
   }
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,7 +37,7 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={localization}>
       <html lang="en">
-        <body className="{inter.className} h-screen">
+        <body className={`${inter.className} h-screen`}>
       <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -61,7 +55,6 @@ export default function RootLayout({
           routerConfig={extractRouterConfig(OurFileRouter)}
         />
           {children}
-          <SpeedInsights/>
         </ThemeProvider>
         </body>
       </html>

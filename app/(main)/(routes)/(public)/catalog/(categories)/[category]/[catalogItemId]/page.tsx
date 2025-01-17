@@ -92,7 +92,7 @@ const CatalogItemPage = async ({
             <BreadcrumbSeparator />
 
                 <BreadcrumbItem>
-                    <BreadcrumbLink href={`/catalog/${params.category}`}>{decodeURI(params.category)}</BreadcrumbLink>
+                    <BreadcrumbLink href={`/catalog/${params.category}`}>{decodeURI(params.category).replaceAll("-", " ")}</BreadcrumbLink>
                 </BreadcrumbItem>
             
             <BreadcrumbSeparator />

@@ -35,7 +35,7 @@ export const ImagesList = ({
     }, []);
 
     useEffect(() => {
-        setImages(images)
+        setImages(items)
     }, [items])
 
     const onDragEnd = (result: DropResult) => {
