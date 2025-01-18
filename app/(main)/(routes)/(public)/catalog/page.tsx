@@ -18,6 +18,11 @@ const CatalogPage = async ({
 
 
     const categories = await db.category.findMany({
+        where: {
+            items: {
+                some: {}
+            }
+        },
         orderBy: {
             id: "asc"
         }
