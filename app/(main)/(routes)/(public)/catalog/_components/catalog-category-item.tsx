@@ -36,14 +36,14 @@ const CatalogCategoryItem = ({
   return (
     <button className={cn('overflow-hidden p-2 flex flex-col items-center divide-y gap-2 md:gap-4 hover:bg-accent transition-all hover:rounded-lg active:bg-green-800/10')} onClick={onClick}>
         <AspectRatio ratio={16 / 12} className="rounded-sm overflow-hidden flex justify-center items-center relative">
-            {!!imageSrc ?
+            {!!imageSrc &&
             <Loader2Icon
-                className='absolute animate-spin w-20 h-20 text-accent-foreground/70'
+                className='absolute w-12 h-12 animate-spin lg:w-20 lg:h-20 text-accent-foreground/70'
                 strokeWidth="1"
                 style={{
                     animationDuration: "1.5s"
                 }}
-            /> : null
+            />
             }
             {!!imageSrc ? <Image fill style={{objectFit: "contain"}}  src={imageSrc} alt={label} loading='eager'/> : <CameraOff className='h-20 w-20 text-accent-foreground' strokeWidth="1"/>}
         </AspectRatio>
