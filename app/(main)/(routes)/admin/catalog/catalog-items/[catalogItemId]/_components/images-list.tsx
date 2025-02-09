@@ -1,7 +1,7 @@
 "use client";
 
 import { ImageSrcMultiple } from "@prisma/client";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import {
     DragDropContext,
     Droppable,
@@ -34,7 +34,7 @@ export const ImagesList = ({
         setIsMounted(true);
     }, []);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         setImages(items)
     }, [items])
 
