@@ -37,9 +37,6 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={localization}>
       <html lang="en">
-        <head>
-          
-        </head>
         <body className={`${inter.className} h-screen`}>
       <ThemeProvider
             attribute="class"

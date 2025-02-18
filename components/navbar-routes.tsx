@@ -86,12 +86,12 @@ children: React.ReactNode
                                     +7 702 392 3222
                                 </p>
                             </a>
-                            <a href={`tel:${87058707885}`} className="flex gap-2 items-center hover:bg-accent transition pt-1 pb-2 px-2 rounded-md">
+                            {/* <a href={`tel:${87058707885}`} className="flex gap-2 items-center hover:bg-accent transition pt-1 pb-2 px-2 rounded-md">
                                 <h3 className="text-md text-accent-foreground">Макс:</h3>
                                 <p>
                                     +7 705 870 7885
                                 </p>
-                            </a>
+                            </a> */}
                             <a href={`tel:${87077050852}`} className="flex gap-2 items-center hover:bg-accent transition pt-1 pb-2 px-2 rounded-md">
                                 <h3 className="text-md text-accent-foreground">Георгий:</h3>
                                 <p>
@@ -106,12 +106,12 @@ children: React.ReactNode
                                     +7 702 392 3222
                                 </p>
                             </div>
-                            <div className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md">
+                            {/* <div className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md">
                                 <h3 className="text-md text-accent-foreground">Макс:</h3>
                                 <p>
                                     +7 705 870 7885
                                 </p>
-                            </div>
+                            </div> */}
                             <div className="flex gap-2 items-center hover:bg-slate-200 transition pt-1 pb-2 px-2 rounded-md">
                                 <h3 className="text-md text-accent-foreground">Георгий:</h3>
                                 <p>
