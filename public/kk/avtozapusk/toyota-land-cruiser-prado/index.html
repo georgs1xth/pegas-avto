@@ -32,7 +32,7 @@ header.site .wrap{display:flex;align-items:center;gap:16px;height:62px}
 @media(min-width:1024px){.logo{font-size:26px}}
 .logo .lg-avto{color:rgba(202,138,4,.7);font-weight:600;margin-left:2px;letter-spacing:0}
 .logo .lg-a{color:#b91c1c;font-weight:500;margin-left:2px}
-nav.top{display:flex;gap:6px;overflow-x:auto;font-size:14px}
+nav.top{display:flex;gap:6px;overflow-x:auto;font-size:14px;margin-left:auto}
 nav.top a{position:relative;color:var(--mut);text-decoration:none;white-space:nowrap;font-weight:600;padding:8px 9px}
 nav.top a::after{content:"";position:absolute;left:9px;right:9px;bottom:2px;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .15s}
 nav.top a:hover{color:var(--red)}
@@ -43,6 +43,13 @@ nav.top a.act::after{transform:scaleX(1)}
 .btn-wa{background:var(--red);color:#fff}.btn-wa:hover{background:var(--red-d)}
 .btn-out{border:2px solid var(--dark);color:var(--fg)}.btn-out:hover{border-color:var(--red);color:var(--red)}
 .btn-sm{padding:7px 13px;font-size:14px;margin-left:auto}
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28);transition:transform .15s,background .15s}
+.fab svg{width:30px;height:30px}
+.fab:hover{background:#1eb455;transform:scale(1.06)}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(37,211,102,.55);animation:fabpulse 2.4s ease-out infinite}
+@keyframes fabpulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@media(prefers-reduced-motion:reduce){.fab::before{animation:none}}
+@media(max-width:640px){.fab{right:14px;bottom:14px;width:54px;height:54px}}
 main{padding:30px 0 44px}
 .crumbs{font-size:13px;color:var(--mut);margin-bottom:16px}
 .crumbs a{color:var(--mut)}
@@ -102,8 +109,8 @@ main a:hover{color:var(--red)}
 <header class="site"><div class="wrap">
 <a class="logo" href="/">ПЕГАС<span class="lg-avto">avto</span><span class="lg-a">A</span></a>
 <nav class="top"><a href="/kk/ustanovka-signalizacii-atyrau/">Сигнализация орнату</a><a href="/kk/starline-atyrau/">StarLine</a><a href="/kk/avtozapusk-atyrau/" class="act" aria-current="page">Автоқосу</a><a href="/kk/avtorskaya-ustanovka/">Авторлық орнату</a><a href="/kk/garantiya-dilera/">Дилер кепілдігі</a><a href="/kk/ceny/">Бағалар</a><a href="/kk/opt/">Көтерме</a><a href="/kk/kontakty/">Байланыс</a></nav>
-<a class="btn btn-wa btn-sm" href="https://wa.me/77023923222" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.7 1.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .8-.1 1.4Z"/></svg>Бізге жазыңыз</a>
 </div></header>
+<a class="fab" href="https://wa.me/77023923222" target="_blank" rel="noopener" aria-label="Бізге жазыңыз" title="Бізге жазыңыз"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.7 1.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .8-.1 1.4Z"/></svg></a>
 <main><div class="wrap">
 <nav class="crumbs"><a href="/kk/">Басты бет</a> › <a href="/kk/avtozapusk-atyrau/">Автоқосу</a> › Toyota Land Cruiser Prado</nav>
 <h1>Атырауда Toyota Land Cruiser Prado көлігіне автоқосу және сигнализация</h1>
