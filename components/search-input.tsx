@@ -51,7 +51,7 @@ export const SearchCatalog = () => {
                 <Input
                     onChange={(e) => setValue(e.target.value)}
                     value={value}
-                    className="w-full md:w-[300px] pl-9 rounded-full bg-accent/40 focus-visible:ring-accent-foreground"
+                    className="w-full md:w-[300px] pl-9 rounded-none bg-accent/40 focus-visible:ring-accent-foreground"
                     placeholder="Поиск товаров"
                 />
             </div>

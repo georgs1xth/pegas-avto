@@ -86,7 +86,7 @@ export const ImagesList = ({
                                         >
                                             <div
                                                 className={cn(
-                                                    "px-2 py-3 border-r border-r-accent-foreground/30 hover:bg-accent-foreground/20 rounded-l-md transition",
+                                                    "px-2 py-3 border-r border-r-accent-foreground/30 hover:bg-accent-foreground/20 rounded-none transition",
                                                     "border-accent-foreground/30 hover:bg-accent-foreground/20"
                                                 )}
                                                 {...provided.dragHandleProps}

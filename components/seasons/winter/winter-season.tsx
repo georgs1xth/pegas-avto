@@ -87,7 +87,7 @@ const WinterSeason = () => {
           }}
           className="mx-auto"
         >
-        <Button variant="super" size="lg" className="text-lg rounded-xl w-max" onClick={goToStarline}>
+        <Button variant="super" size="lg" className="text-lg rounded-none w-max" onClick={goToStarline}>
             Подобрать автосигнализацию
         </Button>
         </InView>

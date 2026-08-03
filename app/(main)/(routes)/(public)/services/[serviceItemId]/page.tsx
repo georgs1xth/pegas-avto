@@ -83,7 +83,7 @@ const ServicesItemPage = async ({
                 </BreadcrumbList>
             </Breadcrumb>
         </div>
-        <div className="rounded-3xl overflow-hidden shadow-lg md:max-w-2xl">
+        <div className="rounded-none overflow-hidden shadow-lg md:max-w-2xl">
             <AspectRatio ratio={18 / 9}>
                 <Image src={item.imageSrc!} alt={item.title} style={{ objectFit: 'cover' }} fill/>
             </AspectRatio>

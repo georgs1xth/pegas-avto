@@ -50,7 +50,7 @@ const SlideOverview = ({
         <div className="flex flex-col">
             <Link href={btnHref} className="cursor-pointer">
                 <div className="h-full">
-                    <AspectRatio ratio={15 / 9} className="rounded-xl shadow-md h-full w-full overflow-hidden">
+                    <AspectRatio ratio={15 / 9} className="rounded-none shadow-md h-full w-full overflow-hidden">
                         <div className="w-full h-full">
 
                         {id === "addCarouselItem" ?
@@ -58,7 +58,7 @@ const SlideOverview = ({
                             <PlusCircle className="w-14 h-14 text-accent-foreground"/>
                         </div> :
                         !!imageSrc ?
-                        <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt}/> :
+                        <Image fill className="object-cover overflow-hidden rounded-none shadow-md" src={imageSrc} alt={imageAlt}/> :
                         <div className="flex justify-center items-center w-full h-full">
                             <Ban className="w-14 h-14 text-red-500"/>
                         </div>
@@ -87,7 +87,7 @@ const SlideOverview = ({
                     </p> : null}
                 </div>
                 <div className="justify-center mt-2 hidden md:flex ">
-                    <Button variant="outline" onClick={onClick} className="rounded-2xl" size="inline">
+                    <Button variant="outline" onClick={onClick} className="rounded-none" size="inline">
                         {id === "addCarouselItem" ? <>Добавить слайд</> : <>Подробнее</>}
                     </Button>
                 </div>

@@ -31,7 +31,7 @@ const ServiceItemCrad = ({
 
 
   return (
-        <div className={cn(styles.cardContainer, "w-full h-full flex justify-end relative border shadow-sm rounded-3xl overflow-hidden p-3")}>
+        <div className={cn(styles.cardContainer, "w-full h-full flex justify-end relative border shadow-sm rounded-none overflow-hidden p-3")}>
             <div className="absolute left-0 inset-0 h-full w-[60%] z-0">
                 {/* gradient with img */}
                 {!!imageSrc ?
@@ -50,8 +50,8 @@ const ServiceItemCrad = ({
             <div className="flex flex-col items-end gap-2 w-[100%] text-end mr-2 relative z-1">
                 <h2 className="text-md font-medium text-accent-foreground">{title}</h2>
                 <p className="text-xs text-accent-foreground/90 line-clamp-2 w-[65%]">{description}</p>
-                <Link href={`${linkHref}`} className="rounded-xl z-10">
-                    <Button variant="default" className={cn("rounded-xl px-6", styles.btnOverlay)} type="button">Подробнее</Button>
+                <Link href={`${linkHref}`} className="rounded-none z-10">
+                    <Button variant="default" className={cn("rounded-none px-6", styles.btnOverlay)} type="button">Подробнее</Button>
                 </Link>
             </div>
             <div className={cn("opacity-0 z-5 absolute backdrop-blur-md bg-background/50 dark:bg-background/30 w-full h-full inset-0 transition-all p-3 flex justify-start" ,styles.hoverOverlay)}>

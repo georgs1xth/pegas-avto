@@ -7,41 +7,41 @@ export default function Loading() {
             <div className="flex flex-row gap-4">
                 <div className="basis-full md:grid md:basis-1/2 xl:basis-1/3 h-full">
                     <div className="h-full">
-                        <Skeleton className="rounded-xl shadow-md h-full w-full overflow-hidden aspect-[15/9]"/>
+                        <Skeleton className="rounded-none shadow-md h-full w-full overflow-hidden aspect-[15/9]"/>
                     </div>
                     <div className="flex flex-col justify-between md:min-h-[135px] max-h-max">
                         <div className="flex flex-col justify-center items-center text-center mt-3 md:mt-6 gap-2">
-                            <Skeleton className="w-5/6 h-4 rounded-xl"/>
-                            <Skeleton className="hidden md:block w-4/6 h-4 rounded-xl"/>
-                            <Skeleton className="w-5/6 h-3 rounded-xl mt-2"/>
+                            <Skeleton className="w-5/6 h-4 rounded-none"/>
+                            <Skeleton className="hidden md:block w-4/6 h-4 rounded-none"/>
+                            <Skeleton className="w-5/6 h-3 rounded-none mt-2"/>
                         </div>
-                        <Skeleton className="mt-4 hidden md:flex w-full h-10 rounded-2xl"/>
+                        <Skeleton className="mt-4 hidden md:flex w-full h-10 rounded-none"/>
                     </div>
                 </div>
                 <div className="hidden basis-full md:grid md:basis-1/2 xl:basis-1/3 h-full">
                     <div className="h-full">
-                        <Skeleton className="rounded-xl shadow-md h-full w-full overflow-hidden aspect-[15/9]"/>
+                        <Skeleton className="rounded-none shadow-md h-full w-full overflow-hidden aspect-[15/9]"/>
                     </div>
                     <div className="flex flex-col justify-between md:min-h-[135px] max-h-max">
                         <div className="flex flex-col justify-center items-center text-center mt-6 gap-2">
-                            <Skeleton className="w-5/6 h-4 rounded-xl"/>
-                            <Skeleton className="w-4/6 h-4 rounded-xl"/>
-                            <Skeleton className="w-5/6 h-3 rounded-xl mt-2"/>
+                            <Skeleton className="w-5/6 h-4 rounded-none"/>
+                            <Skeleton className="w-4/6 h-4 rounded-none"/>
+                            <Skeleton className="w-5/6 h-3 rounded-none mt-2"/>
                         </div>
-                        <Skeleton className="mt-4 hidden md:flex w-full h-10 rounded-2xl"/>
+                        <Skeleton className="mt-4 hidden md:flex w-full h-10 rounded-none"/>
                     </div>
                 </div>
                 <div className="hidden basis-full md:hidden xl:grid xl:basis-1/3 h-full">
                     <div className="h-full">
-                        <Skeleton className="rounded-xl shadow-md h-full w-full overflow-hidden aspect-[15/9]"/>
+                        <Skeleton className="rounded-none shadow-md h-full w-full overflow-hidden aspect-[15/9]"/>
                     </div>
                     <div className="flex flex-col justify-between md:min-h-[135px] max-h-max">
                         <div className="flex flex-col justify-center items-center text-center mt-6 gap-2">
-                            <Skeleton className="w-5/6 h-4 rounded-xl"/>
-                            <Skeleton className="w-4/6 h-4 rounded-xl"/>
-                            <Skeleton className="w-5/6 h-3 rounded-xl mt-2"/>
+                            <Skeleton className="w-5/6 h-4 rounded-none"/>
+                            <Skeleton className="w-4/6 h-4 rounded-none"/>
+                            <Skeleton className="w-5/6 h-3 rounded-none mt-2"/>
                         </div>
-                        <Skeleton className="mt-4 hidden md:flex w-full h-10 rounded-2xl"/>
+                        <Skeleton className="mt-4 hidden md:flex w-full h-10 rounded-none"/>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@ export default function Loading() {
             <div className="border rounded-lg p-6 col-span-1 xs:col-span-2 shadow-md flex sm:col-span-1">
                     <div className="flex flex-col gap-2">
                         <div className="flex flex-col items-start md:items-center md:flex-row gap-2 w-full mb-2">
-                            <Skeleton className="h-6 w-6 p-5 rounded-xl"
+                            <Skeleton className="h-6 w-6 p-5 rounded-none"
                             />
                             <Skeleton className="w-32 h-4">
                             </Skeleton>
@@ -61,7 +61,7 @@ export default function Loading() {
             <div className="border rounded-lg p-6 col-span-1 xs:col-span-2 shadow-md flex sm:col-span-1">
                     <div className="flex flex-col gap-2">
                         <div className="flex flex-col items-start md:items-center md:flex-row gap-2 w-full mb-2">
-                            <Skeleton className="h-6 w-6 p-5 rounded-xl"
+                            <Skeleton className="h-6 w-6 p-5 rounded-none"
                             />
                             <Skeleton className="w-32 h-4"/>
                         </div>
@@ -72,7 +72,7 @@ export default function Loading() {
                 <div className="border rounded-lg p-6 col-span-1 xs:col-span-2 shadow-md flex sm:col-span-2"> 
                     <div className="flex flex-col gap-2">
                         <div className="flex flex-col items-start md:items-center md:flex-row gap-2 w-full mb-2">
-                            <Skeleton className="h-6 w-6 p-5 rounded-xl"
+                            <Skeleton className="h-6 w-6 p-5 rounded-none"
                             />
                             <Skeleton className="w-32 h-4"/>
                         </div>

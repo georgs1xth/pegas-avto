@@ -169,4 +169,12 @@
     {
       @apply text-foreground
     }
+    /* Фирменные штрихи Kristall-Auto */
+    ::selection {
+      background: #e30016;
+      color: #fff;
+    }
+    h1, h2 {
+      @apply font-extrabold tracking-tight;
+    }
   }

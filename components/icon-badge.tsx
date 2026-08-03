@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const backgroundVariants = cva(
-  "rounded-xl flex items-center justify-center",
+  "rounded-none flex items-center justify-center",
   {
     variants: {
       variant: {

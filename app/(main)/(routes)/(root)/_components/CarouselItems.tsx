@@ -46,14 +46,14 @@ const CarouselItems = ({
         <CarouselItem className="md:grid md:basis-1/2 xl:basis-1/3 h-full">
             <Link href={btnHref} className="cursor-pointer">
                 <div className="h-full">
-                    <AspectRatio ratio={15 / 9} className="rounded-xl shadow-md h-full w-full overflow-hidden">
+                    <AspectRatio ratio={15 / 9} className="rounded-none shadow-md h-full w-full overflow-hidden">
                         <Suspense fallback={<Skeleton></Skeleton>}>
                             {id === "addCarouselItem" ?
                             <div className="flex justify-center items-center w-full h-full bg-slate-200/50">
                                 <PlusCircle className="w-14 h-14 text-slate-600"/>
                             </div> :
                             !!imageSrc ?
-                            <Image fill className="object-cover overflow-hidden rounded-xl shadow-md" src={imageSrc} alt={imageAlt} loading="eager"/> :
+                            <Image fill className="object-cover overflow-hidden rounded-none shadow-md" src={imageSrc} alt={imageAlt} loading="eager"/> :
                             <div className="flex justify-center items-center w-full h-full">
                                 <Ban className="w-14 h-14 text-red-500"/>
                             </div>
@@ -72,7 +72,7 @@ const CarouselItems = ({
                     </p> : null}
                 </div>
                 <div className="justify-center mt-2 hidden md:flex ">
-                    <Button variant="outline" onClick={onClick} className="rounded-2xl" size="inline">
+                    <Button variant="outline" onClick={onClick} className="rounded-none" size="inline">
                         Подробнее
                     </Button>
                 </div>

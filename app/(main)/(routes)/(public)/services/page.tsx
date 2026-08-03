@@ -79,14 +79,14 @@ const ServicesPage = async () => {
                 company.serviceItems.length > 0 && (
                     <div key={company.id} className="p-2 md:p-4 pb-0 md:pb-0 gap-4 flex flex-col">
                         {company.name == "Пегас avto A" && (
-                            <div className="flex justify-center items-center overflow-hidden bg-accent/20 rounded-xl">
+                            <div className="flex justify-center items-center overflow-hidden bg-accent/20 rounded-none">
                                 <div className="scale-125">
                                     <Logo/>
                                 </div>
                             </div>
                         )}
                         {company.name == "Инжектор Сервис" && (
-                            <div className="pb-2 flex justify-center items-center text-2xl bg-accent/20 rounded-xl font-bold text-yellow-800 dark:text-red-700">
+                            <div className="pb-2 flex justify-center items-center text-2xl bg-accent/20 rounded-none font-bold text-yellow-800 dark:text-red-700">
                                 Injector Service
                             </div>
                         )}
