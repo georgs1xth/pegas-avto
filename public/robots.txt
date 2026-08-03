@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /employee
+Disallow: /sign-in
+Disallow: /sign-up
+Disallow: /api/
+
+Sitemap: https://pegas.georgiy.bond/sitemap.xml
