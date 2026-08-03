@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MessageCircle, ShieldCheck } from "lucide-react";
 
 // Hero в стиле Kristall-Auto: чёрный фон, красная скошенная плашка, крупный uppercase-заголовок.
@@ -17,7 +18,35 @@ const HomeHero = () => {
                 style={{ transform: "skew(-18deg)" }}
             />
 
-            <div className="relative mx-auto max-w-[1140px] px-4 py-12 md:py-16">
+            {/* фото работы в скошенной рамке */}
+            <div
+                className="hidden lg:block absolute inset-y-6 right-[-40px] w-[34%] overflow-hidden"
+                style={{ transform: "skew(-18deg)" }}
+            >
+                <div
+                    className="relative h-full w-[125%] -ml-[12%]"
+                    style={{ transform: "skew(18deg)" }}
+                >
+                    <Image
+                        src="/img/hero-car.webp"
+                        alt="Установка сигнализации StarLine на Toyota Highlander в Атырау — СТО Пегас Авто А"
+                        fill
+                        priority
+                        sizes="(min-width:1024px) 40vw, 0px"
+                        className="object-cover"
+                    />
+                    <div
+                        aria-hidden
+                        className="absolute inset-0"
+                        style={{
+                            background:
+                                "linear-gradient(90deg,#101010 0%,rgba(16,16,16,.55) 22%,rgba(227,0,22,.18) 100%)",
+                        }}
+                    />
+                </div>
+            </div>
+
+            <div className="relative mx-auto max-w-[1140px] px-4 py-12 md:py-16 lg:pr-[38%]">
                 <p className="text-[#ff4d5e] font-bold tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
                     Атырау · 15 лет · 10 000+ установок
                 </p>
