@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { MessageCircle, ShieldCheck } from "lucide-react";
 
 // Hero в стиле Kristall-Auto: чёрный фон, красная скошенная плашка, крупный uppercase-заголовок.
@@ -9,7 +8,7 @@ const HomeHero = () => {
             {/* красный скошенный блок справа */}
             <div
                 aria-hidden
-                className="absolute inset-y-0 right-[-90px] w-[38%] bg-[#e30016] opacity-95"
+                className="absolute inset-y-0 right-[-90px] w-[45%] bg-[#e30016] opacity-95"
                 style={{ transform: "skew(-18deg)" }}
             />
             <div
@@ -18,32 +17,8 @@ const HomeHero = () => {
                 style={{ transform: "skew(-18deg)" }}
             />
 
-            {/* фото работы — компактная карточка на красном поле */}
-            <div
-                className="hidden lg:block absolute right-[7%] top-1/2 -translate-y-1/2 w-[240px] h-[320px] overflow-hidden shadow-2xl"
-                style={{ transform: "translateY(-50%) skew(-12deg)" }}
-            >
-                <div
-                    className="relative h-full w-[130%] -ml-[15%]"
-                    style={{ transform: "skew(12deg)" }}
-                >
-                    <Image
-                        src="/img/hero-car.webp"
-                        alt="Установка сигнализации StarLine на Toyota Highlander в Атырау — СТО Пегас Авто А"
-                        fill
-                        priority
-                        sizes="(min-width:1024px) 260px, 0px"
-                        className="object-cover"
-                    />
-                </div>
-            </div>
-            <div
-                aria-hidden
-                className="hidden lg:block absolute right-[7%] top-1/2 w-[240px] h-[320px] border-[3px] border-white/80 pointer-events-none"
-                style={{ transform: "translate(14px,-50%) skew(-12deg)" }}
-            />
 
-            <div className="relative mx-auto max-w-[1140px] px-4 py-12 md:py-16 lg:pr-[34%]">
+            <div className="relative mx-auto max-w-[1140px] px-4 py-12 md:py-16 lg:pr-[38%]">
                 <p className="text-[#ff4d5e] font-bold tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
                     Атырау · 15 лет · 10 000+ установок
                 </p>

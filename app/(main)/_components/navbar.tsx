@@ -108,7 +108,7 @@ const Navbar = ({
                 {children}
             </NavbarRoutes>
         </div>
-        <div className="md:hidden flex justify-center items-center gap-4 pr-2">
+        <div className="md:hidden flex ml-auto justify-end items-center gap-4 pr-2">
             <AccountButtons/>
             <MobileSidebar>
                 {children}
