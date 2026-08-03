@@ -1,27 +1,57 @@
 import { Clock, Handshake, Smile } from "lucide-react";
 import MainCarousel from "./_components/main-carousel";
 import InfoCard from "@/components/info-card";
-import db from "@/lib/db";
 import { Metadata } from "next";
 import WinterSeason from "@/components/seasons/winter/winter-season";
-
-
+import type { MainCarouselItem } from "@prisma/client";
 
 export const metadata: Metadata = {
     title: { absolute: "СТО Пегас avto A"},
     description: "Широкий выбор услуг для вашего автомобиля. Ремонт, установка доп. оборудования, заправка автокондиционеров и многое другое.",
 };
 
-const Home = async () => {
+// Слайды захардкожены (сняты с прода 03.08.2026) — без запроса к БД, чтобы главная грузилась быстрее.
+// Фото остаются на uploadthing (utfs.io), ссылки те же.
+const carouselItems: MainCarouselItem[] = [
+    {
+        id: "static-1",
+        title: "StarLine — надежная защита вашего автомобиля.",
+        description: "Установка Автосигнализаций.",
+        isPublished: true,
+        imageUrl: "https://utfs.io/f/3c63cf80-6fcc-4d80-a44a-d4bad1d083b5-749o2n.webp",
+        btnHref: "/catalog/Автосигнализации",
+        position: 1,
+    },
+    {
+        id: "static-2",
+        title: "Не дайте жаре помешать вашему комфорту!",
+        description: "Заправка и ремонт Автокондиционеров.",
+        isPublished: true,
+        imageUrl: "https://utfs.io/f/2951b9db-039b-4d6c-81e5-04c37c4b6a84-7xbfek.webp",
+        btnHref: "/services",
+        position: 2,
+    },
+    {
+        id: "static-3",
+        title: "Выявляем проблемы авто компьютерной диагностикой.",
+        description: "Компьютерная диагностика авто.",
+        isPublished: true,
+        imageUrl: "https://utfs.io/f/a85a884d-c4b5-4ebb-a26d-8bca9988bb09-veq5ho.webp",
+        btnHref: "/services/a4d9134d-aa41-4506-a90f-5eab39dcdcdd",
+        position: 3,
+    },
+    {
+        id: "static-4",
+        title: "Оставили ключи в машине или сел аккумулятор?",
+        description: "Аварийное вскрытие и прикуривание авто.",
+        isPublished: true,
+        imageUrl: "https://utfs.io/f/bc434ec0-85eb-4bd5-b4fc-c9d4584a32b9-px1a7k.webp",
+        btnHref: "/services/9c6262b4-0055-4b11-80e4-676cd1cf2113",
+        position: 4,
+    },
+];
 
-    const carouselItems = await db.mainCarouselItem.findMany({
-        where: {
-            isPublished: true
-        },
-        orderBy: {
-            position: "asc"
-        }
-    })
+const Home = () => {
 
     return (
         <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4">
@@ -50,9 +80,9 @@ const Home = async () => {
                 btnHref="/partnership"
                 />
             </div>
-            
+
         </div>
      );
 }
- 
+
 export default Home;
