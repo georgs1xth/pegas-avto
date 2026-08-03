@@ -3,6 +3,7 @@ import MainCarousel from "./_components/main-carousel";
 import InfoCard from "@/components/info-card";
 import { Metadata } from "next";
 import WinterSeason from "@/components/seasons/winter/winter-season";
+import HomeHero from "@/components/home-hero";
 import type { MainCarouselItem } from "@prisma/client";
 
 export const metadata: Metadata = {
@@ -54,7 +55,9 @@ const carouselItems: MainCarouselItem[] = [
 const Home = () => {
 
     return (
-        <div className="p-2 md:p-4 xl:p-6 flex flex-col gap-y-4">
+        <div className="flex flex-col gap-y-6">
+            <HomeHero/>
+            <div className="mx-auto w-full max-w-[1140px] px-4 flex flex-col gap-y-4">
             <WinterSeason/>
             <MainCarousel
                 carouselItems={carouselItems}
@@ -80,7 +83,7 @@ const Home = () => {
                 btnHref="/partnership"
                 />
             </div>
-
+            </div>
         </div>
      );
 }

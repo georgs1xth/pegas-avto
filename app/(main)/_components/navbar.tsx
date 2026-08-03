@@ -82,7 +82,7 @@ const Navbar = ({
     <header className={cn('flex p-2 h-full w-full transition-all duration-100 border-b border-t-[3px] border-t-[#e30016] bg-background/50 backdrop-blur-md',
         !!isScrolled && !!isMainPage ? 'shadow-lg dark:shadow-accent/30 md:shadow-none md:duration-0' : null,
     )}>
-      <div className='flex items-center transition-all duration-100 w-full'>
+      <div className='flex items-center transition-all duration-100 w-full mx-auto max-w-[1140px] px-1'>
         <Link href="/" className="flex items-center pl-2 shrink-0">
             <Logo/>
         </Link>

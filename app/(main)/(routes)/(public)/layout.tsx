@@ -1,10 +1,13 @@
 import SiteFooter from "@/components/site-footer";
 
-// Футер только для публичных страниц (админка и запись — без него)
+// Контейнер 1140px — как на kristall-auto.kz и на статичных страницах.
+// Футер только для публичных страниц (админка и запись — без него).
 const PublicLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
-            {children}
+            <div className="mx-auto w-full max-w-[1140px] px-4">
+                {children}
+            </div>
             <SiteFooter />
         </>
     );
