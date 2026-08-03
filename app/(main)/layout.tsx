@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { checkRole } from "../utils/check-role";
 import Navbar from "./_components/navbar";
-import Sidebar from "./_components/sidebar";
 import { LucideShieldAlert, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
@@ -40,12 +39,10 @@ children : React.ReactNode
             <div className="h-[60px] md:h-[80px] fixed inset-y-0 w-full z-50" >
                 <Navbar isAdmin={isAdmin}>
                     <RoleButton/>
-                </Navbar> 
+                </Navbar>
             </div>
-            <div className="hidden md:flex h-full md:w-56 xl:w-72 flex-col fixed inset-y-0 z-40 pt-[80px] border-r shadow-lg dark:shadow-accent">
-                <Sidebar />
-            </div>
-            <main className="pt-[60px] md:pt-[80px] h-full md:pl-56 xl:pl-72">
+            {/* Сайдбар убран: навигация в шапке (TopNav), в админке — свой сайдбар */}
+            <main className="pt-[60px] md:pt-[80px] h-full">
                 {children}
             </main>
         </div>

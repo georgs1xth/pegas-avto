@@ -11,6 +11,7 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { LogIn, Skull, Zap } from "lucide-react";
 import AccountButtons from "@/components/account-buttons";
 import { cn } from "@/lib/utils";
+import TopNav from "./top-nav";
 
 const Navbar = ({
     children,
@@ -81,19 +82,27 @@ const Navbar = ({
     <header className={cn('flex p-2 h-full w-full transition-all duration-100 border-b border-t-[3px] border-t-[#e30016] bg-background/50 backdrop-blur-md',
         !!isScrolled && !!isMainPage ? 'shadow-lg dark:shadow-accent/30 md:shadow-none md:duration-0' : null,
     )}>
-      <div className='flex items-center justify-between transition-all duration-100 w-full'>
-        <Link href="/" className={cn("transition-all transform translate-x-6 scale-[1.3]",
-                        !!isScrolled && !!isMainPage && "transform translate-x-0 scale-100 md:scale-150 md:translate-x-1/2",
-                        !isMainPage && "translate-x-0 md:translate-x-1/3 xl:translate-x-1/2 scale-100 md:scale-125 xl:scale-150"
-        )}>
+      <div className='flex items-center transition-all duration-100 w-full'>
+        <Link href="/" className="flex items-center pl-2 shrink-0">
             <Logo/>
         </Link>
+        <div className="hidden md:flex ml-6">
+            <TopNav/>
+        </div>
         {isCatalogPage && (
-            <div className="ml-[5.5rem] xl:ml-40 hidden md:block">
+            <div className="ml-4 hidden lg:block">
                 <SearchCatalog/>
             </div>
         )}
         <div className="hidden ml-auto gap-3 justify-center items-center md:flex">
+            <a
+                href="https://wa.me/77023923222"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#e30016] hover:bg-[#b80012] text-white text-sm font-bold px-4 py-2 transition-colors"
+            >
+                Написать нам
+            </a>
             <AccountButtons/>
             <NavbarRoutes>
                 {children}

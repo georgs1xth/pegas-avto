@@ -1,10 +1,10 @@
 import Sidebar from "@/app/(main)/_components/sidebar";
 
 export const metadata = {
-    title: "Administrating"
+    title: "Запись"
 }
 
-const AdminLayout = ({
+const EmployeeLayout = ({
     children
 }: {
 children : React.ReactNode
@@ -22,4 +22,4 @@ children : React.ReactNode
       );
 }
 
-export default AdminLayout;
+export default EmployeeLayout;
