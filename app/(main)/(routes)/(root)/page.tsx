@@ -3,6 +3,7 @@ import MainCarousel from "./_components/main-carousel";
 import InfoCard from "@/components/info-card";
 import { Metadata } from "next";
 import HomeHero from "@/components/home-hero";
+import HomeSchema from "@/components/home-schema";
 import type { MainCarouselItem } from "@prisma/client";
 
 export const metadata: Metadata = {
@@ -55,6 +56,7 @@ const Home = () => {
 
     return (
         <div className="flex flex-col gap-y-6">
+            <HomeSchema/>
             <HomeHero/>
             <div className="mx-auto w-full max-w-[1140px] px-4 flex flex-col gap-y-4">
             <MainCarousel
