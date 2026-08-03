@@ -34,7 +34,7 @@ const CatalogCategoryItem = ({
 
 
   return (
-    <button className={cn('overflow-hidden p-2 flex flex-col items-center divide-y gap-2 md:gap-4 hover:bg-accent transition-all hover:rounded-lg active:bg-green-800/10')} onClick={onClick}>
+    <button className={cn('overflow-hidden p-2 flex flex-col items-center divide-y gap-2 md:gap-4 hover:bg-accent transition-all hover:rounded-none active:bg-[#e30016]/10')} onClick={onClick}>
         <AspectRatio ratio={16 / 12} className="rounded-sm overflow-hidden flex justify-center items-center relative">
             {!!imageSrc &&
             <Loader2Icon

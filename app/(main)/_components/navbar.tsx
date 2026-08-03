@@ -78,7 +78,7 @@ const Navbar = ({
         //     </div>
         // </div>
     //  );
-    <header className={cn('flex p-2 h-full w-full transition-all duration-100 border-b bg-background/50 backdrop-blur-md',
+    <header className={cn('flex p-2 h-full w-full transition-all duration-100 border-b border-t-[3px] border-t-[#e30016] bg-background/50 backdrop-blur-md',
         !!isScrolled && !!isMainPage ? 'shadow-lg dark:shadow-accent/30 md:shadow-none md:duration-0' : null,
     )}>
       <div className='flex items-center justify-between transition-all duration-100 w-full'>
