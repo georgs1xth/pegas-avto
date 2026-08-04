@@ -12,7 +12,8 @@ const Navbar = () => {
 
     const pathname = usePathname();
 
-    const isMainPage = pathname === "/";
+    const isMainPage = pathname === "/" || pathname === "/kk";
+    const isKk = pathname === "/kk" || pathname.startsWith("/kk/");
 
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -30,7 +31,7 @@ const Navbar = () => {
         !!isScrolled && !!isMainPage ? 'shadow-lg md:shadow-none md:duration-0' : null,
     )}>
       <div className='flex items-center transition-all duration-100 w-full mx-auto max-w-[1140px] px-1'>
-        <Link href="/" className="flex items-center pl-2 shrink-0">
+        <Link href={isKk ? "/kk" : "/"} className="flex items-center pl-2 shrink-0">
             <Logo/>
         </Link>
         <div className="hidden md:flex ml-6">
@@ -43,11 +44,23 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#e30016] hover:bg-[#b80012] text-white text-sm font-bold px-4 py-2 transition-colors"
             >
-                Написать нам
+                {isKk ? "Бізге жазыңыз" : "Написать нам"}
             </a>
             <div className="flex gap-[2px]">
-                <span className="px-[9px] py-[6px] text-[13px] font-bold bg-[#101010] text-white border border-[#101010]">RU</span>
-                <a href="/kk" hrefLang="kk-KZ" className="px-[9px] py-[6px] text-[13px] font-bold text-muted-foreground border hover:text-[#e30016] hover:border-[#e30016] transition-colors">KZ</a>
+                <a
+                    href="/"
+                    hrefLang="ru-KZ"
+                    className={cn("px-[9px] py-[6px] text-[13px] font-bold border transition-colors",
+                        isKk ? "text-muted-foreground hover:text-[#e30016] hover:border-[#e30016]"
+                             : "bg-[#101010] text-white border-[#101010]")}
+                >RU</a>
+                <a
+                    href="/kk"
+                    hrefLang="kk-KZ"
+                    className={cn("px-[9px] py-[6px] text-[13px] font-bold border transition-colors",
+                        isKk ? "bg-[#101010] text-white border-[#101010]"
+                             : "text-muted-foreground hover:text-[#e30016] hover:border-[#e30016]")}
+                >KZ</a>
             </div>
         </div>
         <div className="md:hidden flex ml-auto justify-end items-center gap-4 pr-2">

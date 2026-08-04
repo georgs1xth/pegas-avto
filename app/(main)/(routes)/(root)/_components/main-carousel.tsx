@@ -20,10 +20,12 @@ export interface CarouselSlide {
 
 interface mainCarouselProps {
     carouselItems: CarouselSlide[]
+    btnLabel?: string
 }
 
 const MainCarousel = ({
-    carouselItems
+    carouselItems,
+    btnLabel
 }: mainCarouselProps) => {
 
 
@@ -47,13 +49,14 @@ const MainCarousel = ({
                             btnHref={item.btnHref!} 
                             itemTitle={item.title} 
                             itemDescription={item.description!}
+                            btnLabel={btnLabel}
                     />
                     )) :
                     <CarouselItems 
                         id="1"
                         imageSrc="/slider-images/Starline.jpeg" 
                         imageAlt="установка starline" 
-                        btnHref="/catalog/signalisations/starline" 
+                        btnHref="/ustanovka-signalizacii-atyrau" 
                         itemTitle="StarLine — надежная защита вашего автомобиля." itemDescription="Установка Автосигнализаций."
                     />
                     }
@@ -61,7 +64,7 @@ const MainCarousel = ({
                     {/* <CarouselItems 
                         imageSrc="/slider-images/Starline.jpeg" 
                         imageAlt="установка starline" 
-                        btnHref="/catalog/signalisations/starline" 
+                        btnHref="/ustanovka-signalizacii-atyrau" 
                         itemTitle="StarLine — надежная защита вашего автомобиля." itemDescription="Установка Автосигнализаций."
                     />
                     <CarouselItems 

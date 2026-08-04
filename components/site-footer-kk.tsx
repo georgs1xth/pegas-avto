@@ -5,37 +5,37 @@ import Link from "next/link";
 
 const POINTS = [
     {
-        addr: "Атырау, ул. Курмангазы, 70Б, ТД «Диас»",
-        landmark: "задний двор магазина «Москва», рядом с мал базаром «Тума»",
-        hours: "Ежедневно 09:00–19:00, вечером — по предварительному звонку",
+        addr: "Атырау, Құрманғазы көш., 70Б, «Диас» СҮ",
+        landmark: "«Москва» дүкенінің артқы ауласы, «Тума» базарының жанында",
+        hours: "Күн сайын 09:00–19:00, кешке — алдын ала қоңырау бойынша",
         gis: "https://2gis.kz/atyrau/geo/70000001035317367",
     },
     {
-        addr: "Атырау, ул. Бекена Айтжанова, 35",
-        landmark: "рядом с баней «Оркен» и балыкшинским мостом",
-        hours: "Ежедневно 10:00–20:00",
+        addr: "Атырау, Бекен Айтжанов көш., 35",
+        landmark: "«Өркен» моншасы мен Балықшы көпірінің жанында",
+        hours: "Күн сайын 10:00–20:00",
         gis: "https://2gis.kz/atyrau/geo/70000001115435394",
     },
 ];
 
 const APP_LINKS = [
-    { href: "/", label: "Главная" },
-    { href: "/services", label: "Услуги" },
-    { href: "/about", label: "О нас" },
-    { href: "/partnership", label: "Сотрудничество" },
+    { href: "/kk", label: "Басты бет" },
+        { href: "/kk/services", label: "Қызметтер" },
+    { href: "/kk/about", label: "Біз туралы" },
+    { href: "/kk/partnership", label: "Ынтымақтастық" },
 ];
 
 // Статичные SEO-страницы (вне Next-роутера) — обычные <a>
 const SEO_LINKS = [
-    { href: "/ustanovka-signalizacii-atyrau/", label: "Установка сигнализаций" },
-    { href: "/avtozapusk-atyrau/", label: "Автозапуск" },
-    { href: "/avtorskaya-ustanovka/", label: "Авторская установка" },
-    { href: "/ceny/", label: "Цены" },
-    { href: "/opt/", label: "Опт" },
-    { href: "/kontakty/", label: "Контакты" },
+    { href: "/kk/ustanovka-signalizacii-atyrau", label: "Сигнализация орнату" },
+    { href: "/kk/avtozapusk-atyrau", label: "Автоқосу" },
+    { href: "/kk/avtorskaya-ustanovka", label: "Авторлық орнату" },
+    { href: "/kk/ceny", label: "Бағалар" },
+    { href: "/kk/opt", label: "Көтерме" },
+    { href: "/kk/kontakty", label: "Байланыс" },
 ];
 
-const SiteFooter = () => {
+const SiteFooterKk = () => {
     return (
         <footer className="mt-8">
             <div
@@ -48,7 +48,7 @@ const SiteFooter = () => {
             <div className="bg-[#101010] text-neutral-400 text-sm">
                 <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-6">
                     <p>
-                        СТО «Пегас Авто А» — филиал{" "}
+                        «Пегас Авто А» СТО —{" "}
                         <a
                             href="https://kristall-auto.kz"
                             target="_blank"
@@ -57,21 +57,21 @@ const SiteFooter = () => {
                         >
                             Kristall-Auto
                         </a>
-                        , официального дистрибьютора StarLine в Казахстане. Мы в{" "}
+                         Қазақстандағы StarLine ресми дистрибьюторының филиалы. Біз{" "}
                         <a
                             href="https://starline-shop.kz/ru/set-points"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-white hover:text-[#ff4d5e]"
                         >
-                            списке установочных центров StarLine
+                            StarLine орнату орталықтары тізімінде
                         </a>
-                        . 15 лет на рынке, более 10 000 установок.
+                        бармыз. Нарықта 15 жыл, 10 000-нан астам орнату.
                     </p>
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         <div>
                             <h3 className="text-white uppercase text-xs tracking-wider font-bold mb-3">
-                                Наши точки в Атырау
+                                Атыраудағы мекенжайларымыз
                             </h3>
                             {POINTS.map((p) => (
                                 <p key={p.addr} className="mb-3">
@@ -94,7 +94,7 @@ const SiteFooter = () => {
                         </div>
                         <div>
                             <h3 className="text-white uppercase text-xs tracking-wider font-bold mb-3">
-                                Контакты
+                                Байланыс
                             </h3>
                             <p className="mb-2">
                                 <a href="tel:+77023923222" className="text-white hover:text-[#ff4d5e]">
@@ -123,11 +123,11 @@ const SiteFooter = () => {
                                     pegas_avto_by_kristallauto
                                 </a>
                             </p>
-                            <p>ИП «JASavto»</p>
+                            <p>«JASavto» ЖК</p>
                         </div>
                         <div>
                             <h3 className="text-white uppercase text-xs tracking-wider font-bold mb-3">
-                                Разделы
+                                Бөлімдер
                             </h3>
                             <ul className="space-y-1.5">
                                 {APP_LINKS.map((l) => (
@@ -156,4 +156,4 @@ const SiteFooter = () => {
     );
 };
 
-export default SiteFooter;
+export default SiteFooterKk;

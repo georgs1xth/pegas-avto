@@ -19,6 +19,7 @@ interface CarouselItemsProps {
     btnHref?: string;
     itemTitle: string;
     itemDescription?: string;
+    btnLabel?: string;
 }
 
 const CarouselItems = ({
@@ -29,7 +30,7 @@ const CarouselItems = ({
     btnHref,
     itemTitle,
     itemDescription,
-
+    btnLabel,
 }: CarouselItemsProps) => {
 
     const pathname = usePathname()
@@ -73,7 +74,7 @@ const CarouselItems = ({
                 </div>
                 <div className="justify-center mt-2 hidden md:flex ">
                     <Button variant="outline" onClick={onClick} className="rounded-none" size="inline">
-                        Подробнее
+                        {btnLabel ?? "Подробнее"}
                     </Button>
                 </div>
             </div>
