@@ -40,7 +40,7 @@ const SidebarItem = ({
         onClick={onClick}
         type="button"
         className={cn(
-            "flex items-center rounded-none w-full text-muted-foreground text-base font-[500] pl-6 transition-all border-l-2 border-transparent hover:border-[#e30016] hover:text-accent-foreground hover:bg-foreground/10 dark:hover:bg-foreground/10",
+            "flex items-center rounded-none w-full text-muted-foreground text-base font-[500] pl-6 transition-all border-l-2 border-transparent hover:border-[#e30016] hover:text-accent-foreground hover:bg-foreground/10",
             isActive && "text-foreground bg-muted-foreground/10 border-[#e30016] hover:bg-foreground/10 hover:text-accent-foreground"
         )}
         >

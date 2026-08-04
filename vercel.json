@@ -1,3 +1,137 @@
 {
-    "regions": ["fra1"]
+  "regions": [
+    "fra1"
+  ],
+  "redirects": [
+    {
+      "source": "/services/a766e5cd-9498-40cf-9b83-62c3b9c5a395",
+      "destination": "/services/ustanovka-avtosignalizacij/",
+      "permanent": true
+    },
+    {
+      "source": "/services/4b2a412a-c555-41c7-bf93-68ee18ed1dc2",
+      "destination": "/services/zapravka-avtokondicionerov/",
+      "permanent": true
+    },
+    {
+      "source": "/services/bd98e85b-7257-44ec-b553-384330a7f9a7",
+      "destination": "/services/remont-avtokondicionerov/",
+      "permanent": true
+    },
+    {
+      "source": "/services/a4d9134d-aa41-4506-a90f-5eab39dcdcdd",
+      "destination": "/services/kompyuternaya-diagnostika/",
+      "permanent": true
+    },
+    {
+      "source": "/services/41cd5ec4-b28f-43dd-8fa3-f3c83d4bd303",
+      "destination": "/services/ustanovka-videoregistratorov/",
+      "permanent": true
+    },
+    {
+      "source": "/services/9c6262b4-0055-4b11-80e4-676cd1cf2113",
+      "destination": "/services/avarijnoe-vskrytie/",
+      "permanent": true
+    },
+    {
+      "source": "/services/26309bde-9410-43d4-8ddf-4184b908d73a",
+      "destination": "/services/vosstanovlenie-immobilajzera/",
+      "permanent": true
+    },
+    {
+      "source": "/services/3c039866-6b65-4d37-8fd3-15478bf83a81",
+      "destination": "/services/avtoelektrik/",
+      "permanent": true
+    },
+    {
+      "source": "/services/151f7d09-12f3-45e2-a38c-5963773ea9e0",
+      "destination": "/services/poisk-utechki-toka/",
+      "permanent": true
+    },
+    {
+      "source": "/services/33286cf6-2d95-4778-8616-b40efe130c13",
+      "destination": "/services/chistka-forsunok/",
+      "permanent": true
+    },
+    {
+      "source": "/services/f9e72375-84fb-4ecf-ba89-2646798ca7c2",
+      "destination": "/services/chip-tyuning/",
+      "permanent": true
+    },
+    {
+      "source": "/services/2e2a46cd-c937-4ae6-ba13-c6e062f648fe",
+      "destination": "/services/kodirovanie-blokov/",
+      "permanent": true
+    },
+    {
+      "source": "/services/f9003b16-4baf-48f7-87a8-12d843ff8b24",
+      "destination": "/services/videoendoskopiya-dvigatelya/",
+      "permanent": true
+    },
+    {
+      "source": "/services/7093f2d2-af36-4856-b220-5bd9a000ea45",
+      "destination": "/services/dymogenerator/",
+      "permanent": true
+    },
+    {
+      "source": "/services/6a0559b3-2344-4b67-8c00-dd8cba158786",
+      "destination": "/services/zamer-davleniya-masla/",
+      "permanent": true
+    },
+    {
+      "source": "/services/c35e683f-6eae-4a70-b13c-b7a399dbb010",
+      "destination": "/services/protochka-tormoznyh-diskov/",
+      "permanent": true
+    },
+    {
+      "source": "/services/48e0879b-2517-41fb-8d37-20979859af90",
+      "destination": "/services/remont-generatora-startera/",
+      "permanent": true
+    },
+    {
+      "source": "/services/e6031b13-3a66-4722-a52a-329d68e2c478",
+      "destination": "/services/korrektirovka-probega/",
+      "permanent": true
+    },
+    {
+      "source": "/services/4da537f7-adb4-43c4-ac72-4121f6bdba9c",
+      "destination": "/services/diagnostika-kuplya-prodazha/",
+      "permanent": true
+    },
+    {
+      "source": "/services/c306eee9-e4c8-4f23-b4b0-d9cce613819f",
+      "destination": "/services/zapchasti-na-zakaz/",
+      "permanent": true
+    },
+    {
+      "source": "/catalog",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/catalog/:path*",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/sign-in",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sign-up",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/employee/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }

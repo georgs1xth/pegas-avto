@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kia K7 — Атырауда автоқосу орнату</title>
 <meta name="description" content="Атырауда Kia K7 көлігіне автоқосу мен сигнализация орнату: жұмыс 40 000 ₸ бастап, 2–2,5 сағат, кепілдік 5 жылға дейін.">
-<link rel="canonical" href="https://pegas.georgiy.bond/kk/avtozapusk/kia-k7/">
-<link rel="alternate" hreflang="ru-KZ" href="https://pegas.georgiy.bond/avtozapusk/kia-k7/">
-<link rel="alternate" hreflang="kk-KZ" href="https://pegas.georgiy.bond/kk/avtozapusk/kia-k7/">
-<link rel="alternate" hreflang="x-default" href="https://pegas.georgiy.bond/avtozapusk/kia-k7/">
+<link rel="canonical" href="https://pegas.georgiy.bond/kk/avtozapusk/kia-k7">
+<link rel="alternate" hreflang="ru-KZ" href="https://pegas.georgiy.bond/avtozapusk/kia-k7">
+<link rel="alternate" hreflang="kk-KZ" href="https://pegas.georgiy.bond/kk/avtozapusk/kia-k7">
+<link rel="alternate" hreflang="x-default" href="https://pegas.georgiy.bond/avtozapusk/kia-k7">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kia K7 — Атырауда автоқосу орнату">
 <meta property="og:description" content="Атырауда Kia K7 көлігіне автоқосу мен сигнализация орнату: жұмыс 40 000 ₸ бастап, 2–2,5 сағат, кепілдік 5 жылға дейін.">
-<meta property="og:url" content="https://pegas.georgiy.bond/kk/avtozapusk/kia-k7/">
+<meta property="og:url" content="https://pegas.georgiy.bond/kk/avtozapusk/kia-k7">
 <meta property="og:locale" content="kk_KZ">
 <meta property="og:site_name" content="СТО «Пегас Авто А»">
 <meta property="og:image" content="https://pegas.georgiy.bond/img/og-cover.jpg">
@@ -32,8 +32,12 @@ header.site{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filt
 header.site .wrap{display:flex;align-items:center;gap:16px;height:62px}
 .logo{font-weight:700;text-decoration:none;color:var(--fg);white-space:nowrap;letter-spacing:-.02em;font-size:20px}
 @media(min-width:1024px){.logo{font-size:26px}}
-.logo .lg-avto{color:rgba(202,138,4,.7);font-weight:600;margin-left:2px;letter-spacing:0}
-.logo .lg-a{color:#b91c1c;font-weight:500;margin-left:2px}
+.lg-avto{color:rgba(202,138,4,.9);font-weight:600;margin-left:2px;letter-spacing:0}
+.lg-a{color:#b91c1c;font-weight:500;margin-left:2px}
+.lang{display:flex;gap:2px;margin-left:12px;flex-shrink:0}
+.lang a{display:block;padding:6px 9px;font-size:13px;font-weight:700;color:var(--mut);text-decoration:none;border:1px solid var(--line)}
+.lang a:hover{color:var(--red);border-color:var(--red)}
+.lang a.on{background:var(--dark);color:#fff;border-color:var(--dark)}
 nav.top{display:flex;gap:6px;overflow-x:auto;font-size:14px;margin-left:auto}
 nav.top a{position:relative;color:var(--mut);text-decoration:none;white-space:nowrap;font-weight:600;padding:8px 9px}
 nav.top a::after{content:"";position:absolute;left:9px;right:9px;bottom:2px;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .15s}
@@ -96,7 +100,58 @@ details div{padding:0 14px 12px;color:var(--mut)}
 .ph-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:12px 0}
 .ph-grid img{width:100%;height:auto;display:block;border:1px solid var(--line);border-bottom:3px solid var(--red)}
 .ph-one img{max-width:640px;width:100%;height:auto;display:block;border:1px solid var(--line);border-bottom:3px solid var(--red);margin:12px 0}
+.svc-grid{display:grid;gap:16px;grid-template-columns:1fr;margin:14px 0 26px}
+@media(min-width:820px){.svc-grid{grid-template-columns:1fr 1fr}}
+.svc{display:flex;align-items:stretch;height:150px;border:1px solid var(--line);text-decoration:none;color:var(--fg);background:var(--bg);transition:box-shadow .15s;overflow:hidden}
+.svc:hover{box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.svc img{width:40%;max-width:200px;height:100%;object-fit:cover;display:block;flex-shrink:0}
+.svc-t{display:flex;flex-direction:column;align-items:flex-end;text-align:right;padding:12px 14px;gap:4px;flex:1;min-width:0}
+.svc-t b{font-size:16px;line-height:1.25;color:var(--red-d)}
+.svc-t .mut{font-size:13px;line-height:1.45;max-height:4.35em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.svc-t .pr{margin-top:auto;background:var(--red);color:#fff;font-weight:700;font-size:14px;padding:8px 18px;align-self:flex-end}
+.svc:hover .pr{background:var(--red-d)}
+.svc-h{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;text-align:center;background:var(--soft);padding:14px;margin:8px 0 4px}
+.svc-h2{text-align:center;background:var(--soft);padding:14px;margin:30px 0 4px;color:#b8860b}
+@media(max-width:400px){.svc img{width:92px}}
 .stripe{height:10px;background:repeating-linear-gradient(135deg,var(--dark) 0 26px,var(--red) 26px 40px);margin-top:44px}
+.hero{position:relative;overflow:hidden;background:var(--dark);color:#fff;margin:-30px -16px 26px}
+.hero::before{content:"";position:absolute;inset:0 -90px 0 auto;width:45%;background:var(--red);transform:skew(-18deg);opacity:.95}
+.hero-in{position:relative;max-width:1140px;margin:0 auto;padding:46px 16px}
+@media(min-width:1024px){.hero-in{padding-right:38%}}
+.hero .kicker{color:#ff4d5e;font-weight:700;letter-spacing:.18em;font-size:13px;text-transform:uppercase;margin-bottom:10px}
+.hero h1{color:#fff;font-size:clamp(26px,5vw,42px)}
+.hero h1::after{background:var(--red)}
+.hero .sub{color:#d4d4d4;font-size:17px;max-width:560px}
+.hero .row{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 30px}
+.hero .btn-out{border-color:#fff;color:#fff}
+.hero .btn-out:hover{border-color:var(--red);color:#ff4d5e}
+.hero .facts{display:grid;gap:1px;background:rgba(255,255,255,.12);max-width:720px;grid-template-columns:1fr}
+@media(min-width:600px){.hero .facts{grid-template-columns:repeat(3,1fr)}}
+.hero .facts div{background:var(--dark);padding:12px 16px}
+.hero .facts b{display:block;font-size:20px;font-weight:800}
+.hero .facts span{font-size:11px;color:#a3a3a3;text-transform:uppercase;letter-spacing:.04em}
+.hero p{max-width:none}
+.slides{display:grid;gap:16px;grid-template-columns:1fr;margin:22px 0}
+@media(min-width:640px){.slides{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.slides{grid-template-columns:repeat(4,1fr)}}
+.slide{display:flex;flex-direction:column}
+.slide img{width:100%;aspect-ratio:15/9;object-fit:cover;display:block;border:1px solid var(--line)}
+.slide h3{text-align:center;color:var(--red-d);font-size:18px;margin:12px 0 4px}
+.slide p{text-align:center;color:var(--mut);margin:0 0 12px;max-width:none;flex:1}
+.slide .btn{justify-content:center;width:100%;font-weight:600}
+.info-grid{display:grid;gap:14px;grid-template-columns:1fr;margin:22px 0}
+@media(min-width:760px){.info-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.info-grid{grid-template-columns:repeat(4,1fr)}.info-wide{grid-column:span 2}}
+.info{border:1px solid var(--line);border-top:3px solid var(--red);padding:16px}
+.info .ic{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.info .ic svg{width:20px;height:20px;color:var(--red);flex-shrink:0}
+.info b{font-size:17px}
+.info p{margin:0;color:var(--mut);font-size:14px;max-width:none}
+.grid2{display:grid;gap:14px;grid-template-columns:1fr;margin:14px 0}
+@media(min-width:760px){.grid2{grid-template-columns:1fr 1fr}}
+.box{border:1px solid var(--line);border-top:3px solid var(--red);padding:16px}
+.box h3{margin:0 0 6px}
+.box p{margin:0 0 10px;max-width:none}
 footer.site{background:var(--dark);color:#b9b9b9;padding:30px 0;font-size:14px}
 footer.site h3{color:#fff;text-transform:uppercase;font-size:14px;letter-spacing:.04em}
 footer.site .cols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
@@ -106,17 +161,26 @@ footer.site a:hover{color:#ff4d5e}
 a{color:inherit}
 main a{color:var(--fg);text-decoration-color:var(--red);text-underline-offset:3px}
 main a:hover{color:var(--red)}
-@media(max-width:640px){nav.top{display:none}}</style>
+@media(max-width:640px){
+  header.site .wrap{height:auto;flex-wrap:wrap;padding-top:8px;padding-bottom:4px}
+  nav.top{order:3;width:100%;margin:2px -16px 0;padding:0 16px 6px;gap:2px;-webkit-overflow-scrolling:touch}
+  nav.top a{padding:6px 8px;font-size:13px}
+  .lang{margin-left:auto}
+}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "AutoRepair", "@id": "https://pegas.georgiy.bond/#point-kurmangazy", "name": "СТО «Пегас Авто А» by Kristall Auto", "legalName": "ИП «JASavto»", "url": "https://pegas.georgiy.bond", "telephone": "+7 702 392 32 22", "priceRange": "₸₸", "foundingDate": "2011", "paymentAccepted": "Қолма-қол ақша, банк картасы, Kaspi QR, Kaspi Red, Kaspi бөліп төлеу", "currenciesAccepted": "KZT", "areaServed": {"@type": "City", "name": "Атырау"}, "address": {"@type": "PostalAddress", "addressCountry": "KZ", "addressLocality": "Атырау", "streetAddress": "Құрманғазы көш., 70Б"}, "image": "https://pegas.georgiy.bond/img/business.webp", "geo": {"@type": "GeoCoordinates", "latitude": 47.114546, "longitude": 51.885867}, "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "09:00", "closes": "19:00"}, "sameAs": ["https://2gis.kz/atyrau/geo/70000001035317367", "https://share.google/APYcZQgqugB9dfK7N", "https://yandex.kz/profile/7749011020", "https://www.instagram.com/pegas_avto_by_kristallauto"]}, {"@type": "AutoRepair", "@id": "https://pegas.georgiy.bond/#point-aitzhanova", "name": "СТО «Пегас Авто А» by Kristall Auto", "legalName": "ИП «JASavto»", "url": "https://pegas.georgiy.bond", "telephone": "+7 702 392 32 22", "priceRange": "₸₸", "foundingDate": "2011", "paymentAccepted": "Қолма-қол ақша, банк картасы, Kaspi QR, Kaspi Red, Kaspi бөліп төлеу", "currenciesAccepted": "KZT", "areaServed": {"@type": "City", "name": "Атырау"}, "address": {"@type": "PostalAddress", "addressCountry": "KZ", "addressLocality": "Атырау", "streetAddress": "Бекен Айтжанов көш., 35"}, "image": "https://pegas.georgiy.bond/img/business.webp", "geo": {"@type": "GeoCoordinates", "latitude": 47.092672, "longitude": 51.84855}, "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "20:00"}, "sameAs": ["https://2gis.kz/atyrau/geo/70000001115435394", "https://www.instagram.com/pegas_avto_by_kristallauto"]}, {"@type": "Service", "name": "Kia K7 автоқосу", "description": "Атырауда Kia K7 көлігіне автоқосу орнату", "url": "https://pegas.georgiy.bond/kk/avtozapusk/kia-k7/", "serviceType": "Kia K7 автоқосу", "areaServed": {"@type": "City", "name": "Атырау"}, "provider": {"@id": "https://pegas.georgiy.bond/#point-kurmangazy"}, "offers": {"@type": "Offer", "price": "40000", "priceCurrency": "KZT", "url": "https://pegas.georgiy.bond/kk/avtozapusk/kia-k7/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Атырауда Kia K7 автоқосуы қанша тұрады?", "acceptedAnswer": {"@type": "Answer", "text": "Жұмыс — 30 000 ₸ бастап (кілт) немесе 40 000 ₸ бастап (Push Start, CAN). StarLine жабдығы бөлек, нақты есеп — WhatsApp арқылы."}}, {"@type": "Question", "name": "Kia K7 орнатуы қанша уақыт алады?", "acceptedAnswer": {"@type": "Answer", "text": "Стандартты орнату — 2–2,5 сағат. Авторлық орнату — орта есеппен 15 сағат."}}, {"@type": "Question", "name": "Kia K7 көлігін телефоннан қосуға бола ма?", "acceptedAnswer": {"@type": "Answer", "text": "Иә, GSM/LTE модульді StarLine кешендерінде — қашықтық шектеусіз."}}, {"@type": "Question", "name": "Кепілдік қандай?", "acceptedAnswer": {"@type": "Answer", "text": "StarLine жабдығына — 3 жыл, my.starline.ru сайтында тіркелгенде 5 жылға дейін."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Басты бет", "item": "https://pegas.georgiy.bond/kk/"}, {"@type": "ListItem", "position": 2, "name": "Автоқосу", "item": "https://pegas.georgiy.bond/kk/avtozapusk-atyrau/"}, {"@type": "ListItem", "position": 3, "name": "Kia K7", "item": "https://pegas.georgiy.bond/kk/avtozapusk/kia-k7/"}]}]}</script>
 </head>
 <body>
 <header class="site"><div class="wrap">
 <a class="logo" href="/">ПЕГАС<span class="lg-avto">avto</span><span class="lg-a">A</span></a>
-<nav class="top"><a href="/kk/ustanovka-signalizacii-atyrau/">Сигнализация орнату</a><a href="/kk/starline-atyrau/">StarLine</a><a href="/kk/avtozapusk-atyrau/" class="act" aria-current="page">Автоқосу</a><a href="/kk/avtorskaya-ustanovka/">Авторлық орнату</a><a href="/kk/garantiya-dilera/">Дилер кепілдігі</a><a href="/kk/ceny/">Бағалар</a><a href="/kk/opt/">Көтерме</a><a href="/kk/kontakty/">Байланыс</a></nav>
+<nav class="top"><a href="/kk/services">Қызметтер</a><a href="/kk/ustanovka-signalizacii-atyrau">Сигнализация</a><a href="/kk/avtozapusk-atyrau" class="act" aria-current="page">Автоқосу</a><a href="/kk/ceny">Бағалар</a><a href="/kk/kontakty">Байланыс</a></nav>
+<div class="lang">
+<a href="https://pegas.georgiy.bond/avtozapusk/kia-k7" hreflang="ru-KZ">RU</a>
+<a href="https://pegas.georgiy.bond/kk/avtozapusk/kia-k7" class="on" hreflang="kk-KZ">KZ</a>
+</div>
 </div></header>
 <a class="fab" href="https://wa.me/77023923222" target="_blank" rel="noopener" aria-label="Бізге жазыңыз" title="Бізге жазыңыз"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.7 1.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .8-.1 1.4Z"/></svg></a>
 <main><div class="wrap">
-<nav class="crumbs"><a href="/kk/">Басты бет</a> › <a href="/kk/avtozapusk-atyrau/">Автоқосу</a> › Kia K7</nav>
+<nav class="crumbs"><a href="/kk">Басты бет</a> › <a href="/kk/avtozapusk-atyrau">Автоқосу</a> › Kia K7</nav>
 <h1>Атырауда Kia K7 көлігіне автоқосу және сигнализация</h1>
 <p class="lead">Атырауда Kia K7 үшін автоқосу орнатамыз. Жұмыс — 40 000 ₸ бастап: Push Start, CAN-шина арқылы. Жұмыс уақыты — 2–2,5 сағат. StarLine кепілдігі — 3 жыл, тіркелгенде 5 жылға дейін.</p>
 
@@ -125,9 +189,9 @@ main a:hover{color:var(--red)}
 <h2>Орнату ерекшеліктері</h2>
 <p>Седан — бокстарымыздағы ең жиі кузов: сымдарды штаттық арналарға жасырамыз, салонды ізсіз қайтарамыз. Бұл кластағы көліктерге метка немесе смартфон арқылы авторизациясы бар және GSM/LTE модульді кешендерді ұсынамыз.</p>
 <h2>Kia K7 үшін авторлық орнату</h2>
-<p>Жұмсақ отырғызу және 5 батырмаға дейін ақылды комфорт — <b>110 000 ₸</b>, орта есеппен 15 сағат. Обходчиксіз: кілтті көлікте жасырудың қажеті жоқ. <a href="/kk/avtorskaya-ustanovka/">Толығырақ →</a></p>
+<p>Жұмсақ отырғызу және 5 батырмаға дейін ақылды комфорт — <b>110 000 ₸</b>, орта есеппен 15 сағат. Обходчиксіз: кілтті көлікте жасырудың қажеті жоқ. <a href="/kk/avtorskaya-ustanovka">Толығырақ →</a></p>
 <h2>Жиі қойылатын сұрақтар</h2><details><summary>Атырауда Kia K7 автоқосуы қанша тұрады?</summary><div><p>Жұмыс — 30 000 ₸ бастап (кілт) немесе 40 000 ₸ бастап (Push Start, CAN). StarLine жабдығы бөлек, нақты есеп — WhatsApp арқылы.</p></div></details><details><summary>Kia K7 орнатуы қанша уақыт алады?</summary><div><p>Стандартты орнату — 2–2,5 сағат. Авторлық орнату — орта есеппен 15 сағат.</p></div></details><details><summary>Kia K7 көлігін телефоннан қосуға бола ма?</summary><div><p>Иә, GSM/LTE модульді StarLine кешендерінде — қашықтық шектеусіз.</p></div></details><details><summary>Кепілдік қандай?</summary><div><p>StarLine жабдығына — 3 жыл, my.starline.ru сайтында тіркелгенде 5 жылға дейін.</p></div></details>
-<h2>Басқа үлгілер</h2><div class="grid-links"><a href="/kk/avtozapusk/kia-rio/">Kia Rio</a><a href="/kk/avtozapusk/kia-cerato/">Kia Cerato</a><a href="/kk/avtozapusk/kia-optima/">Kia Optima</a><a href="/kk/avtozapusk/kia-k5/">Kia K5</a></div>
+<h2>Басқа үлгілер</h2><div class="grid-links"><a href="/kk/avtozapusk/kia-rio">Kia Rio</a><a href="/kk/avtozapusk/kia-cerato">Kia Cerato</a><a href="/kk/avtozapusk/kia-optima">Kia Optima</a><a href="/kk/avtozapusk/kia-k5">Kia K5</a></div>
 <section class="cta"><h2 style="margin-top:0">Орнатуға жазылу</h2><p class="mut">WhatsApp-қа жазыңыз: көлік үлгісі мен жылын айтыңыз — бағасын бірден бағдарлаймыз.</p>
 <div class="row"><a class="btn btn-wa" href="https://wa.me/77023923222" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.7 1.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .8-.1 1.4Z"/></svg>WhatsApp-қа жазу</a>
 <a class="btn btn-out" href="tel:+77023923222">+7 702 392 32 22</a></div>
@@ -141,8 +205,8 @@ main a:hover{color:var(--red)}
 <div><h3>Атыраудағы мекенжайларымыз</h3><p><b>Атырау, Құрманғазы көш., 70Б, «Диас» СҮ</b><br>«Москва» дүкенінің артқы ауласы, «Тума» базарының жанында<br>Күн сайын 09:00–19:00, кешке — алдын ала қоңырау бойынша<br><a href="https://2gis.kz/atyrau/geo/70000001035317367" target="_blank" rel="noopener">2ГИС</a></p><p><b>Атырау, Бекен Айтжанов көш., 35</b><br>«Өркен» моншасы мен Балықшы көпірінің жанында<br>Күн сайын 10:00–20:00<br><a href="https://2gis.kz/atyrau/geo/70000001115435394" target="_blank" rel="noopener">2ГИС</a></p></div>
 <div><h3>Байланыс</h3>
 <p><a href="tel:+77023923222">+7 702 392 32 22</a> (WhatsApp)<br>ИП «JASavto»</p>
-<p><a href="https://pegas.georgiy.bond/avtozapusk/kia-k7/">Русский</a></p></div>
-<div><h3>Бөлімдер</h3><p><a href="/kk/ustanovka-signalizacii-atyrau/">Сигнализация орнату</a></p><p><a href="/kk/starline-atyrau/">StarLine</a></p><p><a href="/kk/avtozapusk-atyrau/">Автоқосу</a></p><p><a href="/kk/avtorskaya-ustanovka/">Авторлық орнату</a></p><p><a href="/kk/garantiya-dilera/">Дилер кепілдігі</a></p><p><a href="/kk/ceny/">Бағалар</a></p><p><a href="/kk/opt/">Көтерме</a></p><p><a href="/kk/kontakty/">Байланыс</a></p></div>
+</div>
+<div><h3>Бөлімдер</h3><p><a href="/kk/services">Қызметтер</a></p><p><a href="/kk/ustanovka-signalizacii-atyrau">Сигнализация орнату</a></p><p><a href="/kk/starline-atyrau">Атырауда StarLine</a></p><p><a href="/kk/avtozapusk-atyrau">Автоқосу</a></p><p><a href="/kk/avtorskaya-ustanovka">Авторлық орнату</a></p><p><a href="/kk/garantiya-dilera">Дилер кепілдігі</a></p><p><a href="/kk/ceny">Бағалар</a></p><p><a href="/kk/opt">Көтерме</a></p><p><a href="/kk/partnership">Ынтымақтастық</a></p><p><a href="/kk/about">Біз туралы</a></p><p><a href="/kk/kontakty">Байланыс</a></p></div>
 </div>
 <p class="sm" style="margin-top:18px">© 2026 СТО «Пегас Авто А» by Kristall Auto · Атырау</p>
 </div></footer>

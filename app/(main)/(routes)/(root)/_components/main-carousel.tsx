@@ -8,10 +8,18 @@ import {
 import CarouselItems from "@/app/(main)/(routes)/(root)/_components/CarouselItems";
 
 import Autoplay from "embla-carousel-autoplay";
-import { MainCarouselItem } from "@prisma/client";
+
+// Слайды захардкожены в page.tsx — БД больше не используется
+export interface CarouselSlide {
+    id: string;
+    title: string;
+    description: string | null;
+    imageUrl: string | null;
+    btnHref: string | null;
+}
 
 interface mainCarouselProps {
-    carouselItems: MainCarouselItem[]
+    carouselItems: CarouselSlide[]
 }
 
 const MainCarousel = ({

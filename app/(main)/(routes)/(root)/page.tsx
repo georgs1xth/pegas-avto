@@ -4,7 +4,8 @@ import InfoCard from "@/components/info-card";
 import { Metadata } from "next";
 import HomeHero from "@/components/home-hero";
 import HomeSchema from "@/components/home-schema";
-import type { MainCarouselItem } from "@prisma/client";
+import WholesaleSection from "@/components/wholesale-section";
+import type { CarouselSlide } from "./_components/main-carousel";
 
 export const metadata: Metadata = {
     title: { absolute: "СТО Пегас avto A"},
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 // Слайды захардкожены (сняты с прода 03.08.2026) — без запроса к БД, чтобы главная грузилась быстрее.
 // Фото остаются на uploadthing (utfs.io), ссылки те же.
-const carouselItems: MainCarouselItem[] = [
+const carouselItems: CarouselSlide[] = [
     {
         id: "static-1",
         title: "StarLine — надежная защита вашего автомобиля.",
@@ -83,6 +84,7 @@ const Home = () => {
                 btnHref="/partnership"
                 />
             </div>
+            <WholesaleSection/>
             </div>
         </div>
      );

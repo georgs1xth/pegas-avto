@@ -1,29 +1,16 @@
 "use client";
 
-import NavbarRoutes from "@/components/navbar-routes";
 import { Logo } from "./logo";
 import MobileSidebar from "./mobile-sidebar";
-import { SearchCatalog } from "@/components/search-input";
 import { usePathname } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { LogIn, Skull, Zap } from "lucide-react";
-import AccountButtons from "@/components/account-buttons";
 import { cn } from "@/lib/utils";
 import TopNav from "./top-nav";
 
-const Navbar = ({
-    children,
-    isAdmin,
-}: {
-    children: React.ReactNode,
-    isAdmin: boolean
-}) => {
+const Navbar = () => {
 
     const pathname = usePathname();
-
-    const isCatalogPage = pathname.includes("/catalog/");
 
     const isMainPage = pathname === "/";
 
@@ -31,56 +18,16 @@ const Navbar = ({
 
     useEffect(() => {
         const handleScroll = () => {
-        setIsScrolled(window.scrollY > 10);
+            setIsScrolled(window.scrollY > 10);
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-
-
-    return ( 
-        // <div className="p-4 border-b h-full flex items-center bg-background/60 backdrop-blur-md shadow-sm w-full justify-between z-10">
-
-        //         <Link href="/" className="flex pl-4 justify-center justify-self-center scale">
-        //             {!!isAdmin ? 
-        //                 <h1 className="text-md font-medium flex gap-1 justify-center items-center">
-        //                     <Zap className="text-accent"/>
-        //                     <div className="flex flex-col gap-0">
-        //                         <span className="text-xs h-[10px] text-accent">made by </span>
-        //                         Georgiy
-        //                     </div>
-        //                 </h1>
-        //                 :            
-        //                 <Logo />
-        //             }
-        //         </Link>
-
-        //     {isCatalogPage && (
-                
-        //             <div className="ml-10 hidden md:block">
-        //                 <SearchCatalog/>
-        //             </div>
-        //     )}
-            
-
-        //     <div className="hidden ml-auto gap-3 justify-center items-center md:flex">
-        //         <AccountButtons/>
-        //         <NavbarRoutes>
-        //             {children}
-        //         </NavbarRoutes>
-        //     </div>
-        //     <div className="ml-auto md:hidden flex justify-center items-center gap-4">
-        //         <AccountButtons/>
-        //         <MobileSidebar>
-        //             {children}
-        //         </MobileSidebar>
-        //     </div>
-        // </div>
-    //  );
+    return (
     <header className={cn('flex p-2 h-full w-full transition-all duration-100 border-b border-t-[3px] border-t-[#e30016] bg-background/50 backdrop-blur-md',
-        !!isScrolled && !!isMainPage ? 'shadow-lg dark:shadow-accent/30 md:shadow-none md:duration-0' : null,
+        !!isScrolled && !!isMainPage ? 'shadow-lg md:shadow-none md:duration-0' : null,
     )}>
       <div className='flex items-center transition-all duration-100 w-full mx-auto max-w-[1140px] px-1'>
         <Link href="/" className="flex items-center pl-2 shrink-0">
@@ -89,11 +36,6 @@ const Navbar = ({
         <div className="hidden md:flex ml-6">
             <TopNav/>
         </div>
-        {isCatalogPage && (
-            <div className="ml-4 hidden lg:block">
-                <SearchCatalog/>
-            </div>
-        )}
         <div className="hidden ml-auto gap-3 justify-center items-center md:flex">
             <a
                 href="https://wa.me/77023923222"
@@ -103,20 +45,17 @@ const Navbar = ({
             >
                 Написать нам
             </a>
-            <AccountButtons/>
-            <NavbarRoutes>
-                {children}
-            </NavbarRoutes>
+            <div className="flex gap-[2px]">
+                <span className="px-[9px] py-[6px] text-[13px] font-bold bg-[#101010] text-white border border-[#101010]">RU</span>
+                <a href="/kk" hrefLang="kk-KZ" className="px-[9px] py-[6px] text-[13px] font-bold text-muted-foreground border hover:text-[#e30016] hover:border-[#e30016] transition-colors">KZ</a>
+            </div>
         </div>
         <div className="md:hidden flex ml-auto justify-end items-center gap-4 pr-2">
-            <AccountButtons/>
-            <MobileSidebar>
-                {children}
-            </MobileSidebar>
+            <MobileSidebar/>
         </div>
       </div>
     </header>
     )
 }
- 
+
 export default Navbar;
