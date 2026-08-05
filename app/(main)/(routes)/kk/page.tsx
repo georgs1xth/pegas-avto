@@ -11,7 +11,7 @@ import type { CarouselSlide } from "../(root)/_components/main-carousel";
 
 export const metadata: Metadata = {
     title: { absolute: "«Пегас Авто А» — Атыраудағы StarLine ресми дилері" },
-    description: "«Пегас Авто А» — Атыраудағы StarLine ресми дилері әрі дистрибьюторы. StarLine сигнализациялары, Neoline бейнетіркегіштері, Android магнитолалар қоймадан: көтерме және бөлшек, екі бөлімшеде орнату.",
+    description: "«Пегас Авто А» — Атыраудағы StarLine ресми дилері әрі дистрибьюторы: сигнализациялар, Neoline тіркеуіштері, Android магнитолалар. Көтерме және бөлшек.",
     alternates: {
         canonical: "https://pegas.georgiy.bond/kk",
         languages: {
