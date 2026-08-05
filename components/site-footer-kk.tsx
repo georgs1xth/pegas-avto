@@ -31,6 +31,7 @@ const SEO_LINKS = [
     { href: "/kk/avtozapusk-atyrau", label: "Автоқосу" },
     { href: "/kk/avtorskaya-ustanovka", label: "Авторлық орнату" },
     { href: "/kk/videoregistratory-neoline", label: "Neoline бейнетіркегіштері" },
+    { href: "/kk/radar-detektory-atyrau", label: "Радар-детекторлар" },
     { href: "/kk/android-magnitoly", label: "Android магнитолалар" },
     { href: "/kk/mastera", label: "Шеберлер" },
     { href: "/kk/ceny", label: "Бағалар" },
