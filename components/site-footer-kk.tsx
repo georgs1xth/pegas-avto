@@ -20,7 +20,7 @@ const POINTS = [
 
 const APP_LINKS = [
     { href: "/kk", label: "Басты бет" },
-        { href: "/kk/services", label: "Қызметтер" },
+    { href: "/kk/services", label: "Қызметтер" },
     { href: "/kk/about", label: "Біз туралы" },
     { href: "/kk/partnership", label: "Ынтымақтастық" },
 ];
