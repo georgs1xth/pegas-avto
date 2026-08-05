@@ -73,7 +73,10 @@ const ORGANIZATION = {
         url: KRISTALL,
         description: "Қазақстандағы StarLine ресми дистрибьюторы",
     },
-    brand: { "@type": "Brand", name: "StarLine", url: "https://www.starline.ru/" },
+    brand: [
+        { "@type": "Brand", name: "StarLine", url: "https://www.starline.ru/" },
+        { "@type": "Brand", name: "Neoline", url: "https://neoline.kz/" },
+    ],
     subOrganization: POINTS.map((p) => ({ "@id": `${SITE}/#point-${p.id}` })),
     knowsAbout: [
         "StarLine",
