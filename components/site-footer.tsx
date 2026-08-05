@@ -30,6 +30,7 @@ const SEO_LINKS = [
     { href: "/ustanovka-signalizacii-atyrau/", label: "Установка сигнализаций" },
     { href: "/avtozapusk-atyrau/", label: "Автозапуск" },
     { href: "/avtorskaya-ustanovka/", label: "Авторская установка" },
+    { href: "/mastera/", label: "Мастера" },
     { href: "/ceny/", label: "Цены" },
     { href: "/opt/", label: "Опт" },
     { href: "/kontakty/", label: "Контакты" },

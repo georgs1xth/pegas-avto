@@ -30,6 +30,7 @@ const SEO_LINKS = [
     { href: "/kk/ustanovka-signalizacii-atyrau", label: "Сигнализация орнату" },
     { href: "/kk/avtozapusk-atyrau", label: "Автоқосу" },
     { href: "/kk/avtorskaya-ustanovka", label: "Авторлық орнату" },
+    { href: "/kk/mastera", label: "Шеберлер" },
     { href: "/kk/ceny", label: "Бағалар" },
     { href: "/kk/opt", label: "Көтерме" },
     { href: "/kk/kontakty", label: "Байланыс" },
@@ -64,9 +65,9 @@ const SiteFooterKk = () => {
                             rel="noopener noreferrer"
                             className="text-white hover:text-[#ff4d5e]"
                         >
-                            StarLine орнату орталықтары тізімінде
+                            StarLine орнату орталықтарының тізіміне
                         </a>
-                        бармыз. Нарықта 15 жыл, 10 000-нан астам орнату.
+                        енгізілгенбіз. Нарықта 15 жыл, 10 000-нан астам орнату.
                     </p>
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         <div>
@@ -109,7 +110,7 @@ const SiteFooterKk = () => {
                                     rel="noopener noreferrer"
                                     className="inline-block bg-[#e30016] hover:bg-[#b80012] text-white font-bold px-4 py-2"
                                 >
-                                    Написать в WhatsApp
+                                    WhatsApp-қа жазу
                                 </a>
                             </p>
                             <p className="mb-2">
