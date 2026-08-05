@@ -5,11 +5,12 @@ import { Metadata } from "next";
 import HomeHero from "@/components/home-hero";
 import HomeSchema from "@/components/home-schema";
 import WholesaleSection from "@/components/wholesale-section";
+import DistributorSection from "@/components/distributor-section";
 import type { CarouselSlide } from "./_components/main-carousel";
 
 export const metadata: Metadata = {
-    title: { absolute: "СТО Пегас avto A"},
-    description: "Широкий выбор услуг для вашего автомобиля. Ремонт, установка доп. оборудования, заправка автокондиционеров и многое другое.",
+    title: { absolute: "«Пегас Авто А» — официальный дистрибьютор StarLine в Атырау" },
+    description: "«Пегас Авто А» — официальный дистрибьютор StarLine в Атырау: оптовые и розничные поставки оригинального оборудования со склада в городе, установка в двух точках. 15 лет, 10 000+ установок.",
 };
 
 // Слайды захардкожены (сняты с прода 03.08.2026) — без запроса к БД, чтобы главная грузилась быстрее.
@@ -76,6 +77,7 @@ const Home = () => {
                 btnHref="/partnership"
                 />
             </div>
+            <DistributorSection/>
             <WholesaleSection/>
             </div>
         </div>

@@ -49,7 +49,7 @@ const SiteFooterKk = () => {
             <div className="bg-[#101010] text-neutral-400 text-sm">
                 <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-6">
                     <p>
-                        «Пегас Авто А» СТО —{" "}
+                        «Пегас Авто А» — Атырау қаласы мен Атырау облысындағы StarLine ресми дистрибьюторы. Қазақстандағы ресми дистрибьютор{" "}
                         <a
                             href="https://kristall-auto.kz"
                             target="_blank"
@@ -58,7 +58,7 @@ const SiteFooterKk = () => {
                         >
                             Kristall-Auto
                         </a>
-                         Қазақстандағы StarLine ресми дистрибьюторының филиалы. Біз{" "}
+                        {" "}құрамында жұмыс істейміз әрі{" "}
                         <a
                             href="https://starline-shop.kz/ru/set-points"
                             target="_blank"

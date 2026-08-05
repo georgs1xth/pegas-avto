@@ -31,9 +31,79 @@ const POINTS = [
     },
 ];
 
+
+const KRISTALL = "https://kristall-auto.kz";
+const AREA = [
+    { "@type": "City", name: "Атырау" },
+    { "@type": "AdministrativeArea", name: "Атырауская область" },
+];
+const CATALOG = [
+    ["Оптовые поставки оборудования StarLine", "Оптовая поставка"],
+    ["Розничная продажа оборудования StarLine", "Розничная продажа"],
+    ["Установка охранных комплексов StarLine", "Установка"],
+];
+const DISTRIB =
+    "Официальный дистрибьютор StarLine в Атырау и Атырауской области: оптовые и розничные " +
+    "поставки оригинального охранного оборудования со склада в Атырау, установка " +
+    "в собственных установочных центрах.";
+
+// Головной узел сущности: подлежащее при слове «дистрибьютор» — «Пегас Авто А».
+// Связь с Kristall-Auto вынесена в parentOrganization, а не в описание.
+const ORGANIZATION = {
+    "@type": "Organization",
+    "@id": `${SITE}/#organization`,
+    name: "Пегас Авто А",
+    alternateName: ["СТО «Пегас Авто А» by Kristall Auto", "Пегас AVTO A"],
+    legalName: "ИП «JASavto»",
+    description: DISTRIB,
+    url: SITE,
+    image: `${SITE}/img/business.webp`,
+    telephone: PHONE,
+    foundingDate: "2011",
+    areaServed: AREA,
+    address: {
+        "@type": "PostalAddress",
+        addressCountry: "KZ",
+        addressLocality: "Атырау",
+        streetAddress: "ул. Курмангазы, 70Б",
+    },
+    parentOrganization: {
+        "@type": "Organization",
+        name: "Kristall-Auto",
+        url: KRISTALL,
+        description: "Официальный дистрибьютор StarLine в Казахстане",
+    },
+    brand: { "@type": "Brand", name: "StarLine", url: "https://www.starline.ru/" },
+    subOrganization: POINTS.map((p) => ({ "@id": `${SITE}/#point-${p.id}` })),
+    knowsAbout: [
+        "StarLine",
+        "Автосигнализации",
+        "Автозапуск",
+        "CAN/LIN",
+        "Мягкая посадка",
+        "Оптовые поставки охранного оборудования",
+    ],
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Направления работы",
+        itemListElement: CATALOG.map(([name, serviceType]) => ({
+            "@type": "Offer",
+            itemOffered: {
+                "@type": "Service",
+                name,
+                serviceType,
+                provider: { "@id": `${SITE}/#organization` },
+                areaServed: AREA,
+            },
+        })),
+    },
+    sameAs: POINTS[0].sameAs,
+};
+
 const graph = {
     "@context": "https://schema.org",
     "@graph": [
+        ORGANIZATION,
         ...POINTS.map((p) => ({
             "@type": "AutoRepair",
             "@id": `${SITE}/#point-${p.id}`,
@@ -44,6 +114,8 @@ const graph = {
             priceRange: "₸₸",
             foundingDate: "2011",
             paymentAccepted: "Cash, Kaspi, Card",
+            description: DISTRIB,
+            parentOrganization: { "@id": `${SITE}/#organization` },
             areaServed: { "@type": "City", name: "Атырау" },
             address: {
                 "@type": "PostalAddress",
@@ -75,7 +147,7 @@ const graph = {
             url: SITE,
             name: "СТО «Пегас Авто А»",
             inLanguage: "ru-KZ",
-            publisher: { "@id": `${SITE}/#point-kurmangazy` },
+            publisher: { "@id": `${SITE}/#organization` },
         },
     ],
 };

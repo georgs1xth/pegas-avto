@@ -20,18 +20,18 @@ const HomeHeroKk = () => {
 
             <div className="relative mx-auto max-w-[1140px] px-4 py-12 md:py-16 lg:pr-[38%]">
                 <p className="text-[#ff4d5e] font-bold tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
-                    Атырау · 15 жыл · 10 000+ орнату
+                    Атырау · StarLine ресми дистрибьюторы · 15 жыл
                 </p>
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase leading-[1.1] tracking-tight max-w-[680px]">
-                    Атырауда <span className="text-[#ff4d5e]">StarLine</span>
+                    «Пегас Авто А» — Атыраудағы
                     <br />
-                    сигнализациясын орнату
+                    ресми <span className="text-[#ff4d5e]">StarLine</span> дистрибьюторы
                 </h1>
                 <div className="h-1 w-16 bg-[#e30016] my-5" />
                 <p className="max-w-[560px] text-neutral-300 text-base md:text-lg">
-                    Қазақстандағы StarLine ресми дистрибьюторы Kristall-Auto филиалы.
-                    Автоқосу, жұмсақ отырғызуы бар авторлық орнату, түпнұсқа жабдық
-                    және 5 жылға дейін кепілдік.
+                    Түпнұсқа StarLine жабдығын Атыраудағы өз қоймамыздан көтерме және бөлшектеп
+                    сатамыз әрі оны өз орнату орталықтарымызда орнатамыз. Қазақстандағы StarLine
+                    ресми дистрибьюторы Kristall-Auto құрамында жұмыс істейміз.
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
@@ -58,10 +58,11 @@ const HomeHeroKk = () => {
                     </Link>
                 </div>
 
-                <div className="mt-10 grid gap-px bg-white/10 sm:grid-cols-3 max-w-[720px]">
+                <div className="mt-10 grid gap-px bg-white/10 grid-cols-2 lg:grid-cols-4 max-w-[720px]">
                     {[
+                        { t: "Атырауда қойма", d: "өтініш күні тиеу" },
+                        { t: "Көтерме және бөлшек", d: "тікелей түпнұсқа" },
                         { t: "30 000 ₸ бастап", d: "орнату жұмысы" },
-                        { t: "2–2,5 сағат", d: "стандартты орнату" },
                         { t: "5 жылға дейін", d: "StarLine кепілдігі" },
                     ].map((x) => (
                         <div key={x.t} className="bg-[#101010] px-4 py-3">
@@ -75,7 +76,7 @@ const HomeHeroKk = () => {
 
                 <p className="mt-6 flex items-center gap-2 text-xs text-neutral-400">
                     <ShieldCheck className="h-4 w-4 text-[#ff4d5e]" />
-                    Түпнұсқа жабдық дистрибьютордан тікелей
+                    Жеткізілім өндірушіден тікелей — тек түпнұсқа, сериялық нөмірлерімен
                 </p>
             </div>
         </section>

@@ -20,18 +20,18 @@ const HomeHero = () => {
 
             <div className="relative mx-auto max-w-[1140px] px-4 py-12 md:py-16 lg:pr-[38%]">
                 <p className="text-[#ff4d5e] font-bold tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
-                    Атырау · 15 лет · 10 000+ установок
+                    Атырау · официальный дистрибьютор StarLine · 15 лет
                 </p>
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase leading-[1.1] tracking-tight max-w-[680px]">
-                    Установка сигнализаций
+                    «Пегас Авто А» — официальный
                     <br />
-                    <span className="text-[#ff4d5e]">StarLine</span> в Атырау
+                    дистрибьютор <span className="text-[#ff4d5e]">StarLine</span> в Атырау
                 </h1>
                 <div className="h-1 w-16 bg-[#e30016] my-5" />
                 <p className="max-w-[560px] text-neutral-300 text-base md:text-lg">
-                    Филиал Kristall-Auto — официального дистрибьютора StarLine в Казахстане.
-                    Автозапуск, авторская установка с мягкой посадкой, оригинальное оборудование
-                    и гарантия до 5 лет.
+                    Продаём оригинальное оборудование StarLine оптом и в розницу со своего склада
+                    в Атырау и ставим его в собственных установочных центрах. Работаем в составе
+                    Kristall-Auto — официального дистрибьютора StarLine в Казахстане.
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
@@ -58,10 +58,11 @@ const HomeHero = () => {
                     </Link>
                 </div>
 
-                <div className="mt-10 grid gap-px bg-white/10 sm:grid-cols-3 max-w-[720px]">
+                <div className="mt-10 grid gap-px bg-white/10 grid-cols-2 lg:grid-cols-4 max-w-[720px]">
                     {[
+                        { t: "Склад в Атырау", d: "отгрузка в день заявки" },
+                        { t: "Опт и розница", d: "оригинал напрямую" },
                         { t: "от 30 000 ₸", d: "работа по установке" },
-                        { t: "2–2,5 часа", d: "стандартная установка" },
                         { t: "до 5 лет", d: "гарантия StarLine" },
                     ].map((x) => (
                         <div key={x.t} className="bg-[#101010] px-4 py-3">
@@ -75,7 +76,7 @@ const HomeHero = () => {
 
                 <p className="mt-6 flex items-center gap-2 text-xs text-neutral-400">
                     <ShieldCheck className="h-4 w-4 text-[#ff4d5e]" />
-                    Оригинальное оборудование напрямую от дистрибьютора
+                    Поставки напрямую от производителя — только оригинал, с серийными номерами
                 </p>
             </div>
         </section>

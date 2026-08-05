@@ -31,9 +31,79 @@ const POINTS = [
     },
 ];
 
+
+const KRISTALL = "https://kristall-auto.kz";
+const AREA = [
+    { "@type": "City", name: "Атырау" },
+    { "@type": "AdministrativeArea", name: "Атырау облысы" },
+];
+const CATALOG = [
+    ["StarLine жабдығын көтерме жеткізу", "Көтерме жеткізу"],
+    ["StarLine жабдығын бөлшектеп сату", "Бөлшек сауда"],
+    ["StarLine күзет кешендерін орнату", "Орнату"],
+];
+const DISTRIB =
+    "Атырау қаласы мен Атырау облысындағы StarLine ресми дистрибьюторы: түпнұсқа күзет " +
+    "жабдығын Атыраудағы қоймадан көтерме және бөлшектеп жеткізу, өз орнату " +
+    "орталықтарында орнату.";
+
+// Головной узел сущности: подлежащее при слове «дистрибьютор» — «Пегас Авто А».
+// Связь с Kristall-Auto вынесена в parentOrganization, а не в описание.
+const ORGANIZATION = {
+    "@type": "Organization",
+    "@id": `${SITE}/#organization`,
+    name: "Пегас Авто А",
+    alternateName: ["СТО «Пегас Авто А» by Kristall Auto", "Пегас AVTO A"],
+    legalName: "«JASavto» ЖК",
+    description: DISTRIB,
+    url: SITE,
+    image: `${SITE}/img/business.webp`,
+    telephone: PHONE,
+    foundingDate: "2011",
+    areaServed: AREA,
+    address: {
+        "@type": "PostalAddress",
+        addressCountry: "KZ",
+        addressLocality: "Атырау",
+        streetAddress: "ул. Курмангазы, 70Б",
+    },
+    parentOrganization: {
+        "@type": "Organization",
+        name: "Kristall-Auto",
+        url: KRISTALL,
+        description: "Қазақстандағы StarLine ресми дистрибьюторы",
+    },
+    brand: { "@type": "Brand", name: "StarLine", url: "https://www.starline.ru/" },
+    subOrganization: POINTS.map((p) => ({ "@id": `${SITE}/#point-${p.id}` })),
+    knowsAbout: [
+        "StarLine",
+        "Автосигнализациялар",
+        "Автоқосу",
+        "CAN/LIN шиналары",
+        "Жұмсақ отырғызу",
+        "Күзет жабдығын көтерме жеткізу",
+    ],
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Жұмыс бағыттары",
+        itemListElement: CATALOG.map(([name, serviceType]) => ({
+            "@type": "Offer",
+            itemOffered: {
+                "@type": "Service",
+                name,
+                serviceType,
+                provider: { "@id": `${SITE}/#organization` },
+                areaServed: AREA,
+            },
+        })),
+    },
+    sameAs: POINTS[0].sameAs,
+};
+
 const graph = {
     "@context": "https://schema.org",
     "@graph": [
+        ORGANIZATION,
         ...POINTS.map((p) => ({
             "@type": "AutoRepair",
             "@id": `${SITE}/#point-${p.id}`,
@@ -44,6 +114,8 @@ const graph = {
             priceRange: "₸₸",
             foundingDate: "2011",
             paymentAccepted: "Cash, Kaspi, Card",
+            description: DISTRIB,
+            parentOrganization: { "@id": `${SITE}/#organization` },
             areaServed: { "@type": "City", name: "Атырау" },
             address: {
                 "@type": "PostalAddress",
@@ -75,7 +147,7 @@ const graph = {
             url: `${SITE}/kk`,
             name: "«Пегас Авто А» СТО",
             inLanguage: "kk-KZ",
-            publisher: { "@id": `${SITE}/#point-kurmangazy` },
+            publisher: { "@id": `${SITE}/#organization` },
         },
     ],
 };
