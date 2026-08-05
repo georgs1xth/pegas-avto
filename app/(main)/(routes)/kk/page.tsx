@@ -46,7 +46,7 @@ const carouselItems: CarouselSlide[] = [
     {
         id: "static-4",
         title: "Кілт көлікте қалды ма, аккумулятор отырды ма?",
-        description: "Авариялық ашу және от алдыру.",
+        description: "Авариялық ашу және аккумуляторды қуаттандыру.",
         imageUrl: "https://utfs.io/f/bc434ec0-85eb-4bd5-b4fc-c9d4584a32b9-px1a7k.webp",
         btnHref: "/kk/services/avarijnoe-vskrytie",
     },
