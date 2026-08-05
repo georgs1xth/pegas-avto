@@ -96,6 +96,19 @@ details div{padding:0 14px 12px;color:var(--mut)}
 .grid-links{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin:12px 0}
 .grid-links a{border:1px solid var(--line);padding:9px 12px;text-decoration:none;color:var(--fg);font-size:14px;border-left:3px solid var(--red)}
 .grid-links a:hover{background:var(--soft);color:var(--red)}
+.prods{display:grid;gap:16px;grid-template-columns:1fr;margin:16px 0}
+@media(min-width:640px){.prods{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.prods{grid-template-columns:repeat(3,1fr)}}
+.prod{border:1px solid var(--line);border-top:3px solid var(--red);background:var(--bg);display:flex;flex-direction:column}
+.prod-img{background:#fff;padding:14px;display:flex;align-items:center;justify-content:center;min-height:190px}
+.prod-img img{max-width:100%;max-height:180px;width:auto;height:auto;display:block}
+.prod-b{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod-k{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);font-weight:700}
+.prod h3{margin:0;font-size:17px;line-height:1.25}
+.prod ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--mut)}
+.prod ul li{margin-bottom:5px}
+.prod-p{margin-top:auto;padding-top:8px;border-top:1px solid var(--line);font-size:19px;font-weight:800}
+.prod-p span{display:block;font-size:11px;font-weight:400;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
 .note{border-left:4px solid var(--red);background:var(--soft);padding:12px 14px;margin:14px 0}
 .ph-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:12px 0}
 .ph-grid img{width:100%;height:auto;display:block;border:1px solid var(--line);border-bottom:3px solid var(--red)}
@@ -184,7 +197,7 @@ main a:hover{color:var(--red)}
 <h1>Біз туралы</h1>
 <p class="lead">«Пегас Авто А» СТО Атырауда 15 жыл жұмыс істейді, 10 000-нан астам орнату орындалды. Біз — Атыраудағы StarLine ресми дистрибьюторымыз әрі Қазақстандағы ресми дистрибьютор Kristall-Auto құрамында жұмыс істейміз: түпнұсқа жабдық дистрибьютордан тікелей келеді, оны бөлшектеп те, көтерме де сатамыз.</p>
 <div class="note"><p style="margin:0">«Пегас Авто А» — Атырау қаласы мен Атырау облысындағы StarLine ресми дистрибьюторы. Қазақстандағы ресми дистрибьютор <a href="https://kristall-auto.kz" target="_blank" rel="noopener">Kristall-Auto</a> құрамында жұмыс істейміз әрі <a href="https://starline-shop.kz/ru/set-points" target="_blank" rel="noopener">StarLine орнату орталықтарының тізіміне</a> енгізілгенбіз. StarLine кепілдігі — 3 жыл, тіркелгенде 5 жылға дейін.</p></div>
-<h2>Немен айналысамыз</h2><div class="grid-links"><a href="/kk/services">Қызметтер</a><a href="/kk/ustanovka-signalizacii-atyrau">Сигнализация орнату</a><a href="/kk/starline-atyrau">Атырауда StarLine</a><a href="/kk/avtozapusk-atyrau">Автоқосу</a><a href="/kk/avtorskaya-ustanovka">Авторлық орнату</a><a href="/kk/garantiya-dilera">Дилер кепілдігі</a><a href="/kk/ceny">Бағалар</a><a href="/kk/opt">Көтерме</a><a href="/kk/partnership">Ынтымақтастық</a><a href="/kk/mastera">Шеберлер</a><a href="/kk/about">Біз туралы</a><a href="/kk/kontakty">Байланыс</a></div>
+<h2>Немен айналысамыз</h2><div class="grid-links"><a href="/kk/services">Қызметтер</a><a href="/kk/ustanovka-signalizacii-atyrau">Сигнализация орнату</a><a href="/kk/starline-atyrau">Атырауда StarLine</a><a href="/kk/avtozapusk-atyrau">Автоқосу</a><a href="/kk/avtorskaya-ustanovka">Авторлық орнату</a><a href="/kk/garantiya-dilera">Дилер кепілдігі</a><a href="/kk/ceny">Бағалар</a><a href="/kk/opt">Көтерме</a><a href="/kk/partnership">Ынтымақтастық</a><a href="/kk/videoregistratory-neoline">Neoline бейнетіркегіштері</a><a href="/kk/android-magnitoly">Android магнитолалар</a><a href="/kk/mastera">Шеберлер</a><a href="/kk/about">Біз туралы</a><a href="/kk/kontakty">Байланыс</a></div>
 <h2>Үлгіңізге автоқосу</h2><div class="grid-links"><a href="/kk/avtozapusk/toyota-camry-50">Toyota Camry 50</a><a href="/kk/avtozapusk/toyota-camry-70">Toyota Camry 70</a><a href="/kk/avtozapusk/toyota-camry-80">Toyota Camry 80</a><a href="/kk/avtozapusk/toyota-corolla">Toyota Corolla</a><a href="/kk/avtozapusk/toyota-rav4">Toyota RAV4</a><a href="/kk/avtozapusk/toyota-land-cruiser">Toyota Land Cruiser</a><a href="/kk/avtozapusk/toyota-land-cruiser-prado">Toyota Land Cruiser Prado</a><a href="/kk/avtozapusk/toyota-hilux">Toyota Hilux</a><a href="/kk/avtozapusk/toyota-highlander">Toyota Highlander</a><a href="/kk/avtozapusk/toyota-alphard">Toyota Alphard</a><a href="/kk/avtozapusk/toyota-sienna">Toyota Sienna</a><a href="/kk/avtozapusk/toyota-estima">Toyota Estima</a></div>
 <p><a href="/kk/avtozapusk-atyrau">Барлық үлгілер →</a></p>
 <h2>Жұмысты кім орындайды</h2>
@@ -203,7 +216,7 @@ main a:hover{color:var(--red)}
 <div><h3>Байланыс</h3>
 <p><a href="tel:+77023923222">+7 702 392 32 22</a> (WhatsApp)<br>ИП «JASavto»</p>
 </div>
-<div><h3>Бөлімдер</h3><p><a href="/kk/services">Қызметтер</a></p><p><a href="/kk/ustanovka-signalizacii-atyrau">Сигнализация орнату</a></p><p><a href="/kk/starline-atyrau">Атырауда StarLine</a></p><p><a href="/kk/avtozapusk-atyrau">Автоқосу</a></p><p><a href="/kk/avtorskaya-ustanovka">Авторлық орнату</a></p><p><a href="/kk/garantiya-dilera">Дилер кепілдігі</a></p><p><a href="/kk/ceny">Бағалар</a></p><p><a href="/kk/opt">Көтерме</a></p><p><a href="/kk/partnership">Ынтымақтастық</a></p><p><a href="/kk/mastera">Шеберлер</a></p><p><a href="/kk/about">Біз туралы</a></p><p><a href="/kk/kontakty">Байланыс</a></p></div>
+<div><h3>Бөлімдер</h3><p><a href="/kk/services">Қызметтер</a></p><p><a href="/kk/ustanovka-signalizacii-atyrau">Сигнализация орнату</a></p><p><a href="/kk/starline-atyrau">Атырауда StarLine</a></p><p><a href="/kk/avtozapusk-atyrau">Автоқосу</a></p><p><a href="/kk/avtorskaya-ustanovka">Авторлық орнату</a></p><p><a href="/kk/garantiya-dilera">Дилер кепілдігі</a></p><p><a href="/kk/ceny">Бағалар</a></p><p><a href="/kk/opt">Көтерме</a></p><p><a href="/kk/partnership">Ынтымақтастық</a></p><p><a href="/kk/videoregistratory-neoline">Neoline бейнетіркегіштері</a></p><p><a href="/kk/android-magnitoly">Android магнитолалар</a></p><p><a href="/kk/mastera">Шеберлер</a></p><p><a href="/kk/about">Біз туралы</a></p><p><a href="/kk/kontakty">Байланыс</a></p></div>
 </div>
 <p class="sm" style="margin-top:18px">© 2026 СТО «Пегас Авто А» by Kristall Auto · Атырау</p>
 </div></footer>

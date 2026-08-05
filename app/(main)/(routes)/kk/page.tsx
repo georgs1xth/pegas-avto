@@ -6,11 +6,12 @@ import HomeHeroKk from "@/components/home-hero-kk";
 import HomeSchemaKk from "@/components/home-schema-kk";
 import WholesaleSectionKk from "@/components/wholesale-section-kk";
 import DistributorSectionKk from "@/components/distributor-section-kk";
+import AlsoSellSectionKk from "@/components/also-sell-section-kk";
 import type { CarouselSlide } from "../(root)/_components/main-carousel";
 
 export const metadata: Metadata = {
     title: { absolute: "«Пегас Авто А» — Атыраудағы StarLine ресми дистрибьюторы" },
-    description: "«Пегас Авто А» — Атыраудағы StarLine ресми дистрибьюторы: түпнұсқа жабдықты қоймадан көтерме және бөлшектеп сату, екі бөлімшеде орнату. 15 жыл, 10 000+ орнату.",
+    description: "«Пегас Авто А» — Атыраудағы StarLine ресми дистрибьюторы: StarLine, Neoline бейнетіркегіштері және Android магнитолалар қоймадан, көтерме және бөлшек, екі бөлімшеде орнату.",
     alternates: {
         canonical: "https://pegas.georgiy.bond/kk",
         languages: {
@@ -86,6 +87,7 @@ const HomeKk = () => {
                 />
             </div>
             <DistributorSectionKk/>
+            <AlsoSellSectionKk/>
             <WholesaleSectionKk/>
             </div>
         </div>
