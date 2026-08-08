@@ -45,7 +45,7 @@ const HomeHero = () => {
                         Написать в WhatsApp
                     </a>
                     <a
-                        href="/ustanovka-signalizacii-atyrau/"
+                        href="/ustanovka-signalizacii-atyrau"
                         className="inline-flex items-center gap-2 border-2 border-white/80 hover:border-[#e30016] hover:text-[#ff4d5e] px-6 py-3 font-bold transition-colors"
                     >
                         Цены на установку

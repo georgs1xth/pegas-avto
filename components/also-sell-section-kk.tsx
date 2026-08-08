@@ -9,8 +9,8 @@ const GROUPS = [
         title: "StarLine күзет кешендері",
         text: "A91-ден 6-буынға дейінгі бүкіл желі: автоқосуы бар сигнализациялар, меткалар, маяктар мен GPS-трекерлер, CAN/LIN модульдер, брелоктар мен аксессуарлар. Атыраудағы қоймадан көтерме және бөлшек.",
         links: [
-            { href: "/kk/starline-atyrau/", label: "Атырауда StarLine" },
-            { href: "/kk/opt/", label: "Көтерме жеткізу" },
+            { href: "/kk/starline-atyrau", label: "Атырауда StarLine" },
+            { href: "/kk/opt", label: "Көтерме жеткізу" },
         ],
     },
     {
@@ -18,16 +18,16 @@ const GROUPS = [
         title: "Бейнетіркегіштер және радар-детекторлар",
         text: "Біз — Атыраудағы Neoline ресми дистрибьюторы: радар-детекторы бар гибридтер және 26 490 ₸-ден бастап 4K флагмандарға дейінгі тіркеуіштер, сигнатуралық радар-детекторлар, сондай-ақ Artway мен Kristall-Auto. Автосалондарға, сервистерге және дүкендерге көтерме.",
         links: [
-            { href: "/kk/videoregistratory-neoline/", label: "Neoline каталогы және хиттер" },
-            { href: "/kk/radar-detektory-atyrau/", label: "Радар-детекторлар" },
-            { href: "/kk/opt/", label: "Автосалондарға көтерме" },
+            { href: "/kk/videoregistratory-neoline", label: "Neoline каталогы және хиттер" },
+            { href: "/kk/radar-detektory-atyrau", label: "Радар-детекторлар" },
+            { href: "/kk/opt", label: "Автосалондарға көтерме" },
         ],
     },
     {
         icon: MonitorSmartphone,
         title: "Android магнитолалар",
         text: "Dudu және Mards: бас құрылғыны нақты көлікке қарай таңдаймыз, рульдегі батырмаларды, зауыттық камералар мен парктрониктерді сақтаймыз. Орнатуды өзіміз жасаймыз.",
-        links: [{ href: "/kk/android-magnitoly/", label: "Магнитола және орнату туралы" }],
+        links: [{ href: "/kk/android-magnitoly", label: "Магнитола және орнату туралы" }],
     },
 ];
 

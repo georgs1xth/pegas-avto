@@ -80,13 +80,13 @@ const DistributorSectionKk = () => {
 
             <div className="mt-4 flex flex-wrap gap-3">
                 <a
-                    href="/kk/opt/"
+                    href="/kk/opt"
                     className="inline-flex items-center gap-2 bg-[#e30016] hover:bg-[#b80012] text-white px-5 py-2.5 font-bold transition-colors"
                 >
                     Көтерме жеткізу
                 </a>
                 <a
-                    href="/kk/starline-atyrau/"
+                    href="/kk/starline-atyrau"
                     className="inline-flex items-center gap-2 border-2 border-neutral-900 dark:border-neutral-200 hover:border-[#e30016] hover:text-[#e30016] px-5 py-2.5 font-bold transition-colors"
                 >
                     Атырауда StarLine

@@ -27,16 +27,16 @@ const APP_LINKS = [
 
 // Статичные SEO-страницы (вне Next-роутера) — обычные <a>
 const SEO_LINKS = [
-    { href: "/ustanovka-signalizacii-atyrau/", label: "Установка сигнализаций" },
-    { href: "/avtozapusk-atyrau/", label: "Автозапуск" },
-    { href: "/avtorskaya-ustanovka/", label: "Авторская установка" },
-    { href: "/videoregistratory-neoline/", label: "Видеорегистраторы Neoline" },
-    { href: "/radar-detektory-atyrau/", label: "Радар-детекторы" },
-    { href: "/android-magnitoly/", label: "Android-магнитолы" },
-    { href: "/mastera/", label: "Мастера" },
-    { href: "/ceny/", label: "Цены" },
-    { href: "/opt/", label: "Опт" },
-    { href: "/kontakty/", label: "Контакты" },
+    { href: "/ustanovka-signalizacii-atyrau", label: "Установка сигнализаций" },
+    { href: "/avtozapusk-atyrau", label: "Автозапуск" },
+    { href: "/avtorskaya-ustanovka", label: "Авторская установка" },
+    { href: "/videoregistratory-neoline", label: "Видеорегистраторы Neoline" },
+    { href: "/radar-detektory-atyrau", label: "Радар-детекторы" },
+    { href: "/android-magnitoly", label: "Android-магнитолы" },
+    { href: "/mastera", label: "Мастера" },
+    { href: "/ceny", label: "Цены" },
+    { href: "/opt", label: "Опт" },
+    { href: "/kontakty", label: "Контакты" },
 ];
 
 const SiteFooter = () => {

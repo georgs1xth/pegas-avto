@@ -12,22 +12,22 @@ const mainPageRoutes = [
     {
         icon: Wrench,
         label: "Услуги",
-        href: "/services/"
+        href: "/services"
     },
     {
         icon: ShieldCheck,
         label: "Установка сигнализаций",
-        href: "/ustanovka-signalizacii-atyrau/"
+        href: "/ustanovka-signalizacii-atyrau"
     },
     {
         icon: Info,
         label: "О нас",
-        href: "/about/"
+        href: "/about"
     },
     {
         icon: Handshake,
         label: "Сотрудничество",
-        href: "/partnership/"
+        href: "/partnership"
     }
 ]
 

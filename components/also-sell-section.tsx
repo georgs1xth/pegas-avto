@@ -10,8 +10,8 @@ const GROUPS = [
         title: "Охранные комплексы StarLine",
         text: "Вся линейка от A91 до 6-го поколения: сигнализации с автозапуском, метки, маяки и GPS-трекеры, CAN/LIN-модули, брелоки и аксессуары. Опт и розница со склада в Атырау.",
         links: [
-            { href: "/starline-atyrau/", label: "StarLine в Атырау" },
-            { href: "/opt/", label: "Оптовые поставки" },
+            { href: "/starline-atyrau", label: "StarLine в Атырау" },
+            { href: "/opt", label: "Оптовые поставки" },
         ],
     },
     {
@@ -19,16 +19,16 @@ const GROUPS = [
         title: "Видеорегистраторы и радар-детекторы",
         text: "Мы официальный дистрибьютор Neoline в Атырау: гибриды с радар-детектором и регистраторы от 26 490 ₸ до 4K-флагманов, сигнатурные радар-детекторы, а также Artway и Kristall-Auto. Опт автосалонам, сервисам и магазинам автотоваров.",
         links: [
-            { href: "/videoregistratory-neoline/", label: "Каталог Neoline и хиты продаж" },
-            { href: "/radar-detektory-atyrau/", label: "Радар-детекторы" },
-            { href: "/opt/", label: "Опт для автосалонов" },
+            { href: "/videoregistratory-neoline", label: "Каталог Neoline и хиты продаж" },
+            { href: "/radar-detektory-atyrau", label: "Радар-детекторы" },
+            { href: "/opt", label: "Опт для автосалонов" },
         ],
     },
     {
         icon: MonitorSmartphone,
         title: "Android-магнитолы",
         text: "Dudu и Mards: подбираем головное устройство под конкретную машину, сохраняем кнопки на руле, штатные камеры и парктроники. Устанавливаем сами.",
-        links: [{ href: "/android-magnitoly/", label: "Про магнитолы и установку" }],
+        links: [{ href: "/android-magnitoly", label: "Про магнитолы и установку" }],
     },
 ];
 
