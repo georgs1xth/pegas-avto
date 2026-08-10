@@ -127,7 +127,17 @@ const SiteFooter = () => {
                                     pegas_avto_by_kristallauto
                                 </a>
                             </p>
-                            <p>ИП «JASavto»</p>
+                            <p className="mb-2">ИП «JASavto»</p>
+                            <p>
+                                GPS-мониторинг транспорта —{" "}
+                                <a
+                                    href="https://bagyt.georgiy.bond"
+                                    rel="noopener"
+                                    className="text-white hover:text-[#ff4d5e]"
+                                >
+                                    Bagyt GPS
+                                </a>
+                            </p>
                         </div>
                         <div>
                             <h3 className="text-white uppercase text-xs tracking-wider font-bold mb-3">

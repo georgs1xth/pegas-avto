@@ -127,7 +127,17 @@ const SiteFooterKk = () => {
                                     pegas_avto_by_kristallauto
                                 </a>
                             </p>
-                            <p>«JASavto» ЖК</p>
+                            <p className="mb-2">«JASavto» ЖК</p>
+                            <p>
+                                Көлікті GPS арқылы бақылау —{" "}
+                                <a
+                                    href="https://bagyt.georgiy.bond"
+                                    rel="noopener"
+                                    className="text-white hover:text-[#ff4d5e]"
+                                >
+                                    Bagyt GPS
+                                </a>
+                            </p>
                         </div>
                         <div>
                             <h3 className="text-white uppercase text-xs tracking-wider font-bold mb-3">

@@ -7,6 +7,7 @@ import HomeSchemaKk from "@/components/home-schema-kk";
 import WholesaleSectionKk from "@/components/wholesale-section-kk";
 import DistributorSectionKk from "@/components/distributor-section-kk";
 import AlsoSellSectionKk from "@/components/also-sell-section-kk";
+import GpsSectionKk from "@/components/gps-section-kk";
 import type { CarouselSlide } from "../(root)/_components/main-carousel";
 
 export const metadata: Metadata = {
@@ -88,6 +89,7 @@ const HomeKk = () => {
             </div>
             <DistributorSectionKk/>
             <AlsoSellSectionKk/>
+            <GpsSectionKk/>
             <WholesaleSectionKk/>
             </div>
         </div>

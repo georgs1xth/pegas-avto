@@ -4,6 +4,9 @@
 const SITE = "https://pegas.georgiy.bond";
 const PHONE = "+7 702 392 32 22";
 const IG = "https://www.instagram.com/pegas_avto_by_kristallauto";
+// Смежное направление GPS-мониторинга. Bagyt GPS ссылается сюда обратно
+// через parentOrganization — связь читается в обе стороны.
+const BAGYT = "https://bagyt.georgiy.bond";
 
 const POINTS = [
     {
@@ -77,7 +80,28 @@ const ORGANIZATION = {
         { "@type": "Brand", name: "StarLine", url: "https://www.starline.ru/" },
         { "@type": "Brand", name: "Neoline", url: "https://neoline.kz/" },
     ],
-    subOrganization: POINTS.map((p) => ({ "@id": `${SITE}/#point-${p.id}` })),
+    subOrganization: [
+        ...POINTS.map((p) => ({ "@id": `${SITE}/#point-${p.id}` })),
+        {
+            "@type": "Organization",
+            "@id": `${BAGYT}/#org`,
+            name: "Bagyt GPS",
+            url: BAGYT,
+            description:
+                "Атыраудағы көлікті GPS-мониторингтеу бағыты: GPS-жабдықты орнату және мониторинг платформасына қосу",
+            telephone: "+7 702 975 94 80",
+            address: {
+                "@type": "PostalAddress",
+                addressCountry: "KZ",
+                addressLocality: "Атырау",
+                streetAddress: "Бекен Айтжанов көш., 35",
+            },
+            areaServed: [
+                { "@type": "City", name: "Атырау" },
+                { "@type": "AdministrativeArea", name: "Атырау облысы" },
+            ],
+        },
+    ],
     knowsAbout: [
         "StarLine",
         "Автосигнализациялар",
