@@ -12,9 +12,21 @@ export const metadata: Metadata = {
     template: "%s | СТО Пегас avto A",
   },
   description: "Широкий выбор услуг для вашего автомобиля. Ремонт, установка доп. оборудования, заправка автокондиционеров и многое другое.",
+  // Иконка — щит в фирменной палитре, по тематике охранных комплексов.
+  // Растр лежит в app/favicon.ico и public/, вектор — public/favicon.svg.
+  // Исходник и генератор: generator/icons.py.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   other: { "google-site-verification": "YGfdW5HMTs0VsVfYZmKLqpQm2KfGiOQ5D3a0CUKYr8c"
   }
 };
+
+export const viewport = { themeColor: "#101010" };
 
 export default function RootLayout({
   children,
