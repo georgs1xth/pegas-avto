@@ -131,11 +131,11 @@ const SiteFooterKk = () => {
                             <p>
                                 Көлікті GPS арқылы бақылау —{" "}
                                 <a
-                                    href="https://bagyt.georgiy.bond"
+                                    href="https://gps.georgiy.bond"
                                     rel="noopener"
                                     className="text-white hover:text-[#ff4d5e]"
                                 >
-                                    Bagyt GPS
+                                    бөлек сайт
                                 </a>
                             </p>
                         </div>

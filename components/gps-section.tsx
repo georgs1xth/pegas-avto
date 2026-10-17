@@ -5,7 +5,7 @@ import { Navigation } from "lucide-react";
 // что мониторингом занимается та же команда, но это отдельная компания.
 // Связь дублируется в разметке (home-schema.tsx, subOrganization).
 
-const BAGYT = "https://bagyt.georgiy.bond";
+const BAGYT = "https://gps.georgiy.bond"; // сайт GPS-мониторинга (до 17.10.2026 был на другом поддомене)
 
 const GpsSection = () => {
     return (
@@ -24,14 +24,14 @@ const GpsSection = () => {
                         rel="noopener"
                         className="font-bold text-[#e30016] hover:underline underline-offset-4"
                     >
-                        Bagyt GPS
+                        GPS-мониторинг «Пегас Авто А»
                     </a>
                     . Ставим GPS-оборудование и подключаем машины к платформе мониторинга: видно, где
                     техника сейчас, каким маршрутом шла и сколько проехала за месяц. Автопарки,
                     спецтехника, такси и доставка.
                 </p>
                 <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-                    Атырау, ул. Бекена Айтжанова, 35 ·{" "}
+                    Атырау, ул. Курмангазы, 70Б ·{" "}
                     <a href="tel:+77029759480" className="hover:text-[#e30016]">
                         +7 702 975 94 80
                     </a>

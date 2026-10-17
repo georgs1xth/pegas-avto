@@ -4,9 +4,9 @@
 const SITE = "https://pegas.georgiy.bond";
 const PHONE = "+7 702 392 32 22";
 const IG = "https://www.instagram.com/pegas_avto_by_kristallauto";
-// Смежное направление GPS-мониторинга. Bagyt GPS ссылается сюда обратно
+// Смежное направление GPS-мониторинга. Его сайт ссылается сюда обратно
 // через parentOrganization — связь читается в обе стороны.
-const BAGYT = "https://bagyt.georgiy.bond";
+const BAGYT = "https://gps.georgiy.bond"; // сайт GPS-мониторинга (до 17.10.2026 был на другом поддомене)
 
 const POINTS = [
     {
@@ -85,7 +85,7 @@ const ORGANIZATION = {
         {
             "@type": "Organization",
             "@id": `${BAGYT}/#org`,
-            name: "Bagyt GPS",
+            name: "GPS-мониторинг «Пегас Авто А»",
             url: BAGYT,
             description:
                 "Атыраудағы көлікті GPS-мониторингтеу бағыты: GPS-жабдықты орнату және мониторинг платформасына қосу",
@@ -94,7 +94,7 @@ const ORGANIZATION = {
                 "@type": "PostalAddress",
                 addressCountry: "KZ",
                 addressLocality: "Атырау",
-                streetAddress: "Бекен Айтжанов көш., 35",
+                streetAddress: "Құрманғазы көш., 70Б",
             },
             areaServed: [
                 { "@type": "City", name: "Атырау" },

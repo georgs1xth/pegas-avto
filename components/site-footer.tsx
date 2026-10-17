@@ -131,11 +131,11 @@ const SiteFooter = () => {
                             <p>
                                 GPS-мониторинг транспорта —{" "}
                                 <a
-                                    href="https://bagyt.georgiy.bond"
+                                    href="https://gps.georgiy.bond"
                                     rel="noopener"
                                     className="text-white hover:text-[#ff4d5e]"
                                 >
-                                    Bagyt GPS
+                                    отдельный сайт
                                 </a>
                             </p>
                         </div>
