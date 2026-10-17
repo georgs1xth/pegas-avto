@@ -11,8 +11,8 @@ import GpsSection from "@/components/gps-section";
 import type { CarouselSlide } from "./_components/main-carousel";
 
 export const metadata: Metadata = {
-    title: { absolute: "«Пегас Авто А» — официальный дилер StarLine в Атырау" },
-    description: "«Пегас Авто А» — официальный дилер и дистрибьютор StarLine в Атырау: сигнализации, видеорегистраторы Neoline, Android-магнитолы. Опт и розница, две точки.",
+    title: { absolute: "«Пегас Авто А» by Kristall-Auto — официальный дилер StarLine в Атырау" },
+    description: "«Пегас Авто А» by Kristall-Auto — официальный дилер и дистрибьютор StarLine в Атырау: сигнализации, видеорегистраторы Neoline, Android-магнитолы. Опт и розница, две точки.",
 };
 
 // Слайды захардкожены (сняты с прода 03.08.2026) — без запроса к БД, чтобы главная грузилась быстрее.

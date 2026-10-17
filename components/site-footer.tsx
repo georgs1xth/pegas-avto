@@ -52,7 +52,7 @@ const SiteFooter = () => {
             <div className="bg-[#101010] text-neutral-400 text-sm">
                 <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-6">
                     <p>
-                        «Пегас Авто А» — официальный дистрибьютор StarLine в Атырау и Атырауской области. Работаем в составе{" "}
+                        «Пегас Авто А» by Kristall-Auto — официальный дистрибьютор StarLine в Атырау и Атырауской области. Работаем в составе{" "}
                         <a
                             href="https://kristall-auto.kz"
                             target="_blank"
