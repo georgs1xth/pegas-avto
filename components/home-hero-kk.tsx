@@ -22,8 +22,13 @@ const HomeHeroKk = () => {
                 <p className="text-[#ff4d5e] font-bold tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
                     Атырау · StarLine ресми дистрибьюторы · 15 жыл
                 </p>
+                {/* «by Kristall-Auto» — требование дистрибьюции, не убирать */}
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase leading-[1.1] tracking-tight max-w-[680px]">
-                    «Пегас Авто А» — Атыраудағы
+                    «Пегас Авто А»{" "}
+                    <span className="align-middle whitespace-nowrap text-sm md:text-base font-semibold normal-case tracking-normal text-neutral-400">
+                        by Kristall-Auto
+                    </span>{" "}
+                    — Атыраудағы
                     <br />
                     ресми <span className="text-[#ff4d5e]">StarLine</span> дистрибьюторы
                 </h1>
