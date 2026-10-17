@@ -19,16 +19,12 @@ const HomeHero = () => {
 
 
             <div className="relative mx-auto max-w-[1140px] px-4 py-12 md:py-16 lg:pr-[38%]">
-                <p className="text-[#ff4d5e] font-bold tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
-                    Атырау · официальный дистрибьютор StarLine · 15 лет
-                </p>
                 {/* «by Kristall-Auto» — требование дистрибьюции, не убирать */}
+                <p className="text-[#ff4d5e] font-bold tracking-[0.18em] text-xs md:text-sm uppercase mb-3">
+                    «Пегас Авто А» by Kristall-Auto · Атырау · 15 лет
+                </p>
                 <h1 className="text-3xl md:text-5xl font-extrabold uppercase leading-[1.1] tracking-tight max-w-[680px]">
-                    «Пегас Авто А»{" "}
-                    <span className="align-middle whitespace-nowrap text-sm md:text-base font-semibold normal-case tracking-normal text-neutral-400">
-                        by Kristall-Auto
-                    </span>{" "}
-                    — официальный
+                    «Пегас Авто А» — официальный
                     <br />
                     дистрибьютор <span className="text-[#ff4d5e]">StarLine</span> в Атырау
                 </h1>
