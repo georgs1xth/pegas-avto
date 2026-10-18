@@ -8,7 +8,7 @@ const GROUPS = [
     {
         icon: ShieldCheck,
         title: "Охранные комплексы StarLine",
-        text: "Вся линейка StarLine: сигнализации с автозапуском, метки, маяки и GPS-трекеры, CAN/LIN-модули, брелоки и аксессуары. Опт и розница со склада в Атырау.",
+        text: "Вся линейка StarLine: сигнализации с автозапуском, метки, маяки и GPS-трекеры, CAN/LIN-модули, брелоки и аксессуары. ",
         links: [
             { href: "/starline-atyrau", label: "StarLine в Атырау" },
             { href: "/opt", label: "Оптовые поставки" },
@@ -17,7 +17,7 @@ const GROUPS = [
     {
         icon: Camera,
         title: "Видеорегистраторы и радар-детекторы",
-        text: "Мы официальный дистрибьютор Neoline в Атырау: гибриды с радар-детектором и регистраторы от 26 490 ₸ до 4K-флагманов, сигнатурные радар-детекторы, а также Artway и Kristall-Auto. Опт автосалонам, сервисам и магазинам автотоваров.",
+        text: "Гибриды с радар-детектором и регистраторы от 26 490 ₸ до 4K-флагманов, сигнатурные радар-детекторы, а также Artway и Kristall-Auto.",
         links: [
             { href: "/videoregistratory-neoline", label: "Каталог Neoline и хиты продаж" },
             { href: "/radar-detektory-atyrau", label: "Радар-детекторы" },
@@ -27,14 +27,10 @@ const GROUPS = [
     {
         icon: MonitorSmartphone,
         title: "Android-магнитолы",
-        text: "Dudu и Mards: подбираем головное устройство под конкретную машину, сохраняем кнопки на руле, штатные камеры и парктроники. Устанавливаем сами.",
+        text: "Dudu и Mards: подбираем под конкретную машину, сохраняем кнопки на руле, штатные камеры и парктроники.",
         links: [{ href: "/android-magnitoly", label: "Про магнитолы и установку" }],
     },
 ];
-
-const EXTRA =
-    "Дополнительно ставим парктроники, камеры заднего вида и GPS-мониторинг, " +
-    "а по автоэлектрике и диагностике работаем в паре с Injector Service.";
 
 const AlsoSellSection = () => {
     return (
@@ -43,13 +39,6 @@ const AlsoSellSection = () => {
                 Что мы ещё продаём и ставим
             </h2>
             <div className="h-1 w-12 bg-[#e30016] mt-3 mb-5" />
-
-            <p className="max-w-[76ch] text-neutral-600 dark:text-neutral-300 mb-6">
-                «Пегас Авто А» by Kristall-Auto — официальный дистрибьютор StarLine и Neoline в Атырау. Кроме охранных
-                комплексов поставляем и устанавливаем видеорегистраторы и Android-магнитолы.
-                Всё со своего склада в городе — оптом автосалонам, сервисам и магазинам
-                и в розницу частным владельцам.
-            </p>
 
             <div className="grid gap-4 md:grid-cols-3">
                 {GROUPS.map((g) => {
@@ -82,9 +71,6 @@ const AlsoSellSection = () => {
                 })}
             </div>
 
-            <p className="mt-4 text-sm text-neutral-500 dark:text-neutral-400 max-w-[76ch]">
-                {EXTRA}
-            </p>
         </section>
     );
 };
